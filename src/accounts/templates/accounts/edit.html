@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<div class="row">
+  <div class="col-sm-12 col-md-9">
+    <div class="ctf-block">
+		<div class="ctf-head">
+			<h3>Edit info</h3>
+		</div>
+        <div class="bloc-body">
+            <div class="col-sm-12 col-md-12 mx-auto">
+				{{ u_form.non_field_errors }}
+				{% if error is not None %}
+					<span class="message error-msg">{{ error }}</span>
+				{% elif success is not None %}
+					<span class="message success-msg">{{ success }}</span>
+				{% endif %}
+				<form method='POST'>
+                    <div class="edit-infos-grp">
+						{%csrf_token%}
+						<label for="{{ u_form.username.id_for_label }}">{% trans "Username" %} *</label>
+						{{ u_form.username.errors}}
+						{{u_form.username}}
+						</br>
+						<label for="{{ u_form.email.id_for_label }}">{% trans "Email" %} *</label>
+						{{ u_form.email.errors}}
+						{{u_form.email}}
+						</br>
+						</br>
+						<label for="{{ p_form.portfolio_site.id_for_label }}">{% trans "Website" %}</label>
+						{{p_form.portfolio_site}}
+						</br>
+						</br>Token
+						<input type='text' readonly value='{{token}}'>
+						</br>
+						<input class="form-control" type="submit" value="{% trans "Apply" %}">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="ctf-block">
+		<div class="ctf-head">
+			<h3>{% trans "Connected accounts" %}</h3>
+		</div>
+        <div class="bloc-body">
+            <div class="d-flex">
+				{% if user.userprofileinfo.discord_id|length > 0 %}
+					<form action="{% url 'accounts:connections-disconnect-discord' %}" method='POST' class="form-inline p-2">
+						{%csrf_token%}
+						<button class="btn btn-dark" type="submit">{% trans "Disconnect Discord" %}</button>
+					</form>
+				{% else %}
+					<form action="{% url 'accounts:connections-connect-discord' %}" method='POST' class="form-inline p-2">
+						{%csrf_token%}
+						<button class="btn btn-dark" type="submit">{% trans "Connect Discord" %}</button>
+					</form>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+  </div>
+  <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
+    <ul class="list-group">
+		<li class="list-group-item">{{ user.username }}</li>
+		<li class="list-group-item">{% trans "Score" %} : {{ user.userprofileinfo.score }}</li>
+		{% if user.userprofileinfo.portfolio_site %}
+			<li class="list-group-item">
+				<a href="{{ user.userprofileinfo.portfolio_site }}" target="_blank">
+					{{ user.userprofileinfo.portfolio_site }}
+				</a>
+			</li>
+		{% endif %}
+		<li class="list-group-item">{% trans "Member since" %} {{ user.date_joined|date:"Y-m-d" }}</li>
+	</ul>
+  </div>
+</div>
+{% endblock %}
+

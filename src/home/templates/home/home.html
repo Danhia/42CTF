@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<div class="row">
+        <div class="col-lg-9 col-sm-12 news-card">
+                {% if news %}
+                {% for n in news %}
+                <div class="card text-center news-card">
+                        <div class="card-body">
+                                <h5 class="card-title">{{ n.name|safe }}</h5>
+                                <p class="card-text">{{ n.content|safe }}</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                                {{ n.pub_date }}
+                        </div>
+                </div>
+                {% endfor %}
+                {% else %}
+				<p class="text-center">{% trans "No article available." %}</p>
+                {% endif %}
+        </div>
+        <div class="col-lg-3 col-sm-12 right-sidebar">
+                <ul class="list-group">
+					<li class="list-group-item active">{% trans "Latest challenges added" %}</li>
+                        {% if ctfs %}
+                        {% for ctf in ctfs %}
+			<a class="list-group-item" href="/ctfs/{{ ctf.category.slug }}/{{ ctf.slug }}">{{ ctf.name }}</a>
+                        {% endfor %}
+                        {% else %}
+						<li class="list-group-item">{% trans "No ctf available." %}</li>
+                        {% endif %}
+                </ul>
+                <ul class="list-group">
+                        <li class="list-group-item active">Top 10</li>
+                        {% for t in top %}
+                        <li class="list-group-item"># {{ forloop.counter }} <a class="profile_link" href="/accounts/profile/{{ t.user.username }}"> {{ t.user.username }}</a> <span style="position:absolute;right: 15px;">{{ t.score }}</span></li>
+                        {% endfor %}
+                </ul>
+                <ul class="list-group">
+					<li class="list-group-item active">{% trans "Flags counter" %}</li>
+                        <li class="list-group-item"><span>{{ flags }}</span></li>
+                </ul>
+        </div>
+        
+</div>
+{% endblock %}
+

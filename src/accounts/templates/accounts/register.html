@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<div class="row">
+        <div class="col-sm-12 col-md-9">
+                <div class="ctf-block">
+                        <div class="ctf-head">
+                                <h3>Register</h3>
+                        </div>
+                        <div class="ctf-body sign-body">
+                            <div class="col-sm-8 col-md-6 mx-auto">
+                                {% if registered %}
+								<h1>{% trans "Welcome !" %}</h1>
+								<span class="message success-msg">{% trans "Your account has been created." %}</span>
+                                {% else %}
+                                {% if registered_failed %}
+                                        <span class="message error-msg">{{ registered_failed }}</span>
+                                {% endif %}
+                                <form enctype="multipart/form-data" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+											<input class="form-control" type="text" name="username" placeholder="{% trans "Username" %} *" maxlength="150" required="" id="id_username"></br>
+											<input class="form-control" type="password" name="password" placeholder="{% trans "Password" %} *" required="" id="id_password"></br>
+                                        <input class="form-control" type="email" name="email" placeholder="pleasedontgivemy@private.infos*" required="" maxlength="254" id="id_email"></br>
+										<input class="form-control" type="url" name="portfolio_site" placeholder="{% trans "Personal website" %}"maxlength="200" id="id_portfolio_site"></br>
+										<input type="submit" name="" class="form-control" value="{% trans "Register" %}">
+                                        </div>
+                                </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                </div>
+
+        </div>
+        <div class="col-sm-12 col-md-3 right-sidebar">
+                <ul class="list-group">
+					<a href="/accounts/signup" class="list-group-item">{% trans "Sign up" %}</a>
+					<a href="/accounts/signin" class="list-group-item">{% trans "Login" %}</a>
+                </ul>
+        </div>
+</div>
+{% endblock %}
+

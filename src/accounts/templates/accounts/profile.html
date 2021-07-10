@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<div class="row">
+  <div class="col-sm-12 col-md-9">
+    <div>
+		<h4>Challenges Solved by {{ user.username }}</h4>
+			{% if solves%}
+			<table class="table table-dark">
+        <thead>
+          <tr>
+			  <th scope="col">{% trans "Challenge Name" %}</th>
+			  <th scope="col">{% trans "Category" %}</th>
+			  <th scope="col">{% trans "Points" %}</th>
+			  <th scope="col">{% trans "Date" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+					{% for s in solves %}
+					<tr>
+						<th scope="row"><a href="/ctfs/{{ s.ctf.category.slug }}/{{ s.ctf.slug }}">{{ s.ctf.name }}</a></th>
+							<td>{{ s.ctf.category.name}}</td>
+							<td>{{ s.ctf.points }}</td>
+							<td>{{ s.flag_date|date:"Y-m-d H:i:s" }}</td>
+          </tr>
+					{% endfor %}
+        </tbody>
+      </table>
+			{% else %}
+			<p>{% trans "It's seem {{ user.username }} have never solved any CTF yet..." %}</p>
+			{% endif %}
+    </div>
+  </div>
+  <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
+    <ul class="list-group">
+		<li class="list-group-item">{{ user.username }}</li>
+		<li class="list-group-item">{% trans "Score" %} : {{ user.userprofileinfo.score }}</li>
+		{% if user.userprofileinfo.portfolio_site %}
+			<li class="list-group-item">
+				<a href="{{ user.userprofileinfo.portfolio_site }}" target="_blank">
+					{{ user.userprofileinfo.portfolio_site }}
+				</a>
+			</li>
+		{% endif %}
+		<li class="list-group-item">{% trans "Member since" %} {{ user.date_joined|date:"Y-m-d" }}</li>
+	</ul>
+  </div>
+</div>
+{% endblock %}
+

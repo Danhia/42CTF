@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <div>
+      <h4>Scoreboard</h4>
+			<table class="table table-dark">
+        <thead>
+          <tr>
+			<th scope="col">{% trans "Rank" %}</th>
+            <th scope="col">{% trans "Username" %}</th>
+            <th scope="col">{% trans "Website" %}</th>
+            <th scope="col">{% trans "Score" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+					{% for s in scores %}
+					<tr>
+							<th scope="row"># {{ forloop.counter0|add:scores.start_index }}</th>
+							<th><a class="profile_link" href="/accounts/profile/{{ s.user.username }}"> {{ s.user.username }}</a></th>
+							<td>
+                                                                {% if s.user.userprofileinfo.portfolio_site %}
+                                                                <a href="{{ s.user.userprofileinfo.portfolio_site }}" target="_blank">{{ s.user.userprofileinfo.portfolio_site }}</a>
+                                                                {% endif %}
+                                                        </td>
+							<td>{{ s.user.userprofileinfo.score }}</td>
+          </tr>
+					{% endfor %}
+        </tbody>
+      </table>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if scores.has_previous %}
+            <a href="?page=1">&laquo; {% trans "First" %}</a>
+            <a href="?page={{ scores.previous_page_number }}">{% trans "Previous" %}</a>
+        {% endif %}
+
+        <span class="current">
+            {% trans "Page "%} {{ scores.number }} / {{ scores.paginator.num_pages }}.
+        </span>
+
+        {% if scores.has_next %}
+		<a href="?page={{ scores.next_page_number }}">{% trans "Next" %}</a>
+            <a href="?page={{ scores.paginator.num_pages }}">{% trans "Last" %}&raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+		</div>
+  </div>
+</div>
+{% endblock %}
+

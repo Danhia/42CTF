@@ -1,0 +1,111 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                <link rel="stylesheet" href="{% static "css/style.css" %}">
+				<!-- Primary Meta Tags -->
+				<title>42CTF</title>
+				<meta name="title" content="42CTF">
+				<meta name="description" content="42CTF est une plateforme de challenge en sécurité informatique par les étudiants de l'école 42.">
+
+				<!-- Open Graph / Facebook -->
+				<meta property="og:type" content="website">
+				<meta property="og:url" content="https://www.42ctf.org/">
+				<meta property="og:title" content="42CTF">
+				<meta property="og:description" content="42CTF est une plateforme de challenge en sécurité informatique par les étudiants de l'école 42.">
+				<meta property="og:image" content="{% static "img/og_img.png" %}">
+
+				<!-- Twitter -->
+				<meta property="twitter:card" content="summary_large_image">
+				<meta property="twitter:url" content="https://www.42ctf.org/">
+				<meta property="twitter:title" content="42CTF">
+				<meta property="twitter:description" content="42CTF est une plateforme de challenge en sécurité informatique par les étudiants de l'école 42.">
+				<meta property="twitter:image" content="{% static "img/og_img.png" %}">
+
+		<meta name="Description" content="42CTF est une plateforme de challenge en sécurité informatique par les étudiants de l'école 42.">
+		<meta name="keywords" content="hack, hacking, challenge, solution, exercice, hacking challenge, hack challenge, exercice hack, exercice hacking, capture the flag, CTF, security, sécurité, Documentation,Applicatif,Cryptologie,Challenges,Outils,R&#233;seaux,CrackinWebW Client,Programmation,Cryptanaly,Application,Pr&#233;sentation,R&#233;seau,St&#233;ganographie,Web Serveur,Cracking,R&#233;aliste,Classement,Challenges, Hacking et S&#233;curit&#233; Informatique,App Script,Capture The Flag,App Syst&#232;me,Forensic,Web," />
+	</head>
+        <body>
+                <header>
+                        <!-- As a link -->
+                        <nav class="navbar navbar-expand-lg navbar-dark">
+                                <a class="navbar-brand" href="{% url "home" %}"><img src="{% static "img/cover.png" %}" width="110px"/></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav mr-auto">
+                                                <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                CTFs
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                {% if cats %}
+                                                                {% for c in cats %}
+                                                                <a class="dropdown-item" href="/ctfs/{{ c.slug }}">{{ c.name }}</a>
+                                                                {% endfor %}
+                                                                {% else %}
+																<a class="dropdown-item">{% translate "No category available." %}</a>
+                                                                {% endif %}
+                                                        </div>
+                                                </li>
+                                                <li class="nav-item">
+													<a class="nav-link" href="{% url 'scoreboard:scoreboard' %}">{% translate "Scoreboard" %}</a>
+                                                </li>
+                                        </ul>
+                                        <ul class="navbar-nav ">
+													{% get_current_language as LANGUAGE_CODE %}
+													{% get_available_languages as languages %}
+													{% for lang_code, lang_name in languages %}
+													<li class="nav-item dropdown">
+														<a class="flag_link" href="{% url 'set_language' lang_code %}">
+															<img class="flag_img" src="{% static "img/"|add:lang_code|add:".svg" %}" alt="flag {{ lang_name }}"/>
+														</a>
+													</li>
+													{% endfor %}
+                                                {% if request.user.is_authenticated %}
+                                                <li class="nav-item dropdown">
+													<a href="{% url 'accounts:edit' %}" class="nav-link">{{ request.user.username }}</a>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                        <span class="nav-link">{{ request.user.userprofileinfo.score }}</span>
+                                                </li>
+                                                <li class="nav-item dropdown">
+													<a class="nav-link" href="{% url 'accounts:out' %}">{% translate "Logout" %}</a>
+                                                </li>
+                                                {% else %}
+                                                <li class="nav-item dropdown">
+													<a class="nav-link" href="{% url 'accounts:signin' %}">{% translate "Login" %}</a>
+                                                </li>
+                                                <li class="nav-item">
+													<a class="nav-link" href="{% url 'accounts:signup' %}">{% translate "Sign Up" %}</a>
+                                                </li>
+                                                {% endif %}
+                                        </ul>
+                                </div>
+                        </nav>
+                </header>
+                <div class="container main-div">
+                        {% block content %}
+                        {% endblock %}
+                </div>
+                <footer>
+                        <a href="https://discord.gg/DwZqPpA">
+                                <img width="250px" src="https://discordapp.com/api/guilds/606162827274616845/widget.png?style=banner2">
+                        </a>
+						<p style="padding-top:10px">Made with <img src="{% static "img/smoke.png" %}" width="20px" style="margin-top:-5px"> by <a href="https://ix-56h.github.io/">ix-56h</a></p>
+                </footer>
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        </body>
+</html>
+
