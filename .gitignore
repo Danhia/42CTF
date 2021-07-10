@@ -108,7 +108,7 @@ media/
 *.pid
 *.json
 
-settings.py
+local-settings.py
 /data
 /config
 
