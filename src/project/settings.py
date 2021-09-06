@@ -159,7 +159,3 @@ EMAIL_BACKEND = 'django_mailjet.backends.MailjetBackend'
 EMAIL_HOST = 'in-v3.mailjet.com'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = '42ctf <no-reply@42ctf.org>'
-MAILJET_API_KEY = ''
-MAILJET_API_SECRET = ''
-
-
