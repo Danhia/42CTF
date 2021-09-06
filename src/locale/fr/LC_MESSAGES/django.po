@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-10 19:28+0000\n"
+"POT-Creation-Date: 2021-09-06 18:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,9 +22,12 @@ msgstr ""
 #: accounts/templates/accounts/login.html:18
 #: accounts/templates/accounts/register.html:22
 #: ctfs/templates/ctfs/ctf_info.html:50 ctfs/templates/ctfs/ctfs_list.html:12
+#: ctfs/templates/templates/ctfs/ctf_info.html:50
+#: ctfs/templates/templates/ctfs/ctfs_list.html:12
 #: scoreboard/templates/scoreboard/scoreboard.html:12
+#: templates/ctfs/ctf_info.html:50 templates/ctfs/ctfs_list.html:12
 msgid "Username"
-msgstr ""
+msgstr "Pseudo"
 
 #: accounts/templates/accounts/edit.html:25
 msgid "Email"
@@ -32,59 +35,64 @@ msgstr ""
 
 #: accounts/templates/accounts/edit.html:30
 #: ctfs/templates/ctfs/ctf_info.html:51
+#: ctfs/templates/templates/ctfs/ctf_info.html:51
 #: scoreboard/templates/scoreboard/scoreboard.html:13
+#: templates/ctfs/ctf_info.html:51
 msgid "Website"
-msgstr ""
+msgstr "Site internet"
 
 #: accounts/templates/accounts/edit.html:36
 msgid "Apply"
-msgstr ""
+msgstr "Appliquer"
 
 #: accounts/templates/accounts/edit.html:44
 msgid "Connected accounts"
-msgstr ""
+msgstr "Comptes connectés"
 
 #: accounts/templates/accounts/edit.html:51
 msgid "Disconnect Discord"
-msgstr ""
+msgstr "Déconnecter Discord"
 
 #: accounts/templates/accounts/edit.html:56
 msgid "Connect Discord"
-msgstr ""
+msgstr "Connecter Discord"
 
 #: accounts/templates/accounts/edit.html:66
 #: accounts/templates/accounts/profile.html:37
 #: ctfs/templates/ctfs/ctf_info.html:52 ctfs/templates/ctfs/ctfs_list.html:13
+#: ctfs/templates/templates/ctfs/ctf_info.html:52
+#: ctfs/templates/templates/ctfs/ctfs_list.html:13
 #: scoreboard/templates/scoreboard/scoreboard.html:14
+#: templates/ctfs/ctf_info.html:52 templates/ctfs/ctfs_list.html:13
 msgid "Score"
-msgstr ""
+msgstr "Score"
 
 #: accounts/templates/accounts/edit.html:74
 #: accounts/templates/accounts/profile.html:45
 msgid "Member since"
-msgstr ""
+msgstr "Membre depuis"
 
 #: accounts/templates/accounts/login.html:13
 msgid "Please, verify your infos."
-msgstr ""
+msgstr "Merci de vérifier vos informations."
 
 #: accounts/templates/accounts/login.html:19
 #: accounts/templates/accounts/register.html:23
 msgid "Password"
-msgstr ""
+msgstr "Mot de passe"
 
 #: accounts/templates/accounts/login.html:22
 msgid "Reset password"
-msgstr ""
+msgstr "Réinitialiser le mot de passe"
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:90
+#: accounts/templates/accounts/register.html:38 templates/base.html:84
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:37
 #: templates/registration/password_reset_done.html:17
 #: templates/registration/password_reset_form.html:25
 msgid "Login"
-msgstr ""
+msgstr "Connexion"
 
 #: accounts/templates/accounts/login.html:32
 #: accounts/templates/accounts/register.html:37
@@ -93,241 +101,264 @@ msgstr ""
 #: templates/registration/password_reset_done.html:18
 #: templates/registration/password_reset_form.html:26
 msgid "Sign up"
-msgstr ""
+msgstr "Inscription"
 
 #: accounts/templates/accounts/profile.html:12
 msgid "Challenge Name"
-msgstr ""
+msgstr "Nom du challenge"
 
 #: accounts/templates/accounts/profile.html:13
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
 #: accounts/templates/accounts/profile.html:14
 msgid "Points"
-msgstr ""
+msgstr "Points"
 
 #: accounts/templates/accounts/profile.html:15
 #: ctfs/templates/ctfs/ctf_info.html:53
+#: ctfs/templates/templates/ctfs/ctf_info.html:53
+#: templates/ctfs/ctf_info.html:53
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: accounts/templates/accounts/profile.html:30
 msgid "It's seem {{ user.username }} have never solved any CTF yet..."
-msgstr ""
+msgstr "Il semble que {{ user.username }} n'a pas encore résolu de CTF..."
 
 #: accounts/templates/accounts/register.html:13
 msgid "Welcome !"
-msgstr ""
+msgstr "Bienvenue !"
 
 #: accounts/templates/accounts/register.html:14
 msgid "Your account has been created."
-msgstr ""
+msgstr "Votre compte a été créé."
 
 #: accounts/templates/accounts/register.html:25
 msgid "Personal website"
-msgstr ""
+msgstr "Site personnel"
 
 #: accounts/templates/accounts/register.html:26
 msgid "Register"
-msgstr ""
+msgstr "Inscription"
 
 #: accounts/views/views.py:31
 msgid "Your account was inactive."
-msgstr ""
+msgstr "Votre compte était inactif."
 
 #: accounts/views/views.py:50
 msgid ""
 "The password must contain at least one letter and at least one digit or "
 "punctuation character."
-msgstr ""
+msgstr "Le mot de passe doit contenir au moins une lettre, un chiffre et un signe de ponctuation."
 
 #: accounts/views/views.py:52
 msgid "A user with that email already exists."
-msgstr ""
+msgstr "Un utilisateurs avec cet email existe déjà."
 
 #: accounts/views/views.py:65
 msgid "A user with that username already exists."
-msgstr ""
+msgstr "Un utilisateur avec ce pseudo existe déjà."
 
 #: accounts/views/views.py:93
 msgid "Email already taken."
-msgstr ""
+msgstr "L'adresse mail est déjà utilisée."
 
 #: accounts/views/views.py:99
 msgid "Username already taken."
-msgstr ""
+msgstr "Le pseudo est déjà utilisé."
 
 #: accounts/views/views.py:103
 msgid "Updated."
-msgstr ""
+msgstr "Mis à jour."
 
 #: ctfs/templates/ctfs/ctf_info.html:9
+#: ctfs/templates/templates/ctfs/ctf_info.html:9 templates/ctfs/ctf_info.html:9
 msgid "Published date"
-msgstr ""
+msgstr "Date de publication"
 
 #: ctfs/templates/ctfs/ctf_info.html:17
+#: ctfs/templates/templates/ctfs/ctf_info.html:17
+#: templates/ctfs/ctf_info.html:17
 msgid "Congratulation !"
-msgstr ""
+msgstr "Félicitations !"
 
 #: ctfs/templates/ctfs/ctf_info.html:19
+#: ctfs/templates/templates/ctfs/ctf_info.html:19
+#: templates/ctfs/ctf_info.html:19
 msgid "Already flagged"
-msgstr ""
+msgstr "Déjà résolu"
 
 #: ctfs/templates/ctfs/ctf_info.html:21 ctfs/templates/ctfs/ctf_info.html:30
+#: ctfs/templates/templates/ctfs/ctf_info.html:21
+#: ctfs/templates/templates/ctfs/ctf_info.html:30
+#: templates/ctfs/ctf_info.html:21 templates/ctfs/ctf_info.html:30
 msgid "Start the challenge"
-msgstr ""
+msgstr "Démarrer le challenge"
 
 #: ctfs/templates/ctfs/ctf_info.html:23 ctfs/templates/ctfs/ctf_info.html:32
+#: ctfs/templates/templates/ctfs/ctf_info.html:23
+#: ctfs/templates/templates/ctfs/ctf_info.html:32
+#: templates/ctfs/ctf_info.html:23 templates/ctfs/ctf_info.html:32
 msgid "Download"
-msgstr ""
+msgstr "Télécharger"
 
 #: ctfs/templates/ctfs/ctf_info.html:27
+#: ctfs/templates/templates/ctfs/ctf_info.html:27
+#: templates/ctfs/ctf_info.html:27
 msgid "Wrong flag ! You can do it !"
-msgstr ""
+msgstr "Mauvais flag ! Vous pouvez le faire !"
 
 #: ctfs/templates/ctfs/ctf_info.html:45
+#: ctfs/templates/templates/ctfs/ctf_info.html:45
+#: templates/ctfs/ctf_info.html:45
 msgid "Solved by"
-msgstr ""
+msgstr "Résolu par"
 
 #: ctfs/templates/ctfs/ctf_info.html:68
+#: ctfs/templates/templates/ctfs/ctf_info.html:68
+#: templates/ctfs/ctf_info.html:68
 msgid "Nobody have solved this CTF."
-msgstr ""
+msgstr "Personne n'a résolu ce CTF."
 
 #: ctfs/templates/ctfs/ctf_info.html:74
+#: ctfs/templates/templates/ctfs/ctf_info.html:74
+#: templates/ctfs/ctf_info.html:74
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 #: ctfs/templates/ctfs/ctf_info.html:75
+#: ctfs/templates/templates/ctfs/ctf_info.html:75
+#: templates/ctfs/ctf_info.html:75
 msgid "Point reward"
-msgstr ""
+msgstr "Points"
 
 #: ctfs/templates/ctfs/ctfs_list.html:14
+#: ctfs/templates/templates/ctfs/ctfs_list.html:14
+#: templates/ctfs/ctfs_list.html:14
 msgid "Solved"
-msgstr ""
+msgstr "Résolu"
 
 #: ctfs/templates/ctfs/ctfs_list.html:37
+#: ctfs/templates/templates/ctfs/ctfs_list.html:37
+#: templates/ctfs/ctfs_list.html:37
 msgid "No ctf available for this category."
-msgstr ""
+msgstr "Il n'y a pas de challenges dans cette catégorie."
 
 #: ctfs/templates/ctfs/ctfs_list.html:42
+#: ctfs/templates/templates/ctfs/ctfs_list.html:42
+#: templates/ctfs/ctfs_list.html:42
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
-#: ctfs/templates/ctfs/ctfs_list.html:48 templates/base.html:54
+#: ctfs/templates/ctfs/ctfs_list.html:48
+#: ctfs/templates/templates/ctfs/ctfs_list.html:48 templates/base.html:54
+#: templates/ctfs/ctfs_list.html:48
 msgid "No category available."
-msgstr ""
+msgstr "Il n'y a pas de catégorie disponible."
 
 #: home/templates/home/home.html:19
 msgid "No article available."
-msgstr ""
+msgstr "Il n'y a pas d'article disponible."
 
 #: home/templates/home/home.html:24
 msgid "Latest challenges added"
-msgstr ""
+msgstr "Derniers challenges ajoutés"
 
 #: home/templates/home/home.html:30
 msgid "No ctf available."
-msgstr ""
+msgstr "Pas de challenge disponible"
 
 #: home/templates/home/home.html:40
 msgid "Flags counter"
-msgstr ""
+msgstr "Compteur de flags"
+
+#: project/settings.py:118
+msgid "English"
+msgstr "Anglais"
+
+#: project/settings.py:119
+msgid "German"
+msgstr "Allemand"
 
 #: project/settings.py:120
-msgid "Global Site"
-msgstr ""
+msgid "French"
+msgstr "Français"
 
 #: project/settings.py:121
-msgid "Italian"
-msgstr ""
-
-#: project/settings.py:122
-msgid "German"
-msgstr ""
-
-#: project/settings.py:123
-msgid "French"
-msgstr ""
-
-#: project/settings.py:124
-msgid "Spanish"
-msgstr ""
-
-#: project/settings.py:125
 msgid "Russian"
-msgstr ""
+msgstr "Russe"
 
 #: scoreboard/templates/scoreboard/scoreboard.html:11
 msgid "Rank"
-msgstr ""
+msgstr "Rang"
 
 #: scoreboard/templates/scoreboard/scoreboard.html:36
 msgid "First"
-msgstr ""
+msgstr "Début"
 
 #: scoreboard/templates/scoreboard/scoreboard.html:37
 msgid "Previous"
-msgstr ""
+msgstr "Précédente"
 
 #: scoreboard/templates/scoreboard/scoreboard.html:41
 msgid "Page "
-msgstr ""
+msgstr "Page"
 
 #: scoreboard/templates/scoreboard/scoreboard.html:45
 msgid "Next"
-msgstr ""
+msgstr "Suivante"
 
 #: scoreboard/templates/scoreboard/scoreboard.html:46
 msgid "Last"
-msgstr ""
+msgstr "Fin"
 
 #: templates/base.html:59
 msgid "Scoreboard"
-msgstr ""
+msgstr "Classement"
 
-#: templates/base.html:86
+#: templates/base.html:80
 msgid "Logout"
-msgstr ""
+msgstr "Déconnexion"
 
-#: templates/base.html:93
+#: templates/base.html:87
 msgid "Sign Up"
-msgstr ""
+msgstr "Connexion"
 
 #: templates/registration/password_reset_complete.html:11
 msgid "Your new password has been set."
-msgstr ""
+msgstr "Votre mot de passe a été mis à jour."
 
 #: templates/registration/password_reset_confirm.html:19
 msgid "Your password can’t be too similar to your other personal information."
-msgstr ""
+msgstr "Votre mot de passe ne peut pas être similaire à votre adresse mail."
 
 #: templates/registration/password_reset_confirm.html:20
 msgid "Your password must contain at least 8 characters."
-msgstr ""
+msgstr "Votre mot de passe doit contenir au moins 8 caractères."
 
 #: templates/registration/password_reset_confirm.html:21
 msgid "Your password can’t be a commonly used password."
-msgstr ""
+msgstr "Votre mot de passe ne peut pas être un mot de passe commun."
 
 #: templates/registration/password_reset_confirm.html:22
 msgid "Your password can’t be entirely numeric."
-msgstr ""
+msgstr "Votre mot de passe ne peut pas être entièrement numérique."
 
 #: templates/registration/password_reset_confirm.html:25
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmer"
 
 #: templates/registration/password_reset_confirm.html:27
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #: templates/registration/password_reset_done.html:10
 msgid ""
 "We've emailed you instructions for setting your password. You should receive "
 "the email shortly!"
-msgstr ""
+msgstr "Vous devrierz recevoir rapidement un email avec des instructions pour réinitialiser votre mot de passe."
 
 #: templates/registration/password_reset_form.html:15
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
