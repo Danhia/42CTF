@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<div class="row">
+  <div class="col-sm-12 col-md-9">
+    <div class="ctf-block">
+      <div class="ctf-head">
+        <h3>{{ ctf.name }}</h3>
+		<small>{% trans "Published date" %} : {{ ctf.pub_date }}</small>
+      </div>
+      <div class="ctf-body">
+        {{ ctf.description|safe }}
+      </div>
+      <div class="ctf-footer">
+              {% if request.user.is_authenticated %}
+              {% if valitated == True %}
+			  <p>{% trans "Congratulation !" %}</p>
+              {% elif alvalitated == True %}
+			  <p>{% trans "Already flagged" %}</p>	
+              	{% if ctf.ctf_url %}
+				<a class="begin-ctf-link" target="_blank" href="{{ ctf.ctf_url }}">{% trans "Start the challenge" %}</a></br>
+              	{% elif ctf.file %}
+				<a class="begin-ctf-link" target="_blank" href="{{ ctf.file.url }}">{% trans "Download" %}</a></br>
+              	{% endif %}
+              {% else %}
+              {% if failed %}
+			  <p>{% trans "Wrong flag ! You can do it !" %}</p>
+              {% endif %}
+              {% if ctf.ctf_url %}
+			  <a class="begin-ctf-link" target="_blank" href="{{ ctf.ctf_url }}">{% trans "Start the challenge" %}</a></br>
+              {% elif ctf.file %}
+			  <a class="begin-ctf-link" target="_blank" href="{{ ctf.file.url }}">{% trans "Download" %}</a></br>
+              {% endif %}
+              <form method="post" class="submitflag-form">
+                      {% csrf_token %}
+                      <input type="text" name="flag" maxlength="48" required="" id="id_flag">
+                      <input class="form-control" type="submit" value=">">
+              </form>
+
+              {% endif %}
+              {% endif %}
+      </div>
+    </div>
+    <div>
+		<h4>{% trans "Solved by" %}</h4>
+			{% if solved_list %}
+			<table class="table table-dark">
+        <thead>
+          <tr>
+			  <th scope="col">{% trans "Username" %}</th>
+			  <th scope="col">{% trans "Website" %}</th>
+			  <th scope="col">{% trans "Score" %}</th>
+			  <th scope="col">{% trans "Date" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+					{% for s in solved_list %}
+					<tr>
+							<th scope="row"><a class="profile_link" href="/accounts/profile/{{ s.user.username }}"> {{ s.user.username }}</a></th>
+							<td>{{ s.user.userprofileinfo.portfolio_site }}</td>
+							<td>{{ s.user.userprofileinfo.score }}</td>
+							<td>{{ s.flag_date }}</td>
+          </tr>
+					{% endfor %}
+        </tbody>
+      </table>
+			{% else %}
+			<p>{% trans "Nobody have solved this CTF." %}</p>
+			{% endif %}
+    </div>
+  </div>
+  <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
+    <ul class="list-group">
+		<li class="list-group-item">{% trans "Author" %} : {{ ctf.author.username }}</li>
+		<li class="list-group-item">{% trans "Point reward" %} : {{ ctf.points }}</li>
+		
+		</ul>
+  </div>
+</div>
+{% endblock %}
+
