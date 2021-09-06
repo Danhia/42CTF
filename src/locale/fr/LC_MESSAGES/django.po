@@ -323,7 +323,7 @@ msgstr "Déconnexion"
 
 #: templates/base.html:87
 msgid "Sign Up"
-msgstr "Connexion"
+msgstr "Inscription"
 
 #: templates/registration/password_reset_complete.html:11
 msgid "Your new password has been set."
