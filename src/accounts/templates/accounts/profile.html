@@ -18,7 +18,7 @@
         <tbody>
 					{% for s in solves %}
 					<tr>
-						<th scope="row"><a href="/ctfs/{{ s.ctf.category.slug }}/{{ s.ctf.slug }}">{{ s.ctf.name }}</a></th>
+						<th scope="row"><a href="{% url 'ctf' cat_slug=s.ctf.category.slug ctf_slug=s.ctf.slug %}">{{ s.ctf.name }}</a></th>
 							<td>{{ s.ctf.category.name}}</td>
 							<td>{{ s.ctf.points }}</td>
 							<td>{{ s.flag_date|date:"Y-m-d H:i:s" }}</td>

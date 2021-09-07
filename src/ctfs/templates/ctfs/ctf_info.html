@@ -9,7 +9,11 @@
 		<small>{% trans "Published date" %} : {{ ctf.pub_date }}</small>
       </div>
       <div class="ctf-body">
-        {{ ctf.description|safe }}
+		  {% if description %}
+          {{ description|safe }}
+		  {% else %}
+		  {% trans "No translation available for this challenge. Try another lang (French or English)." %}
+		  {% endif %}
       </div>
       <div class="ctf-footer">
               {% if request.user.is_authenticated %}
@@ -56,7 +60,7 @@
         <tbody>
 					{% for s in solved_list %}
 					<tr>
-							<th scope="row"><a class="profile_link" href="/accounts/profile/{{ s.user.username }}"> {{ s.user.username }}</a></th>
+							<th scope="row"><a class="profile_link" href="{% url 'accounts:profile' user_name=s.user.username %}"> {{ s.user.username }}</a></th>
 							<td>{{ s.user.userprofileinfo.portfolio_site }}</td>
 							<td>{{ s.user.userprofileinfo.score }}</td>
 							<td>{{ s.flag_date }}</td>

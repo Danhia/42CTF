@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-10 19:28+0000\n"
+"POT-Creation-Date: 2021-09-07 19:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: accounts/templates/accounts/edit.html:21
 #: accounts/templates/accounts/login.html:18
 #: accounts/templates/accounts/register.html:22
-#: ctfs/templates/ctfs/ctf_info.html:50 ctfs/templates/ctfs/ctfs_list.html:12
+#: ctfs/templates/ctfs/ctf_info.html:54 ctfs/templates/ctfs/ctfs_list.html:12
 #: scoreboard/templates/scoreboard/scoreboard.html:12
 msgid "Username"
 msgstr ""
@@ -31,7 +31,7 @@ msgid "Email"
 msgstr ""
 
 #: accounts/templates/accounts/edit.html:30
-#: ctfs/templates/ctfs/ctf_info.html:51
+#: ctfs/templates/ctfs/ctf_info.html:55
 #: scoreboard/templates/scoreboard/scoreboard.html:13
 msgid "Website"
 msgstr ""
@@ -54,7 +54,7 @@ msgstr ""
 
 #: accounts/templates/accounts/edit.html:66
 #: accounts/templates/accounts/profile.html:37
-#: ctfs/templates/ctfs/ctf_info.html:52 ctfs/templates/ctfs/ctfs_list.html:13
+#: ctfs/templates/ctfs/ctf_info.html:56 ctfs/templates/ctfs/ctfs_list.html:13
 #: scoreboard/templates/scoreboard/scoreboard.html:14
 msgid "Score"
 msgstr ""
@@ -78,7 +78,7 @@ msgid "Reset password"
 msgstr ""
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:90
+#: accounts/templates/accounts/register.html:38 templates/base.html:84
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:37
 #: templates/registration/password_reset_done.html:17
@@ -108,7 +108,7 @@ msgid "Points"
 msgstr ""
 
 #: accounts/templates/accounts/profile.html:15
-#: ctfs/templates/ctfs/ctf_info.html:53
+#: ctfs/templates/ctfs/ctf_info.html:57
 msgid "Date"
 msgstr ""
 
@@ -166,39 +166,45 @@ msgstr ""
 msgid "Published date"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:17
+#: ctfs/templates/ctfs/ctf_info.html:15
+msgid ""
+"No translation available for this challenge. Try another lang (French or "
+"English)."
+msgstr ""
+
+#: ctfs/templates/ctfs/ctf_info.html:21
 msgid "Congratulation !"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:19
+#: ctfs/templates/ctfs/ctf_info.html:23
 msgid "Already flagged"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:21 ctfs/templates/ctfs/ctf_info.html:30
+#: ctfs/templates/ctfs/ctf_info.html:25 ctfs/templates/ctfs/ctf_info.html:34
 msgid "Start the challenge"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:23 ctfs/templates/ctfs/ctf_info.html:32
+#: ctfs/templates/ctfs/ctf_info.html:27 ctfs/templates/ctfs/ctf_info.html:36
 msgid "Download"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:27
+#: ctfs/templates/ctfs/ctf_info.html:31
 msgid "Wrong flag ! You can do it !"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:45
+#: ctfs/templates/ctfs/ctf_info.html:49
 msgid "Solved by"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:68
+#: ctfs/templates/ctfs/ctf_info.html:72
 msgid "Nobody have solved this CTF."
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:74
+#: ctfs/templates/ctfs/ctf_info.html:78
 msgid "Author"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:75
+#: ctfs/templates/ctfs/ctf_info.html:79
 msgid "Point reward"
 msgstr ""
 
@@ -234,27 +240,19 @@ msgstr ""
 msgid "Flags counter"
 msgstr ""
 
-#: project/settings.py:120
-msgid "Global Site"
+#: project/settings.py:111
+msgid "English"
 msgstr ""
 
-#: project/settings.py:121
-msgid "Italian"
-msgstr ""
-
-#: project/settings.py:122
+#: project/settings.py:112
 msgid "German"
 msgstr ""
 
-#: project/settings.py:123
+#: project/settings.py:113
 msgid "French"
 msgstr ""
 
-#: project/settings.py:124
-msgid "Spanish"
-msgstr ""
-
-#: project/settings.py:125
+#: project/settings.py:114
 msgid "Russian"
 msgstr ""
 
@@ -286,11 +284,11 @@ msgstr ""
 msgid "Scoreboard"
 msgstr ""
 
-#: templates/base.html:86
+#: templates/base.html:80
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:93
+#: templates/base.html:87
 msgid "Sign Up"
 msgstr ""
 

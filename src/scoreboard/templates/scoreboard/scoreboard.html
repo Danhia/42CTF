@@ -18,7 +18,7 @@
 					{% for s in scores %}
 					<tr>
 							<th scope="row"># {{ forloop.counter0|add:scores.start_index }}</th>
-							<th><a class="profile_link" href="/accounts/profile/{{ s.user.username }}"> {{ s.user.username }}</a></th>
+							<th><a class="profile_link" href="{% url 'accounts:profile' user_name=s.user.username %}"> {{ s.user.username }}</a></th>
 							<td>
                                                                 {% if s.user.userprofileinfo.portfolio_site %}
                                                                 <a href="{{ s.user.userprofileinfo.portfolio_site }}" target="_blank">{{ s.user.userprofileinfo.portfolio_site }}</a>

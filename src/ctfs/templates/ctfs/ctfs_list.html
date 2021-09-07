@@ -26,7 +26,7 @@
         {% else %}
                 <th scope="row"> </th>
         {% endif %}
-        <td><a href="/ctfs/{{ cat.slug }}/{{ ctf.slug }}">{{ ctf.name }}</td>
+        <td><a href="{% url 'ctf' cat_slug=ctf.category.slug ctf_slug=ctf.slug %}">{{ ctf.name }}</td>
         <td>{{ ctf.points }}</td>
         <td>{{ ctf.solved_num }}</td>
       </tr>
@@ -42,7 +42,7 @@
 		<li class="list-group-item active">{% trans "Categories" %}</li>
     {% if cats %}
     {% for c in cats %}
-    <a class="list-group-item" href="/ctfs/{{ c.slug }}">{{ c.name }}</a>
+    <a class="list-group-item" href="{% url 'category' cat_slug=c.slug %}">{{ c.name }}</a>
     {% endfor %}
     {% else %}
 	<li class="list-group-item">{% trans "No category available." %}</li>

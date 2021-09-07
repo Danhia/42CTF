@@ -48,7 +48,7 @@
                                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                                 {% if cats %}
                                                                 {% for c in cats %}
-                                                                <a class="dropdown-item" href="/ctfs/{{ c.slug }}">{{ c.name }}</a>
+                                                                <a class="dropdown-item" href="{% url 'category' cat_slug=c.slug %}">{{ c.name }}</a>
                                                                 {% endfor %}
                                                                 {% else %}
 																<a class="dropdown-item">{% translate "No category available." %}</a>
@@ -64,7 +64,7 @@
 													{% get_available_languages as languages %}
 													{% for lang_code, lang_name in languages %}
 													<li class="nav-item dropdown">
-														<a class="flag_link" href="{% url 'set_language' lang_code %}">
+														<a class="flag_link" href="{% url 'set_language' lang_code %}?next={{request.path|slice:"3:"}}">
 															<img class="flag_img" src="{% static "img/"|add:lang_code|add:".svg" %}" alt="flag {{ lang_name }}"/>
 														</a>
 													</li>

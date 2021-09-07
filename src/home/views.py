@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import new
@@ -27,6 +27,8 @@ def home(request):
 
 def set_language(request, lang_code):
     next = '/'
+    if request.GET.get('next'):
+        next = request.GET.get('next')
     response = HttpResponseRedirect(next)
     if lang_code and check_for_language(lang_code):
         if next:
@@ -42,6 +44,7 @@ def set_language(request, lang_code):
                 path=settings.LANGUAGE_COOKIE_PATH,
                 domain=settings.LANGUAGE_COOKIE_DOMAIN,
                 )
-        return response
+        return redirect('/'+lang_code+next)
+
 
 # Create your views here.

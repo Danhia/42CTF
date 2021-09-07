@@ -24,7 +24,7 @@
 					<li class="list-group-item active">{% trans "Latest challenges added" %}</li>
                         {% if ctfs %}
                         {% for ctf in ctfs %}
-			<a class="list-group-item" href="/ctfs/{{ ctf.category.slug }}/{{ ctf.slug }}">{{ ctf.name }}</a>
+			<a class="list-group-item" href="{% url 'ctf' cat_slug=ctf.category.slug ctf_slug=ctf.slug %}">{{ ctf.name }}</a>
                         {% endfor %}
                         {% else %}
 						<li class="list-group-item">{% trans "No ctf available." %}</li>
@@ -33,7 +33,7 @@
                 <ul class="list-group">
                         <li class="list-group-item active">Top 10</li>
                         {% for t in top %}
-                        <li class="list-group-item"># {{ forloop.counter }} <a class="profile_link" href="/accounts/profile/{{ t.user.username }}"> {{ t.user.username }}</a> <span style="position:absolute;right: 15px;">{{ t.score }}</span></li>
+                        <li class="list-group-item"># {{ forloop.counter }} <a class="profile_link" href="{% url 'accounts:profile' user_name=t.user.username %}"> {{ t.user.username }}</a> <span style="position:absolute;right: 15px;">{{ t.score }}</span></li>
                         {% endfor %}
                 </ul>
                 <ul class="list-group">
