@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load i18n %}
+{% get_current_language as lang %}
 <div class="row">
         <div class="col-lg-9 col-sm-12 news-card">
                 {% if news %}
@@ -8,7 +9,19 @@
                 <div class="card text-center news-card">
                         <div class="card-body">
                                 <h5 class="card-title">{{ n.name|safe }}</h5>
-                                <p class="card-text">{{ n.content|safe }}</p>
+                                <p class="card-text">
+                                {% if lang == "fr" and n.content %}
+                                {{ n.content|safe }}
+                                {% elif lang == "en" and n.content_en %}
+                                {{ n.content_en|safe }}
+                                {% elif lang == "de" and n.content_de %}
+                                {{ n.content_de|safe }}
+                                {% elif lang == "ru" and n.content_ru %}
+                                {{ n.content_ru|safe }}
+                                {% else %}
+		  						{% trans "No translation available. Please try another language (English or French)." %}
+                                {% endif %}
+                                </p>
                         </div>
                         <div class="card-footer text-muted">
                                 {{ n.pub_date }}

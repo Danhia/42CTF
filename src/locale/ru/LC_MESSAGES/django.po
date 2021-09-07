@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 19:50+0200\n"
+"POT-Creation-Date: 2021-09-07 21:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,10 +168,9 @@ msgstr ""
 msgid "Published date"
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:15
+#: ctfs/templates/ctfs/ctf_info.html:15 home/templates/home/home.html:22
 msgid ""
-"No translation available for this challenge. Try another lang (French or "
-"English)."
+"No translation available. Please try another language (English or French)."
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:21
@@ -226,35 +225,35 @@ msgstr ""
 msgid "No category available."
 msgstr ""
 
-#: home/templates/home/home.html:19
+#: home/templates/home/home.html:32
 msgid "No article available."
 msgstr "Нет доступных статей."
 
-#: home/templates/home/home.html:24
+#: home/templates/home/home.html:37
 msgid "Latest challenges added"
 msgstr ""
 
-#: home/templates/home/home.html:30
+#: home/templates/home/home.html:43
 msgid "No ctf available."
 msgstr ""
 
-#: home/templates/home/home.html:40
+#: home/templates/home/home.html:53
 msgid "Flags counter"
 msgstr ""
 
-#: project/settings.py:111
+#: project/settings.py:113
 msgid "English"
 msgstr ""
 
-#: project/settings.py:112
+#: project/settings.py:114
 msgid "German"
 msgstr ""
 
-#: project/settings.py:113
+#: project/settings.py:115
 msgid "French"
 msgstr ""
 
-#: project/settings.py:114
+#: project/settings.py:116
 msgid "Russian"
 msgstr ""
 
