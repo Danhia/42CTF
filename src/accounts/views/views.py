@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 
 from django import forms
-from ctfs.models import CTF_flags
+from ctfs.models import Category, CTF_flags
 from ..forms import UserForm,UserProfileInfoForm, UserInfosUpdateForm, UserUpdateForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -113,9 +113,26 @@ def edit(request):
 
 @login_required
 def profile(request, user_name):
+    globalLabels= []
+    globalDatas = [] 
+    timeLabels = []
+    timeDatas= [] 
+
     user_obj = get_object_or_404(User, username=user_name)
+    cats = Category.objects.all()
+    for cat in cats:
+        globalLabels.append(cat.name)
+        solved_count = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat).order_by('-flag_date').count()
+        globalDatas.append(solved_count)
+
+    solves = CTF_flags.objects.filter(user=user_obj).order_by('flag_date')
+    somme = 0
+    for flag in solves:
+        timeLabels.append(flag.flag_date.strftime('%Y-%m-%d'))
+        somme += flag.ctf.points
+        timeDatas.append(somme)
     solves = CTF_flags.objects.filter(user=user_obj).order_by('-flag_date')
-    return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves})
+    return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'globalLabels': globalLabels, 'globalDatas': globalDatas, 'timeLabels': timeLabels, 'timeDatas': timeDatas})
 # Create your views here.
 
 def rank(request, token):
