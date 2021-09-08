@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 
 from django import forms
-from ctfs.models import Category, CTF_flags
+from ctfs.models import Category, CTF_flags, CTF
 from ..forms import UserForm,UserProfileInfoForm, UserInfosUpdateForm, UserUpdateForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -113,8 +113,7 @@ def edit(request):
 
 @login_required
 def profile(request, user_name):
-	globalLabels= []
-	globalDatas = [] 
+	catsDatas = []
 
 	user_obj = get_object_or_404(User, username=user_name)
 	cats = Category.objects.all()
@@ -122,14 +121,15 @@ def profile(request, user_name):
 
 	for cat in cats:
 		# prepare categories
-		globalLabels.append(cat.name)
-		solved_count = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name).order_by('-flag_date').count()
-		globalDatas.append(solved_count)
+		solved_count = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name).count()
+		max_count = CTF.objects.filter(category__name=cat.name).count()
 		# get datas
 		somme = 0
 		solved = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name).order_by('flag_date')
 		pointDatas[cat.name] = []
 		pointDatas[cat.name].append([user_obj.date_joined.timestamp() * 1000, 0])
+		percent = (solved_count / max_count) * 100
+		catsDatas.append([cat.name, solved_count, max_count, '{:.0f}'.format(percent)])
 		for flag in solved:
 			somme += flag.ctf.points
 			pointDatas[cat.name].append([flag.flag_date.timestamp() * 1000, somme])
@@ -141,8 +141,7 @@ def profile(request, user_name):
 	for s in solves.reverse():
 		somme += s.ctf.points
 		solved.append([s.flag_date.timestamp() * 1000,somme])
-	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'globalLabels': globalLabels, 'globalDatas': globalDatas, 'pointDatas': pointDatas})
-# Create your views here.
+	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas})
 
 def rank(request, token):
 	all_users	  = UserProfileInfo.objects.filter(score__gt=0).select_related().order_by('-score', 'last_submission_date', 'user__username')
