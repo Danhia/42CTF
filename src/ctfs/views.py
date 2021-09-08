@@ -21,7 +21,7 @@ def get_description_by_lang(ctf):
 
 def category(request, cat_slug):
     cat         =   get_object_or_404(Category, slug=cat_slug)
-    ctfs        =   CTF.objects.filter(category=cat).order_by('-points')
+    ctfs        =   CTF.objects.filter(category=cat).order_by('points')
     for ex in ctfs:
         ex.solved_num  =   CTF_flags.objects.filter(ctf=ex).count()
         ex.solved = ex.solved_by(request.user)
