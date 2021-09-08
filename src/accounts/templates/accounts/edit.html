@@ -39,26 +39,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="ctf-block">
-		<div class="ctf-head">
-			<h3>{% trans "Connected accounts" %}</h3>
-		</div>
-        <div class="bloc-body">
-            <div class="d-flex">
-				{% if user.userprofileinfo.discord_id|length > 0 %}
-					<form action="{% url 'accounts:connections-disconnect-discord' %}" method='POST' class="form-inline p-2">
-						{%csrf_token%}
-						<button class="btn btn-dark" type="submit">{% trans "Disconnect Discord" %}</button>
-					</form>
-				{% else %}
-					<form action="{% url 'accounts:connections-connect-discord' %}" method='POST' class="form-inline p-2">
-						{%csrf_token%}
-						<button class="btn btn-dark" type="submit">{% trans "Connect Discord" %}</button>
-					</form>
-				{% endif %}
-			</div>
-		</div>
-	</div>
+
   </div>
   <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
     <ul class="list-group">

@@ -84,8 +84,12 @@
         <li class="list-group-item" style="padding-bottom: 3;padding-top: 0;">
             <span>{{ cat.0 }}</span>
             <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: {{ cat.3 }}%" aria-valuenow="{{ cat.3 }}" aria-valuemin="0" aria-valuemax="100">{{ cat.3 }} %</div>
-              </div>
+				{% if cat.3 == '0' %}
+					<div class="progress-bar bg-success" role="progressbar" style="width: 0%;color:#d9d9d9;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0 %</div>
+				{% else %}
+					<div class="progress-bar bg-success" role="progressbar" style="width: {{ cat.3 }}%" aria-valuenow="{{ cat.3 }}" aria-valuemin="0" aria-valuemax="100">{{ cat.3 }} %</div>
+				{% endif %}
+			</div>
         </li>
         {% endfor %}
 	</ul>

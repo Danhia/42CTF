@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 21:12+0200\n"
+"POT-Creation-Date: 2021-09-08 19:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,27 +40,17 @@ msgstr "Site internet"
 msgid "Apply"
 msgstr "Appliquer"
 
-#: accounts/templates/accounts/edit.html:44
-msgid "Connected accounts"
-msgstr "Comptes connectés"
-
-#: accounts/templates/accounts/edit.html:51
-msgid "Disconnect Discord"
-msgstr "Déconnecter Discord"
-
-#: accounts/templates/accounts/edit.html:56
-msgid "Connect Discord"
-msgstr "Connecter Discord"
-
-#: accounts/templates/accounts/edit.html:66
-#: accounts/templates/accounts/profile.html:37
+#: accounts/templates/accounts/edit.html:47
+#: accounts/templates/accounts/profile.html:10
+#: accounts/templates/accounts/profile.html:70
 #: ctfs/templates/ctfs/ctf_info.html:56 ctfs/templates/ctfs/ctfs_list.html:13
 #: scoreboard/templates/scoreboard/scoreboard.html:14
 msgid "Score"
 msgstr "Score"
 
-#: accounts/templates/accounts/edit.html:74
-#: accounts/templates/accounts/profile.html:45
+#: accounts/templates/accounts/edit.html:55
+#: accounts/templates/accounts/profile.html:18
+#: accounts/templates/accounts/profile.html:78
 msgid "Member since"
 msgstr "Membre depuis"
 
@@ -80,39 +70,46 @@ msgstr "Réinitialiser le mot de passe"
 #: accounts/templates/accounts/login.html:31
 #: accounts/templates/accounts/register.html:38 templates/base.html:84
 #: templates/registration/password_reset_complete.html:18
-#: templates/registration/password_reset_confirm.html:37
-#: templates/registration/password_reset_done.html:17
-#: templates/registration/password_reset_form.html:25
+#: templates/registration/password_reset_confirm.html:38
+#: templates/registration/password_reset_done.html:18
+#: templates/registration/password_reset_form.html:26
 msgid "Login"
 msgstr "Connexion"
 
 #: accounts/templates/accounts/login.html:32
 #: accounts/templates/accounts/register.html:37
 #: templates/registration/password_reset_complete.html:19
-#: templates/registration/password_reset_confirm.html:38
-#: templates/registration/password_reset_done.html:18
-#: templates/registration/password_reset_form.html:26
+#: templates/registration/password_reset_confirm.html:39
+#: templates/registration/password_reset_done.html:19
+#: templates/registration/password_reset_form.html:27
 msgid "Sign up"
 msgstr "Inscription"
 
-#: accounts/templates/accounts/profile.html:12
+#: accounts/templates/accounts/profile.html:22
+#: accounts/templates/accounts/profile.html:82
+#, fuzzy
+#| msgid "Categories"
+msgid "Categories stats"
+msgstr "Catégories"
+
+#: accounts/templates/accounts/profile.html:45
 msgid "Challenge Name"
 msgstr "Nom du challenge"
 
-#: accounts/templates/accounts/profile.html:13
+#: accounts/templates/accounts/profile.html:46
 msgid "Category"
 msgstr "Catégorie"
 
-#: accounts/templates/accounts/profile.html:14
+#: accounts/templates/accounts/profile.html:47
 msgid "Points"
 msgstr "Points"
 
-#: accounts/templates/accounts/profile.html:15
+#: accounts/templates/accounts/profile.html:48
 #: ctfs/templates/ctfs/ctf_info.html:57
 msgid "Date"
 msgstr "Date"
 
-#: accounts/templates/accounts/profile.html:30
+#: accounts/templates/accounts/profile.html:63
 msgid "It's seem {{ user.username }} have never solved any CTF yet..."
 msgstr "Il semble que {{ user.username }} n'a pas encore résolu de CTF..."
 
@@ -297,31 +294,31 @@ msgstr "Inscription"
 msgid "Your new password has been set."
 msgstr "Votre mot de passe a été mis à jour."
 
-#: templates/registration/password_reset_confirm.html:19
+#: templates/registration/password_reset_confirm.html:20
 msgid "Your password can’t be too similar to your other personal information."
 msgstr "Votre mot de passe ne peut pas être similaire à votre adresse mail."
 
-#: templates/registration/password_reset_confirm.html:20
+#: templates/registration/password_reset_confirm.html:21
 msgid "Your password must contain at least 8 characters."
 msgstr "Votre mot de passe doit contenir au moins 8 caractères."
 
-#: templates/registration/password_reset_confirm.html:21
+#: templates/registration/password_reset_confirm.html:22
 msgid "Your password can’t be a commonly used password."
 msgstr "Votre mot de passe ne peut pas être un mot de passe commun."
 
-#: templates/registration/password_reset_confirm.html:22
+#: templates/registration/password_reset_confirm.html:23
 msgid "Your password can’t be entirely numeric."
 msgstr "Votre mot de passe ne peut pas être entièrement numérique."
 
-#: templates/registration/password_reset_confirm.html:25
+#: templates/registration/password_reset_confirm.html:26
 msgid "Confirm"
 msgstr "Confirmer"
 
-#: templates/registration/password_reset_confirm.html:27
+#: templates/registration/password_reset_confirm.html:28
 msgid "Submit"
 msgstr "Soumettre"
 
-#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_done.html:11
 msgid ""
 "We've emailed you instructions for setting your password. You should receive "
 "the email shortly!"
@@ -329,6 +326,15 @@ msgstr ""
 "Vous devrierz recevoir rapidement un email avec des instructions pour "
 "réinitialiser votre mot de passe."
 
-#: templates/registration/password_reset_form.html:15
+#: templates/registration/password_reset_form.html:16
 msgid "Reset"
 msgstr "Réinitialiser"
+
+#~ msgid "Connected accounts"
+#~ msgstr "Comptes connectés"
+
+#~ msgid "Disconnect Discord"
+#~ msgstr "Déconnecter Discord"
+
+#~ msgid "Connect Discord"
+#~ msgstr "Connecter Discord"
