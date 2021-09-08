@@ -17,7 +17,7 @@ pre {background-color: #000; color: #cecece; padding-left: 15px; font-weight: bo
 .dropdown-item:hover {background-color: #1D1D1D; color: #FFFFFF}
 
 .flag_link {margin-right: 6px}
-.flag_img {margin-top: 10px;width: 28px;border-radius: 100%;}
+.flag_img {margin-top: 10px;width: 28px;}
 
 .table-dark {background-color: #1D1D1D}
 .table-dark td, .table-dark th, .table-dark thead th {border: none}
