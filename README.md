@@ -9,16 +9,16 @@ CTF by 42 students
 - [x] Section "Intro"
 - [x] Section Treasure Hunt
 - [x] Edition de profil
-- [ ] Ajouter de la Doc
+- [x] Ajouter de la Doc
 - [x] Infrastructure de pwn
 - [x] Organiser une session découverte
 - [x] Compteur de flags
-- [ ] Graphiques statistiques
+- [x] Graphiques statistiques
 - [x] Création d'un discord linkable
 - [ ] Refonte du linkage discord -> 42ctf
-- [ ] Traduction du site
+- [x] Traduction du site
     - [x] Anglais
-    - [ ] Français
+    - [x] Français
     - [ ] Russe
     - [ ] Espagnol
     - [ ] Italien
