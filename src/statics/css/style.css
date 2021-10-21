@@ -1,5 +1,7 @@
 body {background-color: #121212;color: #D9D9D9}
 .card-body {background-color: #1D1D1D;}
+a{color:#cecece;}
+a:hover{color:#a9a9a9;text-decoration: none;}
 .main-div{margin-top: 40px;}
 footer {text-align: center;}
 .news-card {margin-bottom: 20px; border: none;}
@@ -41,9 +43,25 @@ input[type=submit]:hover {background-color:#000}
 .submitflag-form input[type=submit]:hover {background-color:#000}
 .edit-infos-grp input{width: 100%;}
 .message {display: block; padding:5px; text-align:center;margin-bottom: 10px;}
-.success-msg {background-color: #42b35e4f;}
+.success-msg {background-color: #42b35e4f!important;}
 .error-msg {background-color: #9542428c;}
 .progress {background-color: #2d2d2d;}
 .bg-success {
     background-color: #d9d9d9  !important;color: #000;
 }
+
+.event-card {
+	background-color: #1d1d1d;
+	min-height: 50vh;
+	margin-bottom: 13.37px;
+}
+.card-img-top{
+	height:150px;
+}
+.chall-card{
+	background-color: #131313;
+	min-height: 100px;
+	border-radius: 2px;
+	margin-bottom: 13.37px;
+}
+.is-over {opacity: 50%;}

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'ctfs.apps.CtfsConfig',
+    'events.apps.EventsConfig',
     'accounts.apps.AccountsConfig',
     'scoreboard.apps.ScoreboardConfig',
     'django.contrib.sites',

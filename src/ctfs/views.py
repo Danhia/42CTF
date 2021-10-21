@@ -21,10 +21,10 @@ def get_description_by_lang(ctf):
 
 def category(request, cat_slug):
     cat         =   get_object_or_404(Category, slug=cat_slug)
-    ctfs        =   CTF.objects.filter(category=cat).order_by('points')
+    ctfs        =   CTF.objects.filter(category=cat, event=None).order_by('points')
     for ex in ctfs:
-        ex.solved_num  =   CTF_flags.objects.filter(ctf=ex).count()
-        ex.solved = ex.solved_by(request.user)
+        ex.solved_num   = CTF_flags.objects.filter(ctf=ex).count()
+        ex.solved       = ex.solved_by(request.user)
     return render(request, 'ctfs/ctfs_list.html', {'ctfs' : ctfs, 'cat' : cat})
 
 def ctf(request, cat_slug, ctf_slug):
@@ -46,18 +46,12 @@ def ctf(request, cat_slug, ctf_slug):
                     profil.last_submission_date = timezone.now()
                     profil.score += ctf_info.points
                     profil.save()
-                    return render(request, 'ctfs/ctf_info.html', {'form' : form, 'ctf' : ctf_info, 'solved_list': solved_list, 'valitated': True, 'description': description})
+                    return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'valitated': True, 'description': description})
                 else:
-                    return render(request, 'ctfs/ctf_info.html', {'form' : form, 'ctf' : ctf_info, 'solved_list': solved_list, 'failed': True, 'description': description})
+                    return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'failed': True, 'description': description})
             else:
-                form = submit_flag()
-                return render(request, 'ctfs/ctf_info.html', {'form' : form, 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': True, 'description': description})
+                return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': True, 'description': description})
         else:
-            form = submit_flag()
-            return render(request, 'ctfs/ctf_info.html', {'form' : form, 'ctf' : ctf_info, 'solved_list': solved_list, 'description': description})
+            return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'description': description})
     else:
-        form = submit_flag()
-        return render(request, 'ctfs/ctf_info.html', {'form' : form, 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': flagged, 'description': description})
-
-   
-# Create your views here.
+        return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': flagged, 'description': description})

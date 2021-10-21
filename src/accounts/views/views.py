@@ -121,11 +121,11 @@ def profile(request, user_name):
 
 	for cat in cats:
 		# prepare categories
-		solved_count = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name).count()
-		max_count = CTF.objects.filter(category__name=cat.name).count()
+		solved_count = CTF_flags.objects.filter(user=user_obj, ctf__event=None , ctf__category__name=cat.name).count()
+		max_count = CTF.objects.filter(category__name=cat.name, event=None).count()
 		# get datas
 		somme = 0
-		solved = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name).order_by('flag_date')
+		solved = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name, ctf__event=None).order_by('flag_date')
 		pointDatas[cat.name] = []
 		pointDatas[cat.name].append([user_obj.date_joined.timestamp() * 1000, 0])
 		percent = (solved_count / max_count) * 100
@@ -134,7 +134,7 @@ def profile(request, user_name):
 			somme += flag.ctf.points
 			pointDatas[cat.name].append([flag.flag_date.timestamp() * 1000, somme])
 
-	solves = CTF_flags.objects.filter(user=user_obj).order_by('-flag_date')
+	solves = CTF_flags.objects.filter(user=user_obj, ctf__event=None).order_by('-flag_date')
 	solved = []
 	somme = 0
 	solved.append([user_obj.date_joined.timestamp() * 1000, 0])

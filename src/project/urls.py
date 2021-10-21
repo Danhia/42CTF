@@ -32,5 +32,6 @@ urlpatterns += i18n_patterns(
     re_path('^accounts/login/', defaults.page_not_found, {'exception': Exception()}),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('scoreboard/', include('scoreboard.urls'))
+    path('scoreboard/', include('scoreboard.urls')),
+    path('events/', include('events.urls'))
 )

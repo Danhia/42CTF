@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from events.models import Event
 
 class Category(models.Model):
     name        =   models.CharField(max_length=200)
@@ -17,6 +18,7 @@ class CTF(models.Model):
     description_de =   models.TextField(blank=True)
     file        =   models.FileField(blank=True, upload_to='challenges')
     ctf_url     =   models.URLField(blank=True)
+    event       =   models.ForeignKey(Event, null=True, blank=True, on_delete=models.CASCADE)
     points      =   models.PositiveSmallIntegerField()
     slug        =   models.SlugField(max_length=55)
     pub_date    =   models.DateTimeField('Date published')
@@ -25,7 +27,7 @@ class CTF(models.Model):
                                        on_delete=models.SET_NULL,
                                        null=True,
                                        )
-    author        =   models.ForeignKey(User, unique=False, on_delete=models.CASCADE) 
+    author        =   models.ForeignKey(User, unique=False, on_delete=models.CASCADE)
     def solved_by(self, user):
         """True if the exercise has been solved by the user."""
         if not user.is_authenticated:

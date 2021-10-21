@@ -4,8 +4,10 @@
 <div class="row">
   <div class="col-sm-12 col-md-9">
     <div class="ctf-block">
+      <a href="{% url 'events:event_info' event_slug=event.slug %}">< Back to event</a>
       <div class="ctf-head">
-        <h3>{{ ctf.name }}</h3>
+        <h2>Event - {{ event.name }}</h2>
+        <h4>{{ ctf.name }}</h4>
         <small>{% trans "Published date" %} : {{ ctf.pub_date }}</small>
       </div>
       <div class="ctf-body">
@@ -35,7 +37,7 @@
         {% elif ctf.file %}
         <a class="begin-ctf-link" target="_blank" href="{{ ctf.file.url }}">{% trans "Download" %}</a></br>
         {% endif %}
-        <form method="post" class="submitflag-form">
+        <form method="post" action="{% url 'events:submit_event_flag' event_slug=event.slug chall_slug=ctf.slug %}" class="submitflag-form">
           {% csrf_token %}
           <input type="text" name="flag" maxlength="48" required="" id="id_flag">
           <input class="form-control" type="submit" value=">">
