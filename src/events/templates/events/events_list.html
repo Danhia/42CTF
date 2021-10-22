@@ -3,14 +3,10 @@
 {% load i18n %}
 <div class="row">
   <div class="col-12">
-    <h3>Events</h3>
+    <h3>{% trans "Events" %}</h3>
   </div>
   {% if events %}
     {% for ev in events %}
-    {% if request.user.is_authenticated %}
-    
-    {% else %}
-    {% endif %}
     {% if curdate > ev.end_date %}
     <div class="col-md-3 is-over">
     {% else %}
@@ -23,17 +19,23 @@
         alt="..."
         />
         <div class="card-body">
-          <h5 class="card-title">{{ ev.name }}</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the
-            card's content.
-          </p>
+          <h5 class="card-title">
+            {{ ev.name }}
+          </h5>
         </div>
         <ul class="list-group list-group-flush text-center">
-          <li class="list-group-item">{{ ev.start_date }} <br> - <br> {{ ev.end_date }}</li>
+          <li class="list-group-item">
+            {{ ev.start_date }} <br> - <br> {{ ev.end_date }}
+            <br>
+            {% if curdate > ev.end_date %}
+            <span class="badge badge-pill badge-secondary">Finished</span>
+            {% else %}
+            <span class="badge badge-pill badge-success">Open</span>
+            {% endif %}
+          </li>
         </ul>
         <div class="card-body text-center">
-          <a href="{% url 'events:event_info' event_slug=ev.slug %}" class="card-link">See more</a>
+          <a href="{% url 'events:event_info' event_slug=ev.slug %}" class="card-link">{% trans "See more" %}</a>
         </div>
       </div>
     </div>

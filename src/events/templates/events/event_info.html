@@ -4,8 +4,14 @@
 {% load is_flagged %}
 <div class="row">
   <div class="col-sm-12 col-md-9">
-    <div class="ctf-block">
-      <div class="ctf-head">
+    {% if subisover == True %}
+    <span class="message error-msg">{% trans "Subscriptions is over." %}</span>
+    {% endif %}
+    {% if alreadyregistered == True %}
+    <span class="message error-msg">{% trans "You're already registered to this event." %}</span>
+    {% endif %}
+    <div class="event-block">
+      <div class="event-head">
         <h3>{{ event.name }}</h3>
         {% if ended == True %}
         <small>{% trans "This event is over." %}</small>
@@ -13,33 +19,33 @@
         <small>{% trans "This event start at" %} : {{ event.start_date }}</small>
         {% endif %}      
       </div>
-      <div class="ctf-body">
+      <div class="event-body">
         {% if event.description %}
         {{ event.description|safe }}
         {% endif %}
       </div>
-      <div class="ctf-footer">
+      <div class="event-footer">
         {% if begun == True %}
-        <h4>{% trans "Challenges" %}</h4>
-        
-        <div class="row">
+          <h4>{% trans "Challenges" %}</h4>
+          
           {% if ctfs %}
-          {% for ctf in ctfs %}
-          <div class="col-md-4">
-            {% isflagged request.user ctf as flagged%}
-            <a href="{% url 'events:event_chall_info' event_slug=event.slug chall_slug=ctf.slug %}">
-              <div class="chall-card {{flagged}}">
-                <p>{{ ctf.category }}</p>
-                <p>{{ ctf.name }} - {{ ctf.points }}</p>
-              </div>
-            </a>
+          <div class="row">
+            {% for ctf in ctfs %}
+            <div class="col-md-4">
+              {% isflagged request.user ctf as flagged%}
+              <a href="{% url 'events:event_chall_info' event_slug=event.slug chall_slug=ctf.slug %}">
+                <div class="chall-card {{flagged}}">
+                  <p>{{ ctf.category }}</p>
+                  <p>{{ ctf.name }} - {{ ctf.points }}</p>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
+          {% else %}
+          <small>{% trans "No challenges available." %}</small>
           {% endif %}
-        </div>
-        {% if request.user.is_authenticated %}
-        
-        {% endif %}
+
         {% else %}
         <h4>{% trans "The event has not started yet." %}</h4>
         
@@ -72,7 +78,7 @@
         </tbody>
       </table>
       {% else %}
-      <p>{% trans "Nobody have solved this CTF." %}</p>
+      <p>{% trans "No one have earn point yet, you gonna be the first ?" %}</p>
       {% endif %}
     </div>
   </div>

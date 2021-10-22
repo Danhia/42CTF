@@ -11,13 +11,19 @@
             
             <div class="ctf-footer">
                 {% if logged == True %}
-                <h4>{% trans "This event is password protected" %}</h4>
-                <small>{% trans "You need to submit the event password to gain access to this event." %}</small>
-                <form method="post" action="{% url 'events:submit_pwd' event_slug=event.slug %}" class="submitflag-form">
-                    {% csrf_token %}
-                    <input type="text" name="password" maxlength="48" required="">
-                    <input class="form-control" type="submit" value=">">
-                </form>
+                    {% if wrongpwd == True %}
+                    <span class="message error-msg">{% trans "Wrong password submited." %}</span>
+                    {% endif %}
+                    {% if alreadyregistered == True %}
+                    <span class="message error-msg">{% trans "You're already registered to this event." %}</span>
+                    {% endif %}
+                    <h4>{% trans "This event is password protected" %}</h4>
+                    <small>{% trans "You need to submit the event password to gain access to this event." %}</small>
+                    <form method="post" action="{% url 'events:submit_pwd' event_slug=event.slug %}" class="submitflag-form">
+                        {% csrf_token %}
+                        <input type="text" name="password" maxlength="48" required="">
+                        <input class="form-control" type="submit" value=">">
+                    </form>
                 {% else %}
                     <h4>{% trans "You need to be logged to access this event." %}</h4>
                 {% endif %}

@@ -6,32 +6,46 @@
     <div class="ctf-block">
       <a href="{% url 'events:event_info' event_slug=event.slug %}">< Back to event</a>
       <div class="ctf-head">
-        <h2>Event - {{ event.name }}</h2>
+        <h2>{% trans "Event" %} - {{ event.name }}</h2>
         <h4>{{ ctf.name }}</h4>
         <small>{% trans "Published date" %} : {{ ctf.pub_date }}</small>
       </div>
       <div class="ctf-body">
         {% if description %}
-        {{ description|safe }}
+          {{ description|safe }}
         {% else %}
-        {% trans "No translation available. Please try another language (English or French)." %}
+          {% trans "No translation available. Please try another language (English or French)." %}
         {% endif %}
       </div>
       <div class="ctf-footer">
         {% if request.user.is_authenticated %}
-        {% if valitated == True %}
-        <p>{% trans "Congratulation !" %}</p>
-        {% elif alvalitated == True %}
-        <p>{% trans "Already flagged" %}</p>	
-        {% if ctf.ctf_url %}
-        <a class="begin-ctf-link" target="_blank" href="{{ ctf.ctf_url }}">{% trans "Start the challenge" %}</a></br>
-        {% elif ctf.file %}
-        <a class="begin-ctf-link" target="_blank" href="{{ ctf.file.url }}">{% trans "Download" %}</a></br>
-        {% endif %}
+          
+        {% if subisover == True %}
+          <span class="message error-msg">{% trans "Subscriptions is over." %}</span>
+          {% endif %}
+          {% if alreadyregistered == True %}
+          <span class="message error-msg">{% trans "You're already registered to this event." %}</span>
+          {% endif %}
+
+          {% if congrat == True %}
+          <p>{% trans "Congratulation !" %}</p>
+          {% elif alreadyflag == True %}
+          <p>{% trans "Already flagged" %}</p>
+          {% elif eventisover == True %}
+          <p>{% trans "This event is over." %}</p>
+          {% elif errorform == True %}
+          <p>{% trans "Error while processing your request. (Invalid Form)" %}</p>
+          {% elif notsub == True %}
+          <span class="message error-msg">{% trans "Error: you're not registered to this event, so you can't register scores, fucking logic." %}</span>
+          {% if ctf.ctf_url %}
+          <a class="begin-ctf-link" target="_blank" href="{{ ctf.ctf_url }}">{% trans "Start the challenge" %}</a></br>
+          {% elif ctf.file %}
+          <a class="begin-ctf-link" target="_blank" href="{{ ctf.file.url }}">{% trans "Download" %}</a></br>
+          {% endif %}
         {% else %}
-        {% if failed %}
-        <p>{% trans "Wrong flag ! You can do it !" %}</p>
-        {% endif %}
+          {% if wrongflag == True %}
+          <p>{% trans "Wrong flag ! You can do it !" %}</p>
+          {% endif %}
         {% if ctf.ctf_url %}
         <a class="begin-ctf-link" target="_blank" href="{{ ctf.ctf_url }}">{% trans "Start the challenge" %}</a></br>
         {% elif ctf.file %}

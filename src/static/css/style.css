@@ -1,5 +1,7 @@
 body {background-color: #121212;color: #D9D9D9}
 .card-body {background-color: #1D1D1D;}
+a{color:#cecece;}
+a:hover{color:#a9a9a9;text-decoration: none;}
 .main-div{margin-top: 40px;}
 footer {text-align: center;}
 .news-card {margin-bottom: 20px; border: none;}
@@ -27,6 +29,9 @@ pre {background-color: #000; color: #cecece; padding-left: 15px; font-weight: bo
 .ctf-body {margin-top: 50px;}
 .bloc-body {margin-top: 25px;}
 .ctf-footer {margin-top: 15px;text-align: center;}
+.event-block{background-color: #1D1D1D; min-height: 235px; margin-bottom: 20px;}
+.event-body {padding:15px;margin-top: 50px;}
+.event-footer{margin-top: 15px;text-align: center; padding: 15px;}
 input[type=text], input[type=password], input[type=url], input[type=email] {transition: 0.2s;border: 2px solid #2d2d2d;background-color: #2d2d2d;padding: 3px; border-radius: 4px;}
 input[type=submit] {padding: 0px; margin-left: 5px; border-bottom: 3px solid #000;}
 .begin-ctf-link {display:inline-block;margin-bottom: 15px;text-align:center;text-transform: uppercase;text-decoration:none;font-weight: bold;color:#fff;background-color:#121212; width: 125px; border-bottom: 3px solid #000;padding:5px;}
@@ -41,9 +46,35 @@ input[type=submit]:hover {background-color:#000}
 .submitflag-form input[type=submit]:hover {background-color:#000}
 .edit-infos-grp input{width: 100%;}
 .message {display: block; padding:5px; text-align:center;margin-bottom: 10px;}
-.success-msg {background-color: #42b35e4f;}
+.success-msg {background-color: #42b35e4f!important;}
 .error-msg {background-color: #9542428c;}
-.progress {background-color: #2d2d2d;color:#000}
+.progress {background-color: #2d2d2d;}
 .bg-success {
-    background-color: #d9d9d9  !important;
+    background-color: #d9d9d9  !important;color: #000;
+}
+
+.event-card {
+	background-color: #1d1d1d;
+	min-height: 30vh;
+	margin-bottom: 13.37px;
+}
+.card-img-top{
+	height:150px;
+}
+.chall-card{
+	background-color: #131313;
+	min-height: 100px;
+	border-radius: 2px;
+	margin-bottom: 13.37px;
+}
+.is-over {opacity: 50%;}
+.event-head{
+    background-image:
+    linear-gradient(180deg, rgba(102,102,102,0.48501407398897056) 0%, rgba(29,29,29,1) 100%),
+    url('https://media.lesechos.com/api/v1/images/view/616957f83e45460bec299207/1280x720-webp/0611458970965-web-tete.webp');
+	height: 20vh;
+	background-size: cover;
+    color: white;
+    padding: 20px;
+    padding-top: 40px;
 }
