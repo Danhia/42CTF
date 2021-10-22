@@ -27,24 +27,22 @@ CTF by 42 students
 - [ ] Système de badge/succès
 - [ ] Génération d'une page résumant le profil d'un utilisateur (ex: show resume sur intra.42.fr)
 
-#### Event feature :
+#### Event feature
+
 - [X] make relation between user and events
 - [X] make scoreboard for events
 - [X] make access mod for events :
-   - [X] Sub button for public events
-   - [X] Access by password
-   - [X] Begin date for display challenges
-   - [X] Ending date for stop flag submission
+    - [X] Sub button for public events
+    - [X] Access by password
+    - [X] Begin date for display challenges
+    - [X] Ending date for stop flag submission
 - [X] Admin rights
-   - [X] Admin can access to events pages without password
+    - [X] Admin can access to events pages without password
    - [X] Admin can subscribe to event without password
-
 - [X] process flag submission
-   - [X] increment user score in Scores model
-
+    - [X] increment user score in Scores model
 - [X] add filters for admin dashboard
 - [X] add search in fields in admin dashboard
 - [X] display more information in admin dashboard
-
 - [X] Smooth display of events listing
 - [X] Event info page with background and noice display
