@@ -11,7 +11,7 @@
     <span class="message error-msg">{% trans "You're already registered to this event." %}</span>
     {% endif %}
     <div class="event-block">
-      <div class="event-head">
+      <div class="event-head" style="background-image:linear-gradient(180deg, rgba(102,102,102,0.48501407398897056) 100%, rgba(29,29,29,1) 100%),url('{{ event.img }}');">
         <h3>{{ event.name }}</h3>
         {% if ended == True %}
         <small>{% trans "This event is over." %}</small>

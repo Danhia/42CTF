@@ -69,9 +69,6 @@ input[type=submit]:hover {background-color:#000}
 }
 .is-over {opacity: 50%;}
 .event-head{
-    background-image:
-    linear-gradient(180deg, rgba(102,102,102,0.48501407398897056) 0%, rgba(29,29,29,1) 100%),
-    url('https://media.lesechos.com/api/v1/images/view/616957f83e45460bec299207/1280x720-webp/0611458970965-web-tete.webp');
 	height: 20vh;
 	background-size: cover;
     color: white;
