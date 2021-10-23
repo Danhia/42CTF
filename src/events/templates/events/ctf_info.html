@@ -69,7 +69,6 @@
           <tr>
             <th scope="col">{% trans "Username" %}</th>
             <th scope="col">{% trans "Website" %}</th>
-            <th scope="col">{% trans "Score" %}</th>
             <th scope="col">{% trans "Date" %}</th>
           </tr>
         </thead>
@@ -78,7 +77,6 @@
           <tr>
             <th scope="row"><a class="profile_link" href="{% url 'accounts:profile' user_name=s.user.username %}"> {{ s.user.username }}</a></th>
             <td>{{ s.user.userprofileinfo.portfolio_site }}</td>
-            <td>{{ s.user.userprofileinfo.score }}</td>
             <td>{{ s.flag_date }}</td>
           </tr>
           {% endfor %}
