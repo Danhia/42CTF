@@ -38,6 +38,10 @@ def home(request):
     nb_users    =   UserProfileInfo.objects.count()
     return render(request, 'home/home.html', {'news' : news, 'ctfs' : latest_ctfs, 'top' : top10, 'flags' : nb_flags})
 
+def cgu(request):
+    return render(request, 'cgu.html')
+
+
 def set_language(request, lang_code):
     next = '/'
     if request.GET.get('next'):
