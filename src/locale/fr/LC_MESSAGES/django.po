@@ -272,7 +272,7 @@ msgid ""
 "fucking logic."
 msgstr ""
 "Erreur : vous n'êtes pas inscrit à cet événement, vous ne pouvez donc pas enregistrer de scores,"
-"C'est putain de logique".
+"C'est putain de logique."
 
 
 #: events/templates/events/event_info.html:19
