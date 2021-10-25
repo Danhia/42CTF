@@ -30,7 +30,7 @@ msgstr "Pseudo"
 
 #: accounts/templates/accounts/edit.html:25
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: accounts/templates/accounts/edit.html:30
 #: ctfs/templates/ctfs/ctf_info.html:55
@@ -244,7 +244,7 @@ msgstr "Il n'y a pas de catégorie disponible."
 
 #: events/templates/events/ctf_info.html:9
 msgid "Event"
-msgstr ""
+msgstr "Événement"
 
 #: events/templates/events/ctf_info.html:24
 #: events/templates/events/event_info.html:8
@@ -255,27 +255,30 @@ msgstr ""
 #: events/templates/events/event_info.html:11
 #: events/templates/events/event_pwd.html:18
 msgid "You're already registered to this event."
-msgstr ""
+msgstr "Vous êtes déjà inscrit à cet événement."
 
 #: events/templates/events/ctf_info.html:35
 #: events/templates/events/event_info.html:17
 msgid "This event is over."
-msgstr ""
+msgstr "Cet événement est terminé."
 
 #: events/templates/events/ctf_info.html:37
 msgid "Error while processing your request. (Invalid Form)"
-msgstr ""
+msgstr "Erreur lors du traitement de votre requête. (Formulaire non valide)"
 
 #: events/templates/events/ctf_info.html:39
 msgid ""
 "Error: you're not registered to this event, so you can't register scores, "
 "fucking logic."
 msgstr ""
+"Erreur : vous n'êtes pas inscrit à cet événement, vous ne pouvez donc pas enregistrer de scores,"
+"C'est putain de logique".
+
 
 #: events/templates/events/event_info.html:19
 #: events/templates/events/event_pwd.html:9
 msgid "This event start at"
-msgstr ""
+msgstr "Cet événement débute à"
 
 #: events/templates/events/event_info.html:29
 #, fuzzy
@@ -291,7 +294,7 @@ msgstr "Il n'y a pas de catégorie disponible."
 
 #: events/templates/events/event_info.html:50
 msgid "The event has not started yet."
-msgstr ""
+msgstr "L'événement n'a pas encore commencé."
 
 #: events/templates/events/event_info.html:56
 #, fuzzy
@@ -306,17 +309,17 @@ msgstr "Rang"
 
 #: events/templates/events/event_info.html:81
 msgid "No one have earn point yet, you gonna be the first ?"
-msgstr ""
+msgstr "Personne n'a encore gagné de point, allez-vous être le premier ?"
 
 #: events/templates/events/event_info.html:88
 #: events/templates/events/event_pwd.html:36
 msgid "Start at"
-msgstr ""
+msgstr "Démarrer le"
 
 #: events/templates/events/event_info.html:89
 #: events/templates/events/event_pwd.html:37
 msgid "End at"
-msgstr ""
+msgstr "Termine le"
 
 #: events/templates/events/event_info.html:94
 msgid "Subscribe"
@@ -324,27 +327,27 @@ msgstr ""
 
 #: events/templates/events/event_pwd.html:15
 msgid "Wrong password submited."
-msgstr ""
+msgstr "Mauvais mot de passe saisi."
 
 #: events/templates/events/event_pwd.html:20
 msgid "This event is password protected"
-msgstr ""
+msgstr "Cet événement est protégé par un mot de passe"
 
 #: events/templates/events/event_pwd.html:21
 msgid "You need to submit the event password to gain access to this event."
-msgstr ""
+msgstr "Vous devez saisir le mot de passe de l'événement pour y avoir accès."
 
 #: events/templates/events/event_pwd.html:28
 msgid "You need to be logged to access this event."
-msgstr ""
+msgstr "Vous devez être connecté pour accéder à cet événement."
 
 #: events/templates/events/events_list.html:6 templates/base.html:63
 msgid "Events"
-msgstr ""
+msgstr "Événements"
 
 #: events/templates/events/events_list.html:38
 msgid "See more"
-msgstr ""
+msgstr "Voir plus"
 
 #: events/templates/events/events_list.html:44
 #, fuzzy
@@ -418,7 +421,7 @@ msgstr "Inscription"
 
 #: templates/base.html:131
 msgid "Become a Patron!"
-msgstr ""
+msgstr "Soutenez nous via Patreon !"
 
 #: templates/registration/password_reset_complete.html:11
 msgid "Your new password has been set."
