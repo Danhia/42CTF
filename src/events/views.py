@@ -27,6 +27,8 @@ def events(request):
 def chall_event_info(request, event_slug, chall_slug):
     event_info  = get_object_or_404(Event, slug=event_slug)
     ctf_info    = get_object_or_404(CTF, event__slug=event_info.slug, slug=chall_slug)
+    if timezone.now() < ctf_info.start_date:
+        return redirect('events:event_info', event_slug=event_slug)
     eventisover = False
     alreadyflag = False
     congrat     = False
@@ -37,6 +39,8 @@ def chall_event_info(request, event_slug, chall_slug):
         userScore = Scores.objects.filter(event=event_info, user=request.user)
         if not userScore:
             return redirect('/')
+    elif not request.user.is_authenticated:
+        return redirect('/')
     if request.GET.get('EventIsOver'):
         eventisover = True
     if request.GET.get('AlreadyFlagged'):
