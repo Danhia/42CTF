@@ -46,12 +46,12 @@ def ctf(request, cat_slug, ctf_slug):
                     profil.last_submission_date = timezone.now()
                     profil.score += ctf_info.points
                     profil.save()
-                    return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'valitated': True, 'description': description})
+                    return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'valitated': True, 'description': description, 'date': timezone.now()})
                 else:
-                    return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'failed': True, 'description': description})
+                    return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'failed': True, 'description': description, 'date': timezone.now()})
             else:
-                return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': True, 'description': description})
+                return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': True, 'description': description, 'date': timezone.now()})
         else:
-            return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'description': description})
+            return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'description': description, 'date': timezone.now()})
     else:
-        return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': flagged, 'description': description})
+        return render(request, 'ctfs/ctf_info.html', { 'ctf' : ctf_info, 'solved_list': solved_list, 'alvalitated': flagged, 'description': description, 'date': timezone.now()})

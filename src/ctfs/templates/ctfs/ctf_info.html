@@ -8,6 +8,11 @@
         <h3>{{ ctf.name }}</h3>
         <small>{% trans "Published date" %} : {{ ctf.pub_date }}</small>
       </div>
+      {% if date < ctf.pub_date %}
+      <div class="ctf-body">
+      {% trans "Challenge is not yet available." %}
+      </div>
+      {% else %}
       <div class="ctf-body">
         {% if description %}
         {{ description|safe }}
@@ -37,13 +42,14 @@
         {% endif %}
         <form method="post" class="submitflag-form">
           {% csrf_token %}
-          <input type="text" name="flag" maxlength="48" required="" id="id_flag">
+          <input type="text" name="flag" maxlength="100" required="" id="id_flag">
           <input class="form-control" type="submit" value=">">
         </form>
         
         {% endif %}
         {% endif %}
       </div>
+      {% endif %}
     </div>
     <div>
       <h4>{% trans "Solved by" %}</h4>

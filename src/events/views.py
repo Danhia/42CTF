@@ -27,7 +27,7 @@ def events(request):
 def chall_event_info(request, event_slug, chall_slug):
     event_info  = get_object_or_404(Event, slug=event_slug)
     ctf_info    = get_object_or_404(CTF, event__slug=event_info.slug, slug=chall_slug)
-    if timezone.now() < ctf_info.start_date:
+    if timezone.now() < ctf_info.pub_date:
         return redirect('events:event_info', event_slug=event_slug)
     eventisover = False
     alreadyflag = False

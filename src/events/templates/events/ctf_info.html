@@ -53,7 +53,7 @@
         {% endif %}
         <form method="post" action="{% url 'events:submit_event_flag' event_slug=event.slug chall_slug=ctf.slug %}" class="submitflag-form">
           {% csrf_token %}
-          <input type="text" name="flag" maxlength="48" required="" id="id_flag">
+          <input type="text" name="flag" maxlength="100" required="" id="id_flag">
           <input class="form-control" type="submit" value=">">
         </form>
         
