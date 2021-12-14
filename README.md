@@ -36,6 +36,7 @@ CTF by 42 students
     - [X] Access by password
     - [X] Begin date for display challenges
     - [X] Ending date for stop flag submission
+    - [ ] Access by invite link
 - [X] Admin rights
     - [X] Admin can access to events pages without password
    - [X] Admin can subscribe to event without password
@@ -46,3 +47,4 @@ CTF by 42 students
 - [X] display more information in admin dashboard
 - [X] Smooth display of events listing
 - [X] Event info page with background and noice display
+- [ ] Create teams for events
