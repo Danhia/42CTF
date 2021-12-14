@@ -116,6 +116,8 @@ def profile(request, user_name):
 	catsDatas = []
 
 	user_obj = get_object_or_404(User, username=user_name)
+	all_users = list(UserProfileInfo.objects.select_related().order_by('-score', 'last_submission_date', 'user__username'))
+	rank = all_users.index(get_object_or_404(UserProfileInfo, user=user_obj)) + 1
 	cats = Category.objects.all()
 	pointDatas = {}
 
@@ -141,7 +143,8 @@ def profile(request, user_name):
 	for s in solves.reverse():
 		somme += s.ctf.points
 		solved.append([s.flag_date.timestamp() * 1000,somme])
-	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas})
+
+	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas, 'rank': rank})
 
 def rank(request, token):
 	all_users	  = UserProfileInfo.objects.filter(score__gt=0).select_related().order_by('-score', 'last_submission_date', 'user__username')

@@ -4,32 +4,6 @@
 {% load key_value %}
 <div class="row">
   <div class="col-sm-12 col-md-9">
-    <div class="d-block d-md-none right-sidebar">
-        <ul class="list-group">
-            <li class="list-group-item">{{ user.username }}</li>
-            <li class="list-group-item">{% trans "Score" %} : {{ user.userprofileinfo.score }}</li>
-            {% if user.userprofileinfo.portfolio_site %}
-                <li class="list-group-item">
-                    <a href="{{ user.userprofileinfo.portfolio_site }}" target="_blank">
-                        {{ user.userprofileinfo.portfolio_site }}
-                    </a>
-                </li>
-            {% endif %}
-            <li class="list-group-item">{% trans "Member since" %} {{ user.date_joined|date:"Y-m-d" }}</li>
-        </ul>
-    
-        <ul class="list-group">
-            <li class="list-group-item">{% trans "Categories stats" %}</li>
-            {% for cat in catsDatas %}
-            <li class="list-group-item" style="padding-bottom: 3;padding-top: 0;">
-                <span>{{ cat.0 }}</span>
-                <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ cat.3 }}%" aria-valuenow="{{ cat.3 }}" aria-valuemin="0" aria-valuemax="100">{{ cat.3 }} %</div>
-                  </div>
-            </li>
-            {% endfor %}
-        </ul>
-      </div>
     <div>
 		<h4>Challenges Solved by {{ user.username }}</h4>
 		{% if solves%}
@@ -68,6 +42,7 @@
     <ul class="list-group">
 		<li class="list-group-item">{{ user.username }}</li>
 		<li class="list-group-item">{% trans "Score" %} : {{ user.userprofileinfo.score }}</li>
+		<li class="list-group-item">{% trans "Rank" %} : {{ rank }}</li>
 		{% if user.userprofileinfo.portfolio_site %}
 			<li class="list-group-item">
 				<a href="{{ user.userprofileinfo.portfolio_site }}" target="_blank">
