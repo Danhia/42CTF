@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<div class="row">
+    <div class="col-sm-12 col-md-9">
+        <div class="ctf-block">
+            <div class="ctf-head">
+                <h3>{{ event.name }}</h3>
+                <small>{% trans "This event start at" %} : {{ event.start_date }}</small>
+            </div>
+            
+            <div class="ctf-footer">
+                {% if logged == True%}
+                    {% if registered == False %}
+                    <span class="message error-msg">{% trans "You need to be registered to the event." %}</span>
+                    {% else %}
+                        {% if notexist == True %}
+                        <span class="message error-msg">{% trans "Team does not exist." %}</span>
+                        {% elif wrongpwd == True %}
+                        <span class="message error-msg">{% trans "Wrong password submited." %}</span>
+                        {% endif %}
+                    <h2>Create Team</h2>
+                    <form method="post" action="{% url 'events:create_team' event_slug=event.slug %}" class="create-team-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="teamname" placeholder="{% trans "Team name" %} *" maxlength="150" required="" id="id_teamname"></br>
+                        <input class="form-control" type="password" name="password" placeholder="{% trans "Password" %} *" required="" id="id_password"></br>
+                        <!-- <input class="form-control" type="email" name="email" placeholder="pleasedontgivemy@private.infos*" required="" maxlength="254" id="id_email"></br> -->
+                        <!-- <input class="form-control" type="url" name="portfolio_site" placeholder="{% trans "Personal website" %}"maxlength="200" id="id_portfolio_site"></br> -->
+                        <input type="submit" name="" class="form-control" value="{% trans "Create Team" %}">
+                    </div>
+                    </form>
+                    <h2>Join Team</h2>
+                    <form method="post" action="{% url 'events:join_team' event_slug=event.slug %}" class="join-team-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="teamname" placeholder="{% trans "Team name" %} *" maxlength="150" required="" id="id_teamname"></br>
+                            <input class="form-control" type="password" name="password" placeholder="{% trans "Password" %} *" required="" id="id_password"></br>
+                            <!-- <input class="form-control" type="email" name="email" placeholder="pleasedontgivemy@private.infos*" required="" maxlength="254" id="id_email"></br> -->
+                            <!-- <input class="form-control" type="url" name="portfolio_site" placeholder="{% trans "Personal website" %}"maxlength="200" id="id_portfolio_site"></br> -->
+                            <input type="submit" name="" class="form-control" value="{% trans "Join Team" %}">
+                        </div>
+                        </form>
+                    {% endif %}
+                {% else %}
+                    <h4>{% trans "You need to be logged to access this event." %}</h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
+        <ul class="list-group">
+            <li class="list-group-item">{{ event.name }}</li>
+            <li class="list-group-item">{% trans "Start at" %} : {{ event.start_date }}</li>
+            <li class="list-group-item">{% trans "End at" %} : {{ event.end_date }}</li>
+            
+        </ul>
+    </div>
+</div>
+{% endblock %}

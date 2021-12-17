@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import timezone
 from .forms import submit_flag
-from .models import Event, Scores
+from .models import Event, Scores, EventPlayer, Team
 from ctfs.models import CTF, CTF_flags
 from django.utils.translation import get_language
 
@@ -71,12 +71,13 @@ def event(request, event_slug):
         subisover = True
     if request.user.is_authenticated:
         userScore = Scores.objects.filter(event=event_info, user=request.user)
-        if userScore:
+        player = EventPlayer.objects.filter(event=event_info, user=request.user)
+        if userScore or player:
             IsRegistered = True
     if event_info.password:
         if request.user.is_authenticated:
             if request.user.is_staff is False:
-                if not userScore:
+                if not userScore and not player:
                     return render(request, 'events/event_pwd.html', {'event' : event_info, 'logged': True, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered})
         else:
             return render(request, 'events/event_pwd.html', {'event' : event_info, 'logged': False, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered})
@@ -137,6 +138,7 @@ def submit_event_flag(request, event_slug, chall_slug):
 @login_required
 def submit_pwd(request, event_slug):
     response = redirect('events:event_info', event_slug=event_slug)
+    event_info  = get_object_or_404(Event, slug=event_slug)
     if request.method == 'POST':
         if request.user.is_authenticated:
             ev    =   get_object_or_404(Event, slug=event_slug)
@@ -148,13 +150,16 @@ def submit_pwd(request, event_slug):
                 response['Location'] += '?WrongPassword=1'
                 return response
 
-            if Scores.objects.filter(user=request.user, event=ev).exists():
+            if Scores.objects.filter(user=request.user, event=ev).exists() or EventPlayer.objects.filter(user=request.user, event=ev).exists():
                 response['Location'] += '?AlreadyRegistered=1'
                 return response
             else:
-                new = Scores(user=request.user, event=ev, score=0)
+                new = EventPlayer(user=request.user, event=ev)
+                # new = Scores(user=request.user, event=ev, score=0)
                 new.save()
-    return redirect('events:event_info', event_slug=event_slug)
+    # return redirect('events:event_info', event_slug=event_slug)
+    return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
+    # return redirect('events:create_team', event_slug=event_slug)
 
 @login_required
 def subscribe_to_event(request, event_slug):
@@ -174,4 +179,37 @@ def subscribe_to_event(request, event_slug):
             else:
                 new = Scores(user=request.user, event=ev, score=0)
                 new.save()
+    return redirect('events:event_info', event_slug=event_slug)
+
+@login_required
+def create_team(request, event_slug):
+    response = redirect('events:create_team', event_slug=event_slug)
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            ev    =   get_object_or_404(Event, slug=event_slug)
+            new = Team(name=request.POST.get('teamname'), password=request.POST.get('password'), event=ev)
+            new.save()
+            player = EventPlayer.objects.get(user=request.user, event=ev)
+            player.team = new
+            player.save()
+    return redirect('events:event_info', event_slug=event_slug)
+
+@login_required
+def join_team(request, event_slug):
+    response = redirect('events:join_team', event_slug=event_slug)
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            ev    =   get_object_or_404(Event, slug=event_slug)
+            try:
+                team  =   Team.objects.get(name=request.POST.get('teamname'), event=ev)
+            except:
+                team = None
+            if team is None:
+                return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': True, 'registered' : True, 'notexist' : True})
+            if request.POST.get('password') != team.password:
+                return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': True, 'registered' : True, 'notexist' : False})
+            else:
+                player = EventPlayer.objects.get(user=request.user, event=ev)
+                player.team = team
+                player.save()
     return redirect('events:event_info', event_slug=event_slug)
