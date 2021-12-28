@@ -55,6 +55,7 @@
     <div>
       <h4>{% trans "ScoreBoard" %}</h4>
       {% if solved_list %}
+      {% if event.team_size == 1 %}
       <table class="table table-dark">
         <thead>
           <tr>
@@ -69,7 +70,7 @@
           <tr>
             <th scope="row"># {{ forloop.counter0|add:1 }}</th>
             <th scope="row">
-              <a class="profile_link" href="{% url 'accounts:profile' user_name=s.user.username %}"> {{ s.user.username }}</a>
+              <a class="profile_link" href="{% url 'events:profile' user_name=s.user.username event_slug=event.slug %}"> {{ s.user.username }}</a>
             </th>
             <td>{{ s.user.userprofileinfo.site }}</td>
             <td>{{ s.score }}</td>
@@ -77,6 +78,28 @@
           {% endfor %}
         </tbody>
       </table>
+      {% else %}
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">{% trans "Rank" %}</th>
+            <th scope="col">{% trans "Team" %}</th>
+            <th scope="col">{% trans "Score" %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in solved_list %}
+          <tr>
+            <th scope="row"># {{ forloop.counter0|add:1 }}</th>
+            <th scope="row">
+              <a class="profile_link" href="{% url 'events:team_info' name=s.name event_slug=event.slug %}"> {{ s.name }}</a>
+            </th>
+            <td>{{ s.score }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
       {% else %}
       <p>{% trans "No one have earn point yet, you gonna be the first ?" %}</p>
       {% endif %}

@@ -11,5 +11,7 @@ urlpatterns = [
         path('submitEventFlag/<str:event_slug>/<str:chall_slug>', views.submit_event_flag, name='submit_event_flag'),
         path('subscribe/<str:event_slug>', views.subscribe_to_event, name='subscribe_event'),
         path('create_team/<str:event_slug>', views.create_team, name='create_team'),
-         path('join_team/<str:event_slug>', views.join_team, name='join_team'),
+        path('join_team/<str:event_slug>', views.join_team, name='join_team'),
+        path('<str:event_slug>/profile/<str:user_name>', views.profile, name='profile'),
+        path('<str:event_slug>/team/<str:name>', views.team_info, name='team_info'),
 ]

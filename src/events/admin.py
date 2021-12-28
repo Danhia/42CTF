@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event, Scores, EventPlayer, Team
+from .models import Event, EventPlayer, Team
 
 #admin.site.register(Event)
 #admin.site.register(Scores)
@@ -11,7 +11,7 @@ class event(admin.ModelAdmin):
     # search list
     search_fields = ['name', 'slug', 'description', 'password']
 
-@admin.register(Scores)
+@admin.register(EventPlayer)
 class score(admin.ModelAdmin):
     #list display
     list_display = ['user', 'event', 'score']
@@ -31,11 +31,11 @@ class team(admin.ModelAdmin):
     # search list
     search_fields = ['name']
 
-@admin.register(EventPlayer)
-class eventplayer(admin.ModelAdmin):
-    #list display
-    list_display = ['user', 'event', 'team']
-    #list Filter
-    list_filter = ('event', 'team__name')
-    # search list
-    search_fields = ['user__username', 'event__name']
+# @admin.register(EventPlayer)
+# class eventplayer(admin.ModelAdmin):
+#     #list display
+#     list_display = ['user', 'event', 'team']
+#     #list Filter
+#     list_filter = ('event', 'team__name')
+#     # search list
+#     search_fields = ['user__username', 'event__name']

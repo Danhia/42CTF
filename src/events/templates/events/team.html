@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col-sm-12 col-md-9">
     <div>
-		<h4>Challenges Solved by {{ user.username }}</h4>
+		<h4>Challenges Solved by {{ team.name }}</h4>
 		{% if solves%}
 
 	<div class="table table-dark">
@@ -34,23 +34,22 @@
         </tbody>
       </table>
 			{% else %}
-			<p>{% trans "It seems that this user has not solved any challenge yet..." %}</p>
+			<p>{% trans "It seems that this team has not solved any challenge yet..." %}</p>
 			{% endif %}
     </div>
   </div>
   <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
     <ul class="list-group">
-		<li class="list-group-item">{{ user.username }}</li>
+        <li class="list-group-item">{{ team.name }}</li>
 		<li class="list-group-item">{% trans "Score" %} : {{ score }}</li>
 		<li class="list-group-item">{% trans "Rank" %} : {{ rank }}</li>
-		{% if user.userprofileinfo.portfolio_site %}
-			<li class="list-group-item">
-				<a href="{{ user.userprofileinfo.portfolio_site }}" target="_blank">
-					{{ user.userprofileinfo.portfolio_site }}
-				</a>
-			</li>
-		{% endif %}
-		<li class="list-group-item">{% trans "Member since" %} {{ user.date_joined|date:"Y-m-d" }}</li>
+	</ul>
+    <ul class="list-group">
+        <li class="list-group-item">{% trans "Members" %}</li>
+        {% for user in users %}
+		<li class="list-group-item"><a class="profile_link" href="{% url 'accounts:profile' user_name=user.username %}">{{ user.username }}</a></li>
+        {% endfor %}
+
 	</ul>
 
     <ul class="list-group">
@@ -101,7 +100,7 @@
     	    verticalAlign: 'middle'
     	},
     	plotOptions: {
-			pointStart: {{ user.date_joined|timestamp_fromdate }},
+			pointStart: {{ event.start_date|timestamp_fromdate }},
 			series: {
     	    	label: {
     	    	    connectorAllowed: false

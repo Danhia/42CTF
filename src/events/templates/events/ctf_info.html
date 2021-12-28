@@ -74,11 +74,19 @@
         </thead>
         <tbody>
           {% for s in solved_list %}
+          {% if event.team_size == 1%}
           <tr>
-            <th scope="row"><a class="profile_link" href="{% url 'accounts:profile' user_name=s.user.username %}"> {{ s.user.username }}</a></th>
-            <td>{{ s.user.userprofileinfo.portfolio_site }}</td>
-            <td>{{ s.flag_date }}</td>
+            <th scope="row"><a class="profile_link" href="{% url 'events:profile' user_name=s.user.username %}"> {{ s.0.username }}</a></th>
+            <td>{{ s.0.userprofileinfo.portfolio_site }}</td>
+            <td>{{ s.1 }}</td>
           </tr>
+          {% else %}
+          <tr>
+            <th scope="row"><a class="profile_link" href="{% url 'events:team_info' name=s.2 event_slug=event.slug %}"> {{ s.2 }}</a></th>
+            <td></td>
+            <td>{{ s.1 }}</td>
+          </tr>
+          {% endif %}
           {% endfor %}
         </tbody>
       </table>
