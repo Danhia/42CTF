@@ -265,7 +265,8 @@ def profile(request, user_name, event_slug):
 	player = EventPlayer.objects.get(user=user_obj, event=event_info)
 	all_players = list(EventPlayer.objects.filter(event=event_info).order_by('-score', 'last_submission_date', 'user__username'))
 	rank = all_players.index(get_object_or_404(EventPlayer, user=user_obj, event=event_info)) + 1
-	cats = Category.objects.all()
+	all_cats = Category.objects.all()
+	cats = [cat for cat in all_cats if CTF.objects.filter(category__name=cat.name, event=event_info)]
 	pointDatas = {}
 
 	for cat in cats:
@@ -291,7 +292,8 @@ def profile(request, user_name, event_slug):
 		somme += s.ctf.points
 		solved.append([s.flag_date.timestamp() * 1000,somme])
 
-	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas, 'rank': rank, 'score' : somme})
+	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas,
+		'rank': rank, 'score' : somme, 'cats':cats})
 
 @login_required
 def team_info(request, name, event_slug):
@@ -304,7 +306,8 @@ def team_info(request, name, event_slug):
 	users = [p.user for p in players]
 	all_teams = list(Team.objects.filter(event=event_info).order_by('-score', 'last_submission_date', 'name'))
 	rank = all_teams.index(get_object_or_404(Team, id=team.id, event=event_info)) + 1
-	cats = Category.objects.all()
+	all_cats = Category.objects.all()
+	cats = [cat for cat in all_cats if CTF.objects.filter(category__name=cat.name, event=event_info)]
 	pointDatas = {}
 
 	for cat in cats:
@@ -339,7 +342,7 @@ def team_info(request, name, event_slug):
 		solved.append([s.flag_date.timestamp() * 1000,somme])
 
 	return render(request,'events/team.html', {'users':users, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas,
-		'rank': rank, 'team':team, 'score':somme, 'event':event_info})
+		'rank': rank, 'team':team, 'score':somme, 'event':event_info, 'cats':cats})
 
 @login_required
 def manage_team(request, event_slug):
