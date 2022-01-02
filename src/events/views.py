@@ -67,11 +67,11 @@ def chall_event_info(request, event_slug, chall_slug):
 		'congrat': congrat, 'wrongflag': wrongflag, 'errorform': errorform, 'notsub': notsub})
 
 def event(request, event_slug):
-	event_info  = get_object_or_404(Event, slug=event_slug)
-	IsRegistered = False
-	wrongpwd = False
-	alreadyregistered = False
-	subisover = False
+	event_info 			= get_object_or_404(Event, slug=event_slug)
+	IsRegistered		= False
+	wrongpwd			= False
+	alreadyregistered	= False
+	subisover			= False
 	if request.GET.get('WrongPassword'):
 		wrongpwd = True
 	if request.GET.get('AlreadyRegistered'):
@@ -85,6 +85,8 @@ def event(request, event_slug):
 			player = None
 		if player:
 			IsRegistered = True
+			if not player.team and event_info.team_size > 1:
+				return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 	if event_info.password:
 		if request.user.is_authenticated:
 			if request.user.is_staff is False:
