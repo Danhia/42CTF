@@ -4,8 +4,9 @@
 {% load key_value %}
 <div class="row">
   <div class="col-sm-12 col-md-9">
+    <a href="{% url 'events:event_info' event_slug=event.slug %}">< Back to event</a>
     <div>
-		<h4>Challenges Solved by {{ team.name }}</h4>
+		<h4>Challenges Solved by {{ team.name }} - {{ event.name }}</h4>
 		{% if solves%}
 
 	<div class="table table-dark">
@@ -25,7 +26,7 @@
         <tbody>
 					{% for s in solves %}
 					<tr>
-						<th scope="row"><a href="{% url 'ctf' cat_slug=s.ctf.category.slug ctf_slug=s.ctf.slug %}">{{ s.ctf.name }}</a></th>
+						<th scope="row"><a href="{% url 'events:event_chall_info' event_slug=event.slug chall_slug=s.ctf.slug %}">{{ s.ctf.name }}</a></th>
 							<td>{{ s.ctf.category.name}}</td>
 							<td>{{ s.ctf.points }}</td>
 							<td>{{ s.flag_date|date:"Y-m-d H:i:s" }}</td>

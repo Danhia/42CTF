@@ -108,8 +108,8 @@
   <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
     <ul class="list-group">
       <li class="list-group-item">{{ event.name }}</li>
-      <li class="list-group-item">{% trans "Start at" %} : {{ event.start_date }}</li>
-      <li class="list-group-item">{% trans "End at" %} : {{ event.end_date }}</li>
+      <li class="list-group-item">{% trans "Starts at" %} : {{ event.start_date }}</li>
+      <li class="list-group-item">{% trans "Ends at" %} : {{ event.end_date }}</li>
       {% if ended == False and IsRegistered == False %}
       <form method='POST' action="{% url 'events:subscribe_event' event_slug=event.slug %}">
         {%csrf_token%}
@@ -117,8 +117,18 @@
           <input class="form-control" type="submit" value="{% trans "Subscribe" %}">
         </li>
       </form>
-      {% endif %}      
+      {% endif %}
     </ul>
+    {% if event.team_size > 1 and IsRegistered == True and ended == False %}
+    <ul class="list-group">
+      <form method='GET' action="{% url 'events:manage_team' event_slug=event.slug %}">
+        {%csrf_token%}
+        <li class="list-group-item">
+          <input class="form-control" type="submit" value="{% trans "Manage my team" %}">
+        </li>
+      </form>
+    </ul>
+    {% endif %}
   </div>
 </div>
 {% endblock %}

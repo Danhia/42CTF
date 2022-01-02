@@ -20,6 +20,8 @@
                         <span class="message error-msg">{% trans "Wrong password submited." %}</span>
                         {% elif max == True %}
                         <span class="message error-msg">{% trans "Maximum size reached." %}</span>
+                        {% elif exist == True %}
+                        <span class="message error-msg">{% trans "Name already taken." %}</span>
                         {% endif %}
                     <h2>Create Team</h2>
                     <form method="post" action="{% url 'events:create_team' event_slug=event.slug %}" class="create-team-form">

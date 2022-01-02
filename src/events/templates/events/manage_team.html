@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<div class="row">
+  <div class="col-sm-12 col-md-9">
+    <div class="ctf-block">
+        <a href="{% url 'events:event_info' event_slug=player.event.slug %}">< Back to event</a>
+		<div class="ctf-head">
+			<h3>Edit info</h3>
+		</div>
+        <div class="bloc-body">
+            <div class="col-sm-12 col-md-12 mx-auto">
+				<!-- {{ u_form.non_field_errors }} -->
+				{% if error is not None %}
+					<span class="message error-msg">{{ error }}</span>
+				{% elif success is not None %}
+					<span class="message success-msg">{{ success }}</span>
+				{% endif %}
+				<form method='POST'>
+                    <div class="edit-infos-grp">
+						{%csrf_token%}
+						<label for="{{ p_form.name.id_for_label }}">{% trans "Team name" %} *</label>
+						{{ p_form.name.errors}}
+						{{p_form.name}}
+						</br>
+						<label for="{{ p_form.password.id_for_label }}">{% trans "Team password" %} *</label>
+						{{p_form.password}}
+						</br>
+						<input class="form-control" type="submit" value="{% trans "Apply" %}">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+  </div>
+  <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
+    <ul class="list-group">
+        <li class="list-group-item">{{ player.team.name }}</li>
+		<li class="list-group-item">{% trans "Score" %} : {{ player.team.score }}</li>
+		<!-- <li class="list-group-item">{% trans "Rank" %} : {{ rank }}</li> -->
+	</ul>
+    <ul class="list-group">
+        <li class="list-group-item">{% trans "Members" %}</li>
+        {% for p in members %}
+		<li class="list-group-item"><a class="profile_link" href="{% url 'accounts:profile' user_name=p.user.username %}">{{ p.user.username }}</a></li>
+        {% endfor %}
+        <form method='POST' action="{% url 'events:leave_team' event_slug=player.event.slug %}">
+            {%csrf_token%}
+            <li class="list-group-item">
+              <input class="form-control" type="submit" value="{% trans "Leave Team" %}">
+            </li>
+          </form>
+
+	</ul>
+  </div>
+</div>
+{% endblock %}
+

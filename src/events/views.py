@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import timezone
-from .forms import submit_flag
+from .forms import submit_flag, TeamUpdateForm
 from .models import Event, EventPlayer, Team
 from ctfs.models import CTF, CTF_flags, Category
 from django.utils.translation import get_language
 from django.contrib.auth.models import User
 from accounts.models import UserProfileInfo
 from django.db.models import Q
+from django.utils.translation import gettext_lazy as _
 
 def get_description_by_lang(ctf):
 	lang = get_language()
@@ -78,7 +79,10 @@ def event(request, event_slug):
 	if request.GET.get('SubscriptionIsOver'):
 		subisover = True
 	if request.user.is_authenticated:
-		player = EventPlayer.objects.filter(event=event_info, user=request.user)
+		try:
+			player = EventPlayer.objects.get(event=event_info, user=request.user)
+		except:
+			player = None
 		if player:
 			IsRegistered = True
 	if event_info.password:
@@ -86,6 +90,8 @@ def event(request, event_slug):
 			if request.user.is_staff is False:
 				if not player:
 					return render(request, 'events/event_pwd.html', {'event' : event_info, 'logged': True, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered})
+				elif not player.team and event_info.team_size > 1:
+					return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 		else:
 			return render(request, 'events/event_pwd.html', {'event' : event_info, 'logged': False, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered})
 	ended = False
@@ -99,7 +105,8 @@ def event(request, event_slug):
 		solved_list = EventPlayer.objects.filter(event=event_info).order_by('-score', 'last_submission_date', 'user__username')
 	else:
 		solved_list = Team.objects.filter(event=event_info).order_by('-score', 'last_submission_date', 'name')
-	return render(request, 'events/event_info.html', {'event' : event_info, 'IsRegistered': IsRegistered, 'ctfs': challenges, 'solved_list':solved_list, 'ended': ended, 'begun': begun, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered, 'subisover': subisover})
+	return render(request, 'events/event_info.html', {'event' : event_info, 'IsRegistered': IsRegistered, 'ctfs': challenges, 'solved_list':solved_list, 
+		'ended': ended, 'begun': begun, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered, 'subisover': subisover})
 
 @login_required
 def submit_event_flag(request, event_slug, chall_slug):
@@ -138,11 +145,13 @@ def submit_event_flag(request, event_slug, chall_slug):
 				if ctf_info.flag == request.POST.get('flag'):
 					new =   CTF_flags(user = request.user, ctf = ctf_info, flag_date = timezone.now())
 					new.save()
-					player.last_submission_date = timezone.now()
+					if ctf_info.points > 0:
+						player.last_submission_date = timezone.now()
 					player.score += ctf_info.points
 					player.save()
 					if player.team:
-						player.team.last_submission_date = timezone.now()
+						if ctf_info.points > 0:
+							player.team.last_submission_date = timezone.now()
 						player.team.score += ctf_info.points
 						player.team.save()
 					response['Location'] += '?Congrat=1'
@@ -212,6 +221,8 @@ def create_team(request, event_slug):
 	if request.method == 'POST':
 		if request.user.is_authenticated:
 			ev    =   get_object_or_404(Event, slug=event_slug)
+			if Team.objects.filter(name=request.POST.get('teamname'), event=ev).exists():
+				return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'exist' : True})
 			new = Team(name=request.POST.get('teamname'), password=request.POST.get('password'), event=ev)
 			new.save()
 			player = EventPlayer.objects.get(user=request.user, event=ev)
@@ -327,3 +338,54 @@ def team_info(request, name, event_slug):
 
 	return render(request,'events/team.html', {'users':users, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas,
 		'rank': rank, 'team':team, 'score':somme, 'event':event_info})
+
+@login_required
+def manage_team(request, event_slug):
+	event_info	=   get_object_or_404(Event, slug=event_slug)
+	player		= 	EventPlayer.objects.get(user=request.user, event=event_info)
+	members		=	EventPlayer.objects.filter(team=player.team, event=event_info)
+
+	if request.method == 'POST':
+		tname = player.team.name
+		p_form = TeamUpdateForm(request.POST, instance=player.team)
+		error = None
+		success = None
+		if p_form.is_valid():
+			pname = p_form.cleaned_data['name']
+			if pname == tname:
+				pass
+			else:
+				if Team.objects.filter(name=pname, event=event_info).exists():
+					error = _("Name already taken.")
+			ppassword = p_form.cleaned_data['password']
+			if error is None:
+				p_form.save()
+				success = _("Updated.")
+
+		context={'p_form': p_form, 'error':error, 'success' : success, 'player':player, 'members':members}
+		return render(request, 'events/manage_team.html', context)
+	else:
+		p_form = TeamUpdateForm(instance=player.team)
+		context={'p_form': p_form, 'player':player, 'members':members}
+		return render(request, 'events/manage_team.html',context)
+
+
+@login_required
+def leave_team(request, event_slug):
+	event_info	=   get_object_or_404(Event, slug=event_slug)
+	player		= 	EventPlayer.objects.get(user=request.user, event=event_info)
+	team		=	Team.objects.get(event=event_info, name=player.team.name)
+
+	team.score -= player.score
+	team.save()
+	player.team = None
+	solved = CTF_flags.objects.filter(user=player.user, ctf__event=event_info)
+	player.score = 0
+	solved.delete()
+	player.save()
+
+	members		=	EventPlayer.objects.filter(team=team, event=event_info)
+	if members.count() == 0:
+		team.delete()
+
+	return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
