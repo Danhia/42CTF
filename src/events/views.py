@@ -61,7 +61,10 @@ def chall_event_info(request, event_slug, chall_slug):
 	solved_challs = CTF_flags.objects.filter(ctf=ctf_info).order_by('flag_date')
 	solved_list = []
 	for s in solved_challs:
-		solved_list.append([s.user, s.flag_date, EventPlayer.objects.get(event=event_info, user=s.user).team.name])
+		if event_info.team_size > 1:
+			solved_list.append([s.user, s.flag_date, EventPlayer.objects.get(event=event_info, user=s.user).team.name])
+		else:
+			solved_list.append([s.user, s.flag_date])
 	description = get_description_by_lang(ctf_info)
 	return render(request, 'events/ctf_info.html', { 'ctf' : ctf_info, 'event':event_info, 'solved_list': solved_list, 'description': description, 'eventisover': eventisover, 'alreadyflag': alreadyflag,
 		'congrat': congrat, 'wrongflag': wrongflag, 'errorform': errorform, 'notsub': notsub})

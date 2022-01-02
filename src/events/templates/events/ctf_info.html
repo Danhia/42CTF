@@ -76,7 +76,7 @@
           {% for s in solved_list %}
           {% if event.team_size == 1%}
           <tr>
-            <th scope="row"><a class="profile_link" href="{% url 'events:profile' user_name=s.user.username %}"> {{ s.0.username }}</a></th>
+            <th scope="row"><a class="profile_link" href="{% url 'events:profile' user_name=s.0.username event_slug=event.slug %}"> {{ s.0.username }}</a></th>
             <td>{{ s.0.userprofileinfo.portfolio_site }}</td>
             <td>{{ s.1 }}</td>
           </tr>
