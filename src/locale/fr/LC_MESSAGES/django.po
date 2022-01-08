@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-08 09:54+0000\n"
+"POT-Creation-Date: 2022-01-08 10:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,6 +94,10 @@ msgstr "Connexion"
 msgid "Sign up"
 msgstr "Inscription"
 
+#: accounts/templates/accounts/profile.html:8
+msgid "Challenges Solved by"
+msgstr "Challenges résolus par"
+
 #: accounts/templates/accounts/profile.html:19
 #: events/templates/events/team.html:20
 msgid "Challenge Name"
@@ -117,10 +121,8 @@ msgid "Date"
 msgstr "Date"
 
 #: accounts/templates/accounts/profile.html:37
-#, fuzzy
-#| msgid "It's seem {{ user.username }} have never solved any CTF yet..."
 msgid "It seems that this user has not solved any challenge yet..."
-msgstr "Il semble que {{ user.username }} n'a pas encore résolu de CTF..."
+msgstr "Il semble que cet utilisateur n'a pas encore résolu de CTF..."
 
 #: accounts/templates/accounts/profile.html:45
 #: events/templates/events/event_info.html:62
@@ -168,7 +170,7 @@ msgstr ""
 
 #: accounts/views/views.py:52
 msgid "A user with that email already exists."
-msgstr "Un utilisateurs avec cet email existe déjà."
+msgstr "Un utilisateur avec cet email existe déjà."
 
 #: accounts/views/views.py:65
 msgid "A user with that username already exists."
@@ -279,7 +281,7 @@ msgstr "Vous êtes déjà inscrit à cet événement."
 
 #: events/templates/events/create_team.html:18
 msgid "Team does not exist."
-msgstr ""
+msgstr "Cette équipe n'existe pas."
 
 #: events/templates/events/create_team.html:20
 #: events/templates/events/event_pwd.html:15
@@ -288,27 +290,27 @@ msgstr "Mauvais mot de passe saisi."
 
 #: events/templates/events/create_team.html:22
 msgid "Maximum size reached."
-msgstr ""
+msgstr "Taille maximale atteinte."
 
 #: events/templates/events/create_team.html:24 events/views.py:366
 #, fuzzy
 #| msgid "Username already taken."
 msgid "Name already taken."
-msgstr "Le pseudo est déjà utilisé."
+msgstr "Ce nom est déjà utilisé."
 
 #: events/templates/events/create_team.html:30
 #: events/templates/events/create_team.html:39
 #: events/templates/events/manage_team.html:22
 msgid "Team name"
-msgstr ""
+msgstr "Nom de l'équipe"
 
 #: events/templates/events/create_team.html:32
 msgid "Create Team"
-msgstr ""
+msgstr "Créer une équipe"
 
 #: events/templates/events/create_team.html:41
 msgid "Join Team"
-msgstr ""
+msgstr "Rejoindre une équipe"
 
 #: events/templates/events/create_team.html:46
 #: events/templates/events/event_pwd.html:28
@@ -318,12 +320,12 @@ msgstr "Vous devez être connecté pour accéder à cet événement."
 #: events/templates/events/create_team.html:54
 #: events/templates/events/event_pwd.html:36
 msgid "Start at"
-msgstr "Démarrer le"
+msgstr "Début"
 
 #: events/templates/events/create_team.html:55
 #: events/templates/events/event_pwd.html:37
 msgid "End at"
-msgstr "Termine le"
+msgstr "Fin"
 
 #: events/templates/events/ctf_info.html:9
 msgid "Event"
@@ -332,7 +334,7 @@ msgstr "Événement"
 #: events/templates/events/ctf_info.html:24
 #: events/templates/events/event_info.html:8
 msgid "Subscriptions is over."
-msgstr ""
+msgstr "Les inscriptions sont terminées."
 
 #: events/templates/events/ctf_info.html:27
 #: events/templates/events/event_info.html:11
@@ -386,21 +388,19 @@ msgstr "Classement"
 
 #: events/templates/events/event_info.html:86
 msgid "Team"
-msgstr ""
+msgstr "Équipe"
 
 #: events/templates/events/event_info.html:104
 msgid "No one have earn point yet, you gonna be the first ?"
 msgstr "Personne n'a encore gagné de point, allez-vous être le premier ?"
 
 #: events/templates/events/event_info.html:111
-#, fuzzy
-#| msgid "Start at"
 msgid "Starts at"
-msgstr "Démarrer le"
+msgstr "Début"
 
 #: events/templates/events/event_info.html:112
 msgid "Ends at"
-msgstr ""
+msgstr "Fin"
 
 #: events/templates/events/event_info.html:117
 msgid "Subscribe"
@@ -408,7 +408,7 @@ msgstr ""
 
 #: events/templates/events/event_info.html:127
 msgid "Manage my team"
-msgstr ""
+msgstr "Gérer mon équipe"
 
 #: events/templates/events/event_pwd.html:20
 msgid "This event is password protected"
@@ -427,33 +427,25 @@ msgid "See more"
 msgstr "Voir plus"
 
 #: events/templates/events/events_list.html:44
-#, fuzzy
-#| msgid "No ctf available."
 msgid "No events available."
-msgstr "Pas de challenge disponible"
+msgstr "Pas d'évènement disponible."
 
 #: events/templates/events/manage_team.html:26
-#, fuzzy
-#| msgid "Reset password"
 msgid "Team password"
-msgstr "Réinitialiser le mot de passe"
+msgstr "Mot de passe de l'équipe"
 
 #: events/templates/events/manage_team.html:44
 #: events/templates/events/team.html:49
-#, fuzzy
-#| msgid "Member since"
 msgid "Members"
-msgstr "Membre depuis"
+msgstr "Membres"
 
 #: events/templates/events/manage_team.html:51
 msgid "Leave Team"
-msgstr ""
+msgstr "Quitte l'équipe"
 
 #: events/templates/events/team.html:38
-#, fuzzy
-#| msgid "It's seem {{ user.username }} have never solved any CTF yet..."
 msgid "It seems that this team has not solved any challenge yet..."
-msgstr "Il semble que {{ user.username }} n'a pas encore résolu de CTF..."
+msgstr "Il semble que cette équipe n'a pas encore résolu de challenge..."
 
 #: home/templates/home/home.html:32
 msgid "No article available."
