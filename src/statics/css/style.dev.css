@@ -7,6 +7,7 @@ a:hover{color:#a9a9a9;text-decoration: none;}
 .news-card .card-header {padding: 3px; background-color: #1D1D1D;}
 .news-card .card-footer {padding: 0; background-color: #1D1D1D;}
 .list-group-item {border: none;background-color: #1D1D1D}
+a{color:#4375aa;}
 .list-group-item:first-child {border-radius: 0 ; background-color: #2D2D2D;}
 .list-group-item:last-child {border-radius: 0 ;}
 .navbar-dark {background-color: #1D1D1D}

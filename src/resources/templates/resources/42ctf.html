@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+{% get_current_language as lang %}
+<div class="row">
+    <div class="col-sm-12 col-md-9">
+        <div class="ctf-block">
+            <div class="ctf-head">
+            <h3>{% trans "What is 42CTF ?" %}</h3>
+            </div>
+            <div class="ctf-body">
+                <h4>{% trans "A short introduction to CTF" %}</h4>
+                {% trans "CTF stands for Capture The Flag. It is a cybersecurity competition, where participants have to solve challenges of various categories to gain points and progress on the scoreboard." %}
+                {% trans "The challenges require participants to find sort of passwords called \"flags\" and to submit them on the platform."%}
+                <br><br>
+
+                <h4>{% trans "Functionment of 42CTF" %}</h4>
+                {% trans "42CTF is what we call a permanent CTF." %}<br>
+                {% trans "Except from the" %} <a href="{% url 'events:events' %}">{% translate "events" %}</a>, {% trans "challenges are available on the platform without time limitations." %}
+                {% trans "The registration on 42CTF is open to everyone, 42 students or not." %}<br>
+                {% trans "Events may or may not be open. If you would like to organize an event on 42CTF, feel free to contact us." %}<br>
+                <br><br>
+
+                <h4>{% trans "42CTF Team" %}</h4>
+                {% trans "42CTF is managed by 42 students." %}<br>
+                {% trans "You can meet the team on" %} <a class="footer_imgs" href="https://discord.gg/DwZqPpA" target="_blank"><img src="/static/img/discord.png" width="30"></a>.<br>
+                {% trans "Challenges are created by various contributors, not necessarily 42 students."%}<br>
+                {% trans "Anyone is welcome to submit their own challenges, either on the permanent CTF or for a specific event." %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

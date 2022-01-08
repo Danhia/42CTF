@@ -33,5 +33,6 @@ urlpatterns += i18n_patterns(
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('scoreboard/', include('scoreboard.urls')),
-    path('events/', include('events.urls'))
+    path('events/', include('events.urls')),
+    path('resources/', include('resources.urls'))
 )

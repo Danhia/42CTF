@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+{% get_current_language as lang %}
+<div class="row">
+        <div class="col-lg-9 col-sm-12 news-card">
+
+                <div class="card news-card">
+                                <ul class="list-group">
+                                        <li class="list-group-item active">{% trans "Getting started" %}</li>
+                                        <li class="list-group-item">
+                                                <a href="{% url 'resources:42ctf' %}">{% trans "What is 42CTF ?" %}</a></br>
+                                                <a href="{% url 'resources:tools' %}">{% trans "Recommended Tools" %}</a>
+                                        </li>
+                                </ul>
+                </div>
+
+                <div class="card news-card">
+                                <ul class="list-group">
+                                        <li class="list-group-item active">{% trans "Technical documentation" %}</li>
+                                        <li class="list-group-item">{% trans "No docs available, contact us if you want to write some :)" %}</li>
+                                </ul>
+                </div>
+                <div class="card news-card">
+                        <ul class="list-group">
+                                <li class="list-group-item active">{% trans "Contribute" %}</li>
+                                <li class="list-group-item">
+                                        <a href="{% url 'resources:create_challenge' %}">{% trans "Create new challenges" %}</a></br>
+                                        {% trans "Translate 42CTF" %}</br>
+                                        {% trans "Edit this page" %}</br>
+                                        {% trans "Donate" %}
+                                </li>
+                        </ul>
+        </div>
+                
+        </div>
+        
+</div>
+{% endblock %}
+

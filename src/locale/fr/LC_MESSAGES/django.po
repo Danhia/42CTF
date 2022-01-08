@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-08 10:22+0000\n"
+"POT-Creation-Date: 2022-01-08 12:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,7 +77,7 @@ msgid "Reset password"
 msgstr "Réinitialiser le mot de passe"
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:100
+#: accounts/templates/accounts/register.html:38 templates/base.html:103
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:38
 #: templates/registration/password_reset_done.html:18
@@ -463,19 +463,19 @@ msgstr "Pas de challenge disponible"
 msgid "Flags counter"
 msgstr "Compteur de flags"
 
-#: project/settings.py:114
+#: project/settings.py:115
 msgid "English"
 msgstr "Anglais"
 
-#: project/settings.py:115
+#: project/settings.py:116
 msgid "German"
 msgstr "Allemand"
 
-#: project/settings.py:116
+#: project/settings.py:117
 msgid "French"
 msgstr "Français"
 
-#: project/settings.py:117
+#: project/settings.py:118
 msgid "Russian"
 msgstr "Russe"
 
@@ -503,15 +503,19 @@ msgstr "Fin"
 msgid "Scoreboard"
 msgstr "Classement"
 
-#: templates/base.html:96
+#: templates/base.html:66
+msgid "Resources"
+msgstr ""
+
+#: templates/base.html:99
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: templates/base.html:103
+#: templates/base.html:106
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: templates/base.html:131
+#: templates/base.html:134
 msgid "Become a Patron!"
 msgstr "Soutenez nous via Patreon !"
 

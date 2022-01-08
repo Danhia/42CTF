@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'accounts.apps.AccountsConfig',
     'scoreboard.apps.ScoreboardConfig',
+    'resources.apps.ResourcesConfig',
     'django.contrib.sites',
 ]
 
