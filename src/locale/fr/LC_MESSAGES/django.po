@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-24 14:23+0000\n"
+"POT-Creation-Date: 2022-01-08 09:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,9 +21,9 @@ msgstr ""
 #: accounts/templates/accounts/edit.html:21
 #: accounts/templates/accounts/login.html:18
 #: accounts/templates/accounts/register.html:22
-#: ctfs/templates/ctfs/ctf_info.html:54 ctfs/templates/ctfs/ctfs_list.html:12
+#: ctfs/templates/ctfs/ctf_info.html:60 ctfs/templates/ctfs/ctfs_list.html:12
 #: events/templates/events/ctf_info.html:70
-#: events/templates/events/event_info.html:62
+#: events/templates/events/event_info.html:63
 #: scoreboard/templates/scoreboard/scoreboard.html:12
 msgid "Username"
 msgstr "Pseudo"
@@ -33,29 +33,31 @@ msgid "Email"
 msgstr "Email"
 
 #: accounts/templates/accounts/edit.html:30
-#: ctfs/templates/ctfs/ctf_info.html:55
+#: ctfs/templates/ctfs/ctf_info.html:61
 #: events/templates/events/ctf_info.html:71
-#: events/templates/events/event_info.html:63
+#: events/templates/events/event_info.html:64
 #: scoreboard/templates/scoreboard/scoreboard.html:13
 msgid "Website"
 msgstr "Site internet"
 
 #: accounts/templates/accounts/edit.html:36
+#: events/templates/events/manage_team.html:29
 msgid "Apply"
 msgstr "Appliquer"
 
 #: accounts/templates/accounts/edit.html:47
-#: accounts/templates/accounts/profile.html:10
-#: accounts/templates/accounts/profile.html:70
-#: ctfs/templates/ctfs/ctf_info.html:56 ctfs/templates/ctfs/ctfs_list.html:13
-#: events/templates/events/event_info.html:64
+#: accounts/templates/accounts/profile.html:44
+#: ctfs/templates/ctfs/ctf_info.html:62 ctfs/templates/ctfs/ctfs_list.html:13
+#: events/templates/events/event_info.html:65
+#: events/templates/events/event_info.html:87
+#: events/templates/events/manage_team.html:40
+#: events/templates/events/team.html:45
 #: scoreboard/templates/scoreboard/scoreboard.html:14
 msgid "Score"
 msgstr "Score"
 
 #: accounts/templates/accounts/edit.html:55
-#: accounts/templates/accounts/profile.html:18
-#: accounts/templates/accounts/profile.html:78
+#: accounts/templates/accounts/profile.html:53
 msgid "Member since"
 msgstr "Membre depuis"
 
@@ -65,6 +67,8 @@ msgstr "Merci de vérifier vos informations."
 
 #: accounts/templates/accounts/login.html:19
 #: accounts/templates/accounts/register.html:23
+#: events/templates/events/create_team.html:31
+#: events/templates/events/create_team.html:40
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -90,36 +94,49 @@ msgstr "Connexion"
 msgid "Sign up"
 msgstr "Inscription"
 
-#: accounts/templates/accounts/profile.html:22
-#: accounts/templates/accounts/profile.html:82
-#, fuzzy
-#| msgid "Categories"
-msgid "Categories stats"
-msgstr "Catégories"
-
-#: accounts/templates/accounts/profile.html:45
+#: accounts/templates/accounts/profile.html:19
+#: events/templates/events/team.html:20
 msgid "Challenge Name"
 msgstr "Nom du challenge"
 
-#: accounts/templates/accounts/profile.html:46
+#: accounts/templates/accounts/profile.html:20
+#: events/templates/events/team.html:21
 msgid "Category"
 msgstr "Catégorie"
 
-#: accounts/templates/accounts/profile.html:47
+#: accounts/templates/accounts/profile.html:21
+#: events/templates/events/team.html:22
 msgid "Points"
 msgstr "Points"
 
-#: accounts/templates/accounts/profile.html:48
-#: ctfs/templates/ctfs/ctf_info.html:57
+#: accounts/templates/accounts/profile.html:22
+#: ctfs/templates/ctfs/ctf_info.html:63
 #: events/templates/events/ctf_info.html:72
+#: events/templates/events/team.html:23
 msgid "Date"
 msgstr "Date"
 
-#: accounts/templates/accounts/profile.html:63
+#: accounts/templates/accounts/profile.html:37
 #, fuzzy
 #| msgid "It's seem {{ user.username }} have never solved any CTF yet..."
 msgid "It seems that this user has not solved any challenge yet..."
 msgstr "Il semble que {{ user.username }} n'a pas encore résolu de CTF..."
+
+#: accounts/templates/accounts/profile.html:45
+#: events/templates/events/event_info.html:62
+#: events/templates/events/event_info.html:85
+#: events/templates/events/manage_team.html:41
+#: events/templates/events/team.html:46
+#: scoreboard/templates/scoreboard/scoreboard.html:11
+msgid "Rank"
+msgstr "Rang"
+
+#: accounts/templates/accounts/profile.html:57
+#: events/templates/events/team.html:57
+#, fuzzy
+#| msgid "Categories"
+msgid "Categories stats"
+msgstr "Catégories"
 
 #: accounts/templates/accounts/register.html:13
 msgid "Welcome !"
@@ -165,7 +182,7 @@ msgstr "L'adresse mail est déjà utilisée."
 msgid "Username already taken."
 msgstr "Le pseudo est déjà utilisé."
 
-#: accounts/views/views.py:103
+#: accounts/views/views.py:103 events/views.py:370
 msgid "Updated."
 msgstr "Mis à jour."
 
@@ -173,56 +190,62 @@ msgstr "Mis à jour."
 msgid "Published date"
 msgstr "Date de publication"
 
-#: ctfs/templates/ctfs/ctf_info.html:15
+#: ctfs/templates/ctfs/ctf_info.html:13
+#, fuzzy
+#| msgid "No category available."
+msgid "Challenge is not yet available."
+msgstr "Il n'y a pas de catégorie disponible."
+
+#: ctfs/templates/ctfs/ctf_info.html:20
 #: events/templates/events/ctf_info.html:17 home/templates/home/home.html:22
 msgid ""
 "No translation available. Please try another language (English or French)."
 msgstr ""
 
-#: ctfs/templates/ctfs/ctf_info.html:21
+#: ctfs/templates/ctfs/ctf_info.html:26
 #: events/templates/events/ctf_info.html:31
 msgid "Congratulation !"
 msgstr "Félicitations !"
 
-#: ctfs/templates/ctfs/ctf_info.html:23
+#: ctfs/templates/ctfs/ctf_info.html:28
 #: events/templates/events/ctf_info.html:33
 msgid "Already flagged"
 msgstr "Déjà résolu"
 
-#: ctfs/templates/ctfs/ctf_info.html:25 ctfs/templates/ctfs/ctf_info.html:34
+#: ctfs/templates/ctfs/ctf_info.html:30 ctfs/templates/ctfs/ctf_info.html:39
 #: events/templates/events/ctf_info.html:41
 #: events/templates/events/ctf_info.html:50
 msgid "Start the challenge"
 msgstr "Démarrer le challenge"
 
-#: ctfs/templates/ctfs/ctf_info.html:27 ctfs/templates/ctfs/ctf_info.html:36
+#: ctfs/templates/ctfs/ctf_info.html:32 ctfs/templates/ctfs/ctf_info.html:41
 #: events/templates/events/ctf_info.html:43
 #: events/templates/events/ctf_info.html:52
 msgid "Download"
 msgstr "Télécharger"
 
-#: ctfs/templates/ctfs/ctf_info.html:31
+#: ctfs/templates/ctfs/ctf_info.html:36
 #: events/templates/events/ctf_info.html:47
 msgid "Wrong flag ! You can do it !"
 msgstr "Mauvais flag ! Vous pouvez le faire !"
 
-#: ctfs/templates/ctfs/ctf_info.html:49
+#: ctfs/templates/ctfs/ctf_info.html:55
 #: events/templates/events/ctf_info.html:65
 msgid "Solved by"
 msgstr "Résolu par"
 
-#: ctfs/templates/ctfs/ctf_info.html:72
-#: events/templates/events/ctf_info.html:86
+#: ctfs/templates/ctfs/ctf_info.html:78
+#: events/templates/events/ctf_info.html:94
 msgid "Nobody have solved this CTF."
 msgstr "Personne n'a résolu ce CTF."
 
-#: ctfs/templates/ctfs/ctf_info.html:78
-#: events/templates/events/ctf_info.html:92
+#: ctfs/templates/ctfs/ctf_info.html:84
+#: events/templates/events/ctf_info.html:100
 msgid "Author"
 msgstr "Auteur"
 
-#: ctfs/templates/ctfs/ctf_info.html:79
-#: events/templates/events/ctf_info.html:93
+#: ctfs/templates/ctfs/ctf_info.html:85
+#: events/templates/events/ctf_info.html:101
 msgid "Point reward"
 msgstr "Points"
 
@@ -241,6 +264,66 @@ msgstr "Catégories"
 #: ctfs/templates/ctfs/ctfs_list.html:48 templates/base.html:54
 msgid "No category available."
 msgstr "Il n'y a pas de catégorie disponible."
+
+#: events/templates/events/create_team.html:9
+#, fuzzy
+#| msgid "This event start at"
+msgid "This event starts at"
+msgstr "Cet événement débute à"
+
+#: events/templates/events/create_team.html:15
+#, fuzzy
+#| msgid "You're already registered to this event."
+msgid "You need to be registered to the event."
+msgstr "Vous êtes déjà inscrit à cet événement."
+
+#: events/templates/events/create_team.html:18
+msgid "Team does not exist."
+msgstr ""
+
+#: events/templates/events/create_team.html:20
+#: events/templates/events/event_pwd.html:15
+msgid "Wrong password submited."
+msgstr "Mauvais mot de passe saisi."
+
+#: events/templates/events/create_team.html:22
+msgid "Maximum size reached."
+msgstr ""
+
+#: events/templates/events/create_team.html:24 events/views.py:366
+#, fuzzy
+#| msgid "Username already taken."
+msgid "Name already taken."
+msgstr "Le pseudo est déjà utilisé."
+
+#: events/templates/events/create_team.html:30
+#: events/templates/events/create_team.html:39
+#: events/templates/events/manage_team.html:22
+msgid "Team name"
+msgstr ""
+
+#: events/templates/events/create_team.html:32
+msgid "Create Team"
+msgstr ""
+
+#: events/templates/events/create_team.html:41
+msgid "Join Team"
+msgstr ""
+
+#: events/templates/events/create_team.html:46
+#: events/templates/events/event_pwd.html:28
+msgid "You need to be logged to access this event."
+msgstr "Vous devez être connecté pour accéder à cet événement."
+
+#: events/templates/events/create_team.html:54
+#: events/templates/events/event_pwd.html:36
+msgid "Start at"
+msgstr "Démarrer le"
+
+#: events/templates/events/create_team.html:55
+#: events/templates/events/event_pwd.html:37
+msgid "End at"
+msgstr "Termine le"
 
 #: events/templates/events/ctf_info.html:9
 msgid "Event"
@@ -271,9 +354,8 @@ msgid ""
 "Error: you're not registered to this event, so you can't register scores, "
 "fucking logic."
 msgstr ""
-"Erreur : vous n'êtes pas inscrit à cet événement, vous ne pouvez donc pas enregistrer de scores,"
-"C'est putain de logique."
-
+"Erreur : vous n'êtes pas inscrit à cet événement, vous ne pouvez donc pas "
+"enregistrer de scores,C'est putain de logique."
 
 #: events/templates/events/event_info.html:19
 #: events/templates/events/event_pwd.html:9
@@ -302,32 +384,31 @@ msgstr "L'événement n'a pas encore commencé."
 msgid "ScoreBoard"
 msgstr "Classement"
 
-#: events/templates/events/event_info.html:61
-#: scoreboard/templates/scoreboard/scoreboard.html:11
-msgid "Rank"
-msgstr "Rang"
+#: events/templates/events/event_info.html:86
+msgid "Team"
+msgstr ""
 
-#: events/templates/events/event_info.html:81
+#: events/templates/events/event_info.html:104
 msgid "No one have earn point yet, you gonna be the first ?"
 msgstr "Personne n'a encore gagné de point, allez-vous être le premier ?"
 
-#: events/templates/events/event_info.html:88
-#: events/templates/events/event_pwd.html:36
-msgid "Start at"
+#: events/templates/events/event_info.html:111
+#, fuzzy
+#| msgid "Start at"
+msgid "Starts at"
 msgstr "Démarrer le"
 
-#: events/templates/events/event_info.html:89
-#: events/templates/events/event_pwd.html:37
-msgid "End at"
-msgstr "Termine le"
+#: events/templates/events/event_info.html:112
+msgid "Ends at"
+msgstr ""
 
-#: events/templates/events/event_info.html:94
+#: events/templates/events/event_info.html:117
 msgid "Subscribe"
 msgstr ""
 
-#: events/templates/events/event_pwd.html:15
-msgid "Wrong password submited."
-msgstr "Mauvais mot de passe saisi."
+#: events/templates/events/event_info.html:127
+msgid "Manage my team"
+msgstr ""
 
 #: events/templates/events/event_pwd.html:20
 msgid "This event is password protected"
@@ -336,10 +417,6 @@ msgstr "Cet événement est protégé par un mot de passe"
 #: events/templates/events/event_pwd.html:21
 msgid "You need to submit the event password to gain access to this event."
 msgstr "Vous devez saisir le mot de passe de l'événement pour y avoir accès."
-
-#: events/templates/events/event_pwd.html:28
-msgid "You need to be logged to access this event."
-msgstr "Vous devez être connecté pour accéder à cet événement."
 
 #: events/templates/events/events_list.html:6 templates/base.html:63
 msgid "Events"
@@ -354,6 +431,29 @@ msgstr "Voir plus"
 #| msgid "No ctf available."
 msgid "No events available."
 msgstr "Pas de challenge disponible"
+
+#: events/templates/events/manage_team.html:26
+#, fuzzy
+#| msgid "Reset password"
+msgid "Team password"
+msgstr "Réinitialiser le mot de passe"
+
+#: events/templates/events/manage_team.html:44
+#: events/templates/events/team.html:49
+#, fuzzy
+#| msgid "Member since"
+msgid "Members"
+msgstr "Membre depuis"
+
+#: events/templates/events/manage_team.html:51
+msgid "Leave Team"
+msgstr ""
+
+#: events/templates/events/team.html:38
+#, fuzzy
+#| msgid "It's seem {{ user.username }} have never solved any CTF yet..."
+msgid "It seems that this team has not solved any challenge yet..."
+msgstr "Il semble que {{ user.username }} n'a pas encore résolu de CTF..."
 
 #: home/templates/home/home.html:32
 msgid "No article available."
