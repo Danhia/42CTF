@@ -9,6 +9,8 @@ from django.contrib.auth.models import User
 from accounts.models import UserProfileInfo
 from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
+from .utils import get_random_name
+from random import randint
 
 def get_description_by_lang(ctf):
 	lang = get_language()
@@ -246,17 +248,19 @@ def join_team(request, event_slug):
 			except:
 				team = None
 			if team is None:
-				return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': True, 'registered' : True, 'notexist' : True})
+				return render(request, 'events/join_team.html', {'event' : ev, 'logged': True, 'wrongpwd': True, 'registered' : True, 'notexist' : True})
 			else:
 				members = EventPlayer.objects.filter(team=team)
 			if request.POST.get('password') != team.password:
-				return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': True, 'registered' : True, 'notexist' : False})
+				return render(request, 'events/join_team.html', {'event' : ev, 'logged': True, 'wrongpwd': True, 'registered' : True, 'notexist' : False})
 			if members.count() >= ev.team_size:
-				return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False, 'max' : True})
+				return render(request, 'events/join_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False, 'max' : True})
 			else:
 				player = EventPlayer.objects.get(user=request.user, event=ev)
 				player.team = team
 				player.save()
+	else:
+		return render(request, 'events/join_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 	return redirect('events:event_info', event_slug=event_slug)
 
 @login_required
@@ -396,3 +400,27 @@ def leave_team(request, event_slug):
 		team.delete()
 
 	return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
+
+@login_required
+def find_team(request, event_slug):
+	event_info	=   get_object_or_404(Event, slug=event_slug)
+	teams		=	Team.objects.filter(event=event_info, auto=True)
+	team 		= 	None
+	player		=	EventPlayer.objects.get(user=request.user, event=event_info)
+
+	for t in teams:
+		if EventPlayer.objects.filter(team=t, event=event_info).count() < event_info.team_size:
+			team = t
+			break
+
+	if team is None:
+		teamname = get_random_name()
+		while Team.objects.filter(name=teamname, event=event_info).exists():
+			teamname = get_random_name()
+		team = Team(name=teamname, password="".join([str(randint(0,10)) for _ in range(16)]), event=event_info, auto=True)
+		team.save()
+			
+	player.team = team
+	player.save()
+
+	return redirect('events:event_info', event_slug=event_slug)

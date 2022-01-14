@@ -22,9 +22,9 @@ class Team(models.Model):
     name        = models.CharField(max_length=200)
     password    = models.CharField(max_length=200)
     event       =   models.ForeignKey(Event, on_delete=models.CASCADE, null=True)
-    size        = models.PositiveIntegerField(default=1)
     score       =   models.PositiveIntegerField(default=0, db_index=True)
     last_submission_date    =   models.DateTimeField('Last Submission Date', default=timezone.now)
+    auto        = models.BooleanField(default=False)
     def __str__(self):
         return self.name 
 
