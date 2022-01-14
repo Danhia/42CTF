@@ -222,10 +222,10 @@ def subscribe_to_event(request, event_slug):
 
 @login_required
 def create_team(request, event_slug):
-	response = redirect('events:create_team', event_slug=event_slug)
+	response	=	redirect('events:create_team', event_slug=event_slug)
+	ev			=   get_object_or_404(Event, slug=event_slug)
 	if request.method == 'POST':
-		if request.user.is_authenticated:
-			ev    =   get_object_or_404(Event, slug=event_slug)
+		if request.user.is_authenticated and ev.team_size > 1:
 			if Team.objects.filter(name=request.POST.get('teamname'), event=ev).exists():
 				return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'exist' : True})
 			new = Team(name=request.POST.get('teamname'), password=request.POST.get('password'), event=ev)
@@ -237,10 +237,10 @@ def create_team(request, event_slug):
 
 @login_required
 def join_team(request, event_slug):
-	response = redirect('events:join_team', event_slug=event_slug)
+	response 	= 	redirect('events:join_team', event_slug=event_slug)
+	ev    		=   get_object_or_404(Event, slug=event_slug)
 	if request.method == 'POST':
-		if request.user.is_authenticated:
-			ev    =   get_object_or_404(Event, slug=event_slug)
+		if request.user.is_authenticated and ev.team_size > 1:
 			try:
 				team  =   Team.objects.get(name=request.POST.get('teamname'), event=ev)
 			except:
