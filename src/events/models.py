@@ -15,6 +15,7 @@ class Event(models.Model):
     password    =   models.CharField(max_length=200, blank=True)
     slug        =   models.SlugField(max_length=55)
     team_size   =   models.PositiveIntegerField(default=1)
+    auto_match  =   models.BooleanField(default=False)
     def __str__(self):
         return self.name
 

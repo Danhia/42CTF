@@ -46,6 +46,7 @@
             <a href="{% url 'events:create_team' event_slug=event.slug %}" class="list-group-item">{% trans "Create Team" %}</a>
             <a href="{% url 'events:join_team' event_slug=event.slug %}" class="list-group-item">{% trans "Join Team" %}</a>     
     </ul>
+    {% if event.auto_match %}
     <ul class="list-group">
         <form method='GET' action="{% url 'events:find_team' event_slug=event.slug %}">
           {%csrf_token%}
@@ -54,6 +55,7 @@
           </li>
         </form>
       </ul>
+    {% endif %}
     </div>
 </div>
 {% endblock %}
