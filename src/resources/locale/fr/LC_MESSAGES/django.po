@@ -151,10 +151,10 @@ msgstr "Lorsque vous adherez à 42CTF, vous obtenez les avantages suivants :"
 #: resources/templates/resources/donate.html:18
 msgid ""
 "A different color for your pseudo in the scoreboard, to let everyone know "
-"you're a member. (not yet implemented but coming soon)"
+"you're a member."
 msgstr ""
 "Une couleur différente pour votre pseudo sur le scoreboard, pour que tout le "
-"monde sache que vous êtes membre (en cours de développement)."
+"monde sache que vous êtes membre."
 
 #: resources/templates/resources/donate.html:19
 msgid ""

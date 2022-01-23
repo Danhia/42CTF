@@ -149,7 +149,7 @@ msgstr ""
 #: resources/templates/resources/donate.html:18
 msgid ""
 "A different color for your pseudo in the scoreboard, to let everyone know "
-"you're a member. (not yet implemented but coming soon)"
+"you're a member."
 msgstr ""
 
 #: resources/templates/resources/donate.html:19

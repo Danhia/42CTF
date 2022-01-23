@@ -79,7 +79,7 @@ pre {
 }
 .list-group a {
   text-decoration: none;
-  color: #4375aa;
+  /* color: #4375aa; */
 }
 .list-group a:hover {
   text-decoration: none;

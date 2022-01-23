@@ -2,6 +2,7 @@
 {% block content %}
 {% load i18n %}
 {% get_current_language as lang %}
+{% load is_member %}
 <div class="row">
         <div class="col-lg-9 col-sm-12 news-card">
                 {% if news %}
@@ -44,9 +45,12 @@
                         {% endif %}
                 </ul>
                 <ul class="list-group">
-                        <li class="list-group-item active">Top 10</li>
+                        <li class="list-group-item">Top 10</li>
                         {% for t in top %}
-                        <li class="list-group-item"># {{ forloop.counter }} <a class="profile_link" href="{% url 'accounts:profile' user_name=t.user.username %}"> {{ t.user.username }}</a> <span style="position:absolute;right: 15px;">{{ t.score }}</span></li>
+                        {% ismember t.user.userprofileinfo as is_member %}
+                        <li class="list-group-item"># {{ forloop.counter }}
+                                <a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=t.user.username %}"> {{ t.user.username }}</a> 
+                                <span style="position:absolute;right: 15px;">{{ t.score }}</span></li>
                         {% endfor %}
                 </ul>
                 <ul class="list-group">
