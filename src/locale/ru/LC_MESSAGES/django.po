@@ -244,7 +244,7 @@ msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:78
 #: events/templates/events/ctf_info.html:94
-msgid "Nobody have solved this CTF."
+msgid "Nobody has solved this challenge yet."
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:84
