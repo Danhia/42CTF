@@ -2,10 +2,12 @@
 {% block content %}
 {% load i18n %}
 {% load key_value %}
+{% load is_member %}
+{% ismember user.userprofileinfo as is_member %}
 <div class="row">
   <div class="col-sm-12 col-md-9">
     <div>
-		<h4>{% trans "Challenges Solved by" %} {{ user.username }}</h4>
+		<h4>{% trans "Challenges Solved by" %} <span class="{{ is_member }}">{{ user.username }}</span></h4>
 		{% if solves%}
 
 	<div class="table table-dark">
@@ -40,7 +42,7 @@
   </div>
   <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
     <ul class="list-group">
-		<li class="list-group-item">{{ user.username }}</li>
+		<li class="list-group-item {{ is_member }}">{{ user.username }}</li>
 		<li class="list-group-item">{% trans "Score" %} : {{ score }}</li>
 		<li class="list-group-item">{% trans "Rank" %} : {{ rank }}</li>
 		{% if user.userprofileinfo.portfolio_site %}
@@ -50,7 +52,12 @@
 				</a>
 			</li>
 		{% endif %}
-		<li class="list-group-item">{% trans "Member since" %} {{ user.date_joined|date:"Y-m-d" }}</li>
+		{% if member %}
+			<li class="list-group-item">{% trans "Status: Member" %}</li>
+		{% else %}
+			<li class="list-group-item">{% trans "Status: Visitor" %}</li>
+		{% endif %}
+		<li class="list-group-item">{% trans "Registered since" %} {{ user.date_joined|date:"d-m-Y" }}</li>
 	</ul>
 
     <ul class="list-group">

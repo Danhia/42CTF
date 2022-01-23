@@ -31,9 +31,6 @@ a:hover {
   border: none;
   background-color: #1d1d1d;
 }
-a {
-  color: #4375aa;
-}
 .list-group-item:first-child {
   border-radius: 0;
   background-color: #2d2d2d;
@@ -361,4 +358,7 @@ footer {
   height: unset;
   width: unset;
   cursor: unset;
+}
+.is-member {
+  color: #2b908f;
 }

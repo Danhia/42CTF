@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-23 15:54+0000\n"
+"POT-Creation-Date: 2022-01-23 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: ctfs/templates/ctfs/ctf_info.html:60 ctfs/templates/ctfs/ctfs_list.html:12
 #: events/templates/events/ctf_info.html:70
 #: events/templates/events/event_info.html:63
-#: scoreboard/templates/scoreboard/scoreboard.html:12
+#: scoreboard/templates/scoreboard/scoreboard.html:13
 msgid "Username"
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr ""
 #: ctfs/templates/ctfs/ctf_info.html:61
 #: events/templates/events/ctf_info.html:71
 #: events/templates/events/event_info.html:64
-#: scoreboard/templates/scoreboard/scoreboard.html:13
+#: scoreboard/templates/scoreboard/scoreboard.html:14
 msgid "Website"
 msgstr ""
 
@@ -46,19 +46,19 @@ msgid "Apply"
 msgstr ""
 
 #: accounts/templates/accounts/edit.html:47
-#: accounts/templates/accounts/profile.html:44
+#: accounts/templates/accounts/profile.html:46
 #: ctfs/templates/ctfs/ctf_info.html:62 ctfs/templates/ctfs/ctfs_list.html:13
 #: events/templates/events/event_info.html:65
 #: events/templates/events/event_info.html:87
 #: events/templates/events/manage_team.html:40
 #: events/templates/events/team.html:45
-#: scoreboard/templates/scoreboard/scoreboard.html:14
+#: scoreboard/templates/scoreboard/scoreboard.html:15
 msgid "Score"
 msgstr ""
 
 #: accounts/templates/accounts/edit.html:55
-#: accounts/templates/accounts/profile.html:53
-msgid "Member since"
+#: accounts/templates/accounts/profile.html:60
+msgid "Registered since"
 msgstr ""
 
 #: accounts/templates/accounts/login.html:13
@@ -94,46 +94,54 @@ msgstr ""
 msgid "Sign up"
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:8
+#: accounts/templates/accounts/profile.html:10
 msgid "Challenges Solved by"
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:19
+#: accounts/templates/accounts/profile.html:21
 #: events/templates/events/team.html:20
 msgid "Challenge Name"
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:20
+#: accounts/templates/accounts/profile.html:22
 #: events/templates/events/team.html:21
 msgid "Category"
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:21
+#: accounts/templates/accounts/profile.html:23
 #: events/templates/events/team.html:22
 msgid "Points"
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:22
+#: accounts/templates/accounts/profile.html:24
 #: ctfs/templates/ctfs/ctf_info.html:63
 #: events/templates/events/ctf_info.html:72
 #: events/templates/events/team.html:23
 msgid "Date"
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:37
+#: accounts/templates/accounts/profile.html:39
 msgid "It seems that this user has not solved any challenge yet..."
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:45
+#: accounts/templates/accounts/profile.html:47
 #: events/templates/events/event_info.html:62
 #: events/templates/events/event_info.html:85
 #: events/templates/events/manage_team.html:41
 #: events/templates/events/team.html:46
-#: scoreboard/templates/scoreboard/scoreboard.html:11
+#: scoreboard/templates/scoreboard/scoreboard.html:12
 msgid "Rank"
 msgstr ""
 
-#: accounts/templates/accounts/profile.html:57
+#: accounts/templates/accounts/profile.html:56
+msgid "Status: Member"
+msgstr ""
+
+#: accounts/templates/accounts/profile.html:58
+msgid "Status: Visitor"
+msgstr ""
+
+#: accounts/templates/accounts/profile.html:64
 #: events/templates/events/team.html:57
 msgid "Categories stats"
 msgstr ""
@@ -154,33 +162,33 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: accounts/views/views.py:31
+#: accounts/views/views.py:33
 msgid "Your account was inactive."
 msgstr ""
 
-#: accounts/views/views.py:50
+#: accounts/views/views.py:52
 msgid ""
 "The password must contain at least one letter and at least one digit or "
 "punctuation character."
 msgstr ""
 
-#: accounts/views/views.py:52
+#: accounts/views/views.py:54
 msgid "A user with that email already exists."
 msgstr ""
 
-#: accounts/views/views.py:65
+#: accounts/views/views.py:67
 msgid "A user with that username already exists."
 msgstr ""
 
-#: accounts/views/views.py:93
+#: accounts/views/views.py:95
 msgid "Email already taken."
 msgstr ""
 
-#: accounts/views/views.py:99
+#: accounts/views/views.py:101
 msgid "Username already taken."
 msgstr ""
 
-#: accounts/views/views.py:103 events/views/teams.py:122
+#: accounts/views/views.py:105 events/views/teams.py:122
 msgid "Updated."
 msgstr ""
 
@@ -467,23 +475,23 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: scoreboard/templates/scoreboard/scoreboard.html:36
+#: scoreboard/templates/scoreboard/scoreboard.html:38
 msgid "First"
 msgstr ""
 
-#: scoreboard/templates/scoreboard/scoreboard.html:37
+#: scoreboard/templates/scoreboard/scoreboard.html:39
 msgid "Previous"
 msgstr ""
 
-#: scoreboard/templates/scoreboard/scoreboard.html:41
+#: scoreboard/templates/scoreboard/scoreboard.html:43
 msgid "Page "
 msgstr ""
 
-#: scoreboard/templates/scoreboard/scoreboard.html:45
+#: scoreboard/templates/scoreboard/scoreboard.html:47
 msgid "Next"
 msgstr ""
 
-#: scoreboard/templates/scoreboard/scoreboard.html:46
+#: scoreboard/templates/scoreboard/scoreboard.html:48
 msgid "Last"
 msgstr ""
 

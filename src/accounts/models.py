@@ -12,6 +12,9 @@ class UserProfileInfo(models.Model):
     last_submission_date    =   models.DateTimeField('Last Submission Date', default=timezone.now)
     token                   =   models.CharField(max_length=200, blank=True)
     discord_id              =   models.CharField(max_length=20, null=True, blank=True, unique=True)
+    member                  =   models.BooleanField(default=False)
+    member_since            =   models.DateTimeField('Member since', default=timezone.now)
+    member_until            =   models.DateTimeField('Member until', default=timezone.now)
     def __str__(self):
         return self.user.username
     class Meta:

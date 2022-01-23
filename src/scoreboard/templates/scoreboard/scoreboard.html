@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
+{% load is_member %}
 <div class="row">
   <div class="col-12">
     <div>
@@ -16,9 +17,10 @@
         </thead>
         <tbody>
           {% for s in scores %}
+          {% ismember s.user.userprofileinfo as is_member %}
           <tr>
             <th scope="row"># {{ forloop.counter0|add:scores.start_index }}</th>
-            <th><a class="profile_link" href="{% url 'accounts:profile' user_name=s.user.username %}"> {{ s.user.username }}</a></th>
+            <th><a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=s.user.username %}"> {{ s.user.username }}</a></th>
             <td>
               {% if s.user.userprofileinfo.portfolio_site %}
               <a href="{{ s.user.userprofileinfo.portfolio_site }}" target="_blank">{{ s.user.userprofileinfo.portfolio_site }}</a>

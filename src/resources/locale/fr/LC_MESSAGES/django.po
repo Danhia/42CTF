@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-23 15:54+0000\n"
+"POT-Creation-Date: 2022-01-23 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,7 +136,9 @@ msgstr "42CTF est une association loi 1901 (loi française)."
 
 #: resources/templates/resources/donate.html:14
 msgid "You can support us by becoming a member and paying a fee of 15 euros."
-msgstr "Vous pouvez nous aider financièrement en devenant membre, au cout de 15 euros."
+msgstr ""
+"Vous pouvez nous aider financièrement en devenant membre, au cout de 15 "
+"euros."
 
 #: resources/templates/resources/donate.html:15
 msgid "Membership is then granted for 1 year."
@@ -151,21 +153,25 @@ msgid ""
 "A different color for your pseudo in the scoreboard, to let everyone know "
 "you're a member. (not yet implemented but coming soon)"
 msgstr ""
-"Une couleur différente pour votre pseudo sur le scoreboard, pour que tout le monde sache que vous êtes membre (en cours de développement)."
+"Une couleur différente pour votre pseudo sur le scoreboard, pour que tout le "
+"monde sache que vous êtes membre (en cours de développement)."
 
 #: resources/templates/resources/donate.html:19
 msgid ""
 "The possibility to play again past CTF, with challenges no longer available, "
 "in the form of private events with the people of your choice."
 msgstr ""
-"La possibilité de jouer de nouveau aux CTF passés, avec des challenges qui ne sont plus disponibles, "
-"sous la forme d'un événement privé avec les personnes de votre choix."
+"La possibilité de jouer de nouveau aux CTF passés, avec des challenges qui "
+"ne sont plus disponibles, sous la forme d'un événement privé avec les "
+"personnes de votre choix."
 
 #: resources/templates/resources/donate.html:20
 msgid ""
 "Ex: you played Welcome CTF 2021, and want to play it again with your friends "
 "during one weekend."
-msgstr "Ex: vous avez joué au Welcome CTF 2021, et vous voulez renouveler l'expérience avec vos amis le temps d'un weekend."
+msgstr ""
+"Ex: vous avez joué au Welcome CTF 2021, et vous voulez renouveler "
+"l'expérience avec vos amis le temps d'un weekend."
 
 #: resources/templates/resources/donate.html:21
 msgid "Or you didn't play Welcome CTF 2021 because you were not eligible."
@@ -173,7 +179,9 @@ msgstr "Ou au contraire vous n'avez pas joué car vous n'étiez pas éligible."
 
 #: resources/templates/resources/donate.html:24
 msgid "More advantages may come later, and you can submit us your ideas."
-msgstr "Plus d'avantages pourraient être disponibles plus tard, et vous pouvez nous soumettre vos idées."
+msgstr ""
+"Plus d'avantages pourraient être disponibles plus tard, et vous pouvez nous "
+"soumettre vos idées."
 
 #: resources/templates/resources/donate.html:25
 msgid ""
@@ -181,8 +189,9 @@ msgid ""
 "will be equivalent to organize paid events, and we want 42CTF to remain FREE "
 "for all."
 msgstr ""
-"Cependant, nous n'organiserons pas de CTF en temps limité réservé aux membres, "
-"car cela serait équivalent à organiser des événements payants, and nous voulons que 42CTF reste GRATUIT pour tous."
+"Cependant, nous n'organiserons pas de CTF en temps limité réservé aux "
+"membres, car cela serait équivalent à organiser des événements payants, and "
+"nous voulons que 42CTF reste GRATUIT pour tous."
 
 #: resources/templates/resources/donate.html:28
 msgid "Donate to 42CTF"
@@ -207,17 +216,17 @@ msgid ""
 "If you're paying for your membership, don't forget to send us your first and "
 "last name, as well as your 42CTF pseudo."
 msgstr ""
-"Si vous payez pour l'adhesion, n'oubliez pas de nous envoyer vos noms et prénoms, "
-"ainsi que votre pseudo 42CTF."
-
+"Si vous payez pour l'adhesion, n'oubliez pas de nous envoyer vos noms et "
+"prénoms, ainsi que votre pseudo 42CTF."
 
 #: resources/templates/resources/donate.html:46
 msgid ""
 "We will only use thoe data to keep track of our members and grant you "
 "advantages, and we will never communicate them to any third party."
 msgstr ""
-"Nous utiliserons ces données exclusivement pour tenir compte de nos membres et vous accorder "
-"des avantages, nous ne transmettrons jamais ces données à des tierces parties."
+"Nous utiliserons ces données exclusivement pour tenir compte de nos membres "
+"et vous accorder des avantages, nous ne transmettrons jamais ces données à "
+"des tierces parties."
 
 #: resources/templates/resources/edit.html:9
 #: resources/templates/resources/resources.html:30
