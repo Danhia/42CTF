@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+{% get_current_language as lang %}
+<div class="row">
+    <div class="col-sm-12 col-md-9">
+        <div class="ctf-block">
+            <div class="ctf-head">
+            <h3>{% trans "Donate" %}</h3>
+            </div>
+            <div class="ctf-body">
+                <h4>{% trans "Become a 42CTF member" %}</h4>
+                {% trans "42CTF is a non-profit organization with a legal status under the french law (Association loi 1901)." %}<br>
+                {% trans "You can support us by becoming a member and paying a fee of 15 euros." %}<br>
+                {% trans "Membership is then granted for 1 year." %}<br><br>
+
+                {% trans "When you become a member, you gain the following advantages:" %}<br>
+                - {% trans "A different color for your pseudo in the scoreboard, to let everyone know you're a member. (not yet implemented but coming soon)" %}<br>
+                - {% trans "The possibility to play again past CTF, with challenges no longer available, in the form of private events with the people of your choice." %}<br>
+                {% trans "Ex: you played Welcome CTF 2021, and want to play it again with your friends during one weekend." %}
+                {% trans "Or you didn't play Welcome CTF 2021 because you were not eligible." %}
+                <br><br>
+
+                {% trans "More advantages may come later, and you can submit us your ideas." %}<br>
+                {% trans "However, we will not organize limited time CTF for members only, as this will be equivalent to organize paid events, and we want 42CTF to remain FREE for all." %}<br>
+                <br><br>
+
+                <h4>{% trans "Donate to 42CTF" %}</h4>
+                {% trans "You can donate to 42CTF or pay your membership with the following means:" %}<br>
+                <a href="https://www.patreon.com/42ctf" target="_blank" class="patreon li-patreon">
+                    <!-- <div class="patreon-content"> -->
+                            <span class="svg-box">
+                                    <svg viewBox="0 0 569 546" xmlns="http://www.w3.org/2000/svg"><g><circle cx="362.589996" cy="204.589996" data-fill="1" id="Oval" r="204.589996"></circle><rect data-fill="2" height="545.799988" id="Rectangle" width="100" x="0" y="0"></rect></g></svg>
+                            </span>
+                            <span class="patreon-text">
+                                    Patreon
+                            </span>
+                    <!-- </div> -->
+                </a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=M6YBYZ63MQGAY" target="_blank">
+                                    <img src="/static/img/paypal.png" width="200">
+                </a><br>
+                {% trans "If you would like us to add another payment method or if you want to pay in cash, send us a message !" %}<br><br>
+
+                {% trans "If you're paying for your membership, don't forget to send us your first and last name, as well as your 42CTF pseudo." %}
+                {% trans "We will only use thoe data to keep track of our members and grant you advantages, and we will never communicate them to any third party." %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

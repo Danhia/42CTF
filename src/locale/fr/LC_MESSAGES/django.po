@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-08 12:12+0100\n"
+"POT-Creation-Date: 2022-01-23 15:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,8 +67,8 @@ msgstr "Merci de vérifier vos informations."
 
 #: accounts/templates/accounts/login.html:19
 #: accounts/templates/accounts/register.html:23
-#: events/templates/events/create_team.html:31
-#: events/templates/events/create_team.html:40
+#: events/templates/events/create_team.html:26
+#: events/templates/events/join_team.html:31
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -184,7 +184,7 @@ msgstr "L'adresse mail est déjà utilisée."
 msgid "Username already taken."
 msgstr "Le pseudo est déjà utilisé."
 
-#: accounts/views/views.py:103 events/views.py:370
+#: accounts/views/views.py:103 events/views/teams.py:122
 msgid "Updated."
 msgstr "Mis à jour."
 
@@ -268,64 +268,67 @@ msgid "No category available."
 msgstr "Il n'y a pas de catégorie disponible."
 
 #: events/templates/events/create_team.html:9
+#: events/templates/events/join_team.html:9
 #, fuzzy
 #| msgid "This event start at"
 msgid "This event starts at"
 msgstr "Cet événement débute à"
 
-#: events/templates/events/create_team.html:15
+#: events/templates/events/create_team.html:16
+#: events/templates/events/join_team.html:16
 #, fuzzy
 #| msgid "You're already registered to this event."
 msgid "You need to be registered to the event."
 msgstr "Vous êtes déjà inscrit à cet événement."
 
-#: events/templates/events/create_team.html:18
-msgid "Team does not exist."
-msgstr "Cette équipe n'existe pas."
-
-#: events/templates/events/create_team.html:20
-#: events/templates/events/event_pwd.html:15
-msgid "Wrong password submited."
-msgstr "Mauvais mot de passe saisi."
-
-#: events/templates/events/create_team.html:22
-msgid "Maximum size reached."
-msgstr "Taille maximale atteinte."
-
-#: events/templates/events/create_team.html:24 events/views.py:366
+#: events/templates/events/create_team.html:19 events/views/teams.py:118
 #, fuzzy
 #| msgid "Username already taken."
 msgid "Name already taken."
 msgstr "Ce nom est déjà utilisé."
 
-#: events/templates/events/create_team.html:30
-#: events/templates/events/create_team.html:39
+#: events/templates/events/create_team.html:25
+#: events/templates/events/join_team.html:30
 #: events/templates/events/manage_team.html:22
 msgid "Team name"
 msgstr "Nom de l'équipe"
 
-#: events/templates/events/create_team.html:32
+#: events/templates/events/create_team.html:27
+#: events/templates/events/create_team.html:46
+#: events/templates/events/join_team.html:52
 msgid "Create Team"
 msgstr "Créer une équipe"
 
-#: events/templates/events/create_team.html:41
-msgid "Join Team"
-msgstr "Rejoindre une équipe"
-
-#: events/templates/events/create_team.html:46
+#: events/templates/events/create_team.html:32
 #: events/templates/events/event_pwd.html:28
+#: events/templates/events/join_team.html:37
 msgid "You need to be logged to access this event."
 msgstr "Vous devez être connecté pour accéder à cet événement."
 
-#: events/templates/events/create_team.html:54
+#: events/templates/events/create_team.html:41
+#: events/templates/events/event_info.html:111
 #: events/templates/events/event_pwd.html:36
-msgid "Start at"
+#: events/templates/events/join_team.html:46
+msgid "Starts at"
 msgstr "Début"
 
-#: events/templates/events/create_team.html:55
+#: events/templates/events/create_team.html:42
+#: events/templates/events/event_info.html:112
 #: events/templates/events/event_pwd.html:37
-msgid "End at"
+#: events/templates/events/join_team.html:47
+msgid "Ends at"
 msgstr "Fin"
+
+#: events/templates/events/create_team.html:47
+#: events/templates/events/join_team.html:32
+#: events/templates/events/join_team.html:51
+msgid "Join Team"
+msgstr "Rejoindre une équipe"
+
+#: events/templates/events/create_team.html:54
+#: events/templates/events/join_team.html:59
+msgid "Find me a team !"
+msgstr ""
 
 #: events/templates/events/ctf_info.html:9
 msgid "Event"
@@ -394,14 +397,6 @@ msgstr "Équipe"
 msgid "No one have earn point yet, you gonna be the first ?"
 msgstr "Personne n'a encore gagné de point, allez-vous être le premier ?"
 
-#: events/templates/events/event_info.html:111
-msgid "Starts at"
-msgstr "Début"
-
-#: events/templates/events/event_info.html:112
-msgid "Ends at"
-msgstr "Fin"
-
 #: events/templates/events/event_info.html:117
 msgid "Subscribe"
 msgstr ""
@@ -409,6 +404,11 @@ msgstr ""
 #: events/templates/events/event_info.html:127
 msgid "Manage my team"
 msgstr "Gérer mon équipe"
+
+#: events/templates/events/event_pwd.html:15
+#: events/templates/events/join_team.html:21
+msgid "Wrong password submited."
+msgstr "Mauvais mot de passe saisi."
 
 #: events/templates/events/event_pwd.html:20
 msgid "This event is password protected"
@@ -429,6 +429,14 @@ msgstr "Voir plus"
 #: events/templates/events/events_list.html:44
 msgid "No events available."
 msgstr "Pas d'évènement disponible."
+
+#: events/templates/events/join_team.html:19
+msgid "Team does not exist."
+msgstr "Cette équipe n'existe pas."
+
+#: events/templates/events/join_team.html:23
+msgid "Maximum size reached."
+msgstr "Taille maximale atteinte."
 
 #: events/templates/events/manage_team.html:26
 msgid "Team password"
@@ -558,6 +566,12 @@ msgstr ""
 #: templates/registration/password_reset_form.html:16
 msgid "Reset"
 msgstr "Réinitialiser"
+
+#~ msgid "Start at"
+#~ msgstr "Début"
+
+#~ msgid "End at"
+#~ msgstr "Fin"
 
 #~ msgid "Connected accounts"
 #~ msgstr "Comptes connectés"

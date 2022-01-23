@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-08 10:22+0000\n"
+"POT-Creation-Date: 2022-01-23 15:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,8 +69,8 @@ msgstr ""
 
 #: accounts/templates/accounts/login.html:19
 #: accounts/templates/accounts/register.html:23
-#: events/templates/events/create_team.html:31
-#: events/templates/events/create_team.html:40
+#: events/templates/events/create_team.html:26
+#: events/templates/events/join_team.html:31
 msgid "Password"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgid "Reset password"
 msgstr ""
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:100
+#: accounts/templates/accounts/register.html:38 templates/base.html:103
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:38
 #: templates/registration/password_reset_done.html:18
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Username already taken."
 msgstr ""
 
-#: accounts/views/views.py:103 events/views.py:370
+#: accounts/views/views.py:103 events/views/teams.py:122
 msgid "Updated."
 msgstr ""
 
@@ -266,57 +266,60 @@ msgid "No category available."
 msgstr ""
 
 #: events/templates/events/create_team.html:9
+#: events/templates/events/join_team.html:9
 msgid "This event starts at"
 msgstr ""
 
-#: events/templates/events/create_team.html:15
+#: events/templates/events/create_team.html:16
+#: events/templates/events/join_team.html:16
 msgid "You need to be registered to the event."
 msgstr ""
 
-#: events/templates/events/create_team.html:18
-msgid "Team does not exist."
-msgstr ""
-
-#: events/templates/events/create_team.html:20
-#: events/templates/events/event_pwd.html:15
-msgid "Wrong password submited."
-msgstr ""
-
-#: events/templates/events/create_team.html:22
-msgid "Maximum size reached."
-msgstr ""
-
-#: events/templates/events/create_team.html:24 events/views.py:366
+#: events/templates/events/create_team.html:19 events/views/teams.py:118
 msgid "Name already taken."
 msgstr ""
 
-#: events/templates/events/create_team.html:30
-#: events/templates/events/create_team.html:39
+#: events/templates/events/create_team.html:25
+#: events/templates/events/join_team.html:30
 #: events/templates/events/manage_team.html:22
 msgid "Team name"
 msgstr ""
 
-#: events/templates/events/create_team.html:32
+#: events/templates/events/create_team.html:27
+#: events/templates/events/create_team.html:46
+#: events/templates/events/join_team.html:52
 msgid "Create Team"
 msgstr ""
 
-#: events/templates/events/create_team.html:41
-msgid "Join Team"
-msgstr ""
-
-#: events/templates/events/create_team.html:46
+#: events/templates/events/create_team.html:32
 #: events/templates/events/event_pwd.html:28
+#: events/templates/events/join_team.html:37
 msgid "You need to be logged to access this event."
 msgstr ""
 
-#: events/templates/events/create_team.html:54
+#: events/templates/events/create_team.html:41
+#: events/templates/events/event_info.html:111
 #: events/templates/events/event_pwd.html:36
-msgid "Start at"
+#: events/templates/events/join_team.html:46
+msgid "Starts at"
 msgstr ""
 
-#: events/templates/events/create_team.html:55
+#: events/templates/events/create_team.html:42
+#: events/templates/events/event_info.html:112
 #: events/templates/events/event_pwd.html:37
-msgid "End at"
+#: events/templates/events/join_team.html:47
+msgid "Ends at"
+msgstr ""
+
+#: events/templates/events/create_team.html:47
+#: events/templates/events/join_team.html:32
+#: events/templates/events/join_team.html:51
+msgid "Join Team"
+msgstr ""
+
+#: events/templates/events/create_team.html:54
+#: events/templates/events/join_team.html:59
+msgid "Find me a team !"
 msgstr ""
 
 #: events/templates/events/ctf_info.html:9
@@ -382,20 +385,17 @@ msgstr ""
 msgid "No one have earn point yet, you gonna be the first ?"
 msgstr ""
 
-#: events/templates/events/event_info.html:111
-msgid "Starts at"
-msgstr ""
-
-#: events/templates/events/event_info.html:112
-msgid "Ends at"
-msgstr ""
-
 #: events/templates/events/event_info.html:117
 msgid "Subscribe"
 msgstr ""
 
 #: events/templates/events/event_info.html:127
 msgid "Manage my team"
+msgstr ""
+
+#: events/templates/events/event_pwd.html:15
+#: events/templates/events/join_team.html:21
+msgid "Wrong password submited."
 msgstr ""
 
 #: events/templates/events/event_pwd.html:20
@@ -419,6 +419,14 @@ msgstr ""
 #| msgid "No article available."
 msgid "No events available."
 msgstr "Нет доступных статей."
+
+#: events/templates/events/join_team.html:19
+msgid "Team does not exist."
+msgstr ""
+
+#: events/templates/events/join_team.html:23
+msgid "Maximum size reached."
+msgstr ""
 
 #: events/templates/events/manage_team.html:26
 msgid "Team password"
@@ -453,19 +461,19 @@ msgstr ""
 msgid "Flags counter"
 msgstr ""
 
-#: project/settings.py:114
+#: project/settings.py:115
 msgid "English"
 msgstr ""
 
-#: project/settings.py:115
+#: project/settings.py:116
 msgid "German"
 msgstr ""
 
-#: project/settings.py:116
+#: project/settings.py:117
 msgid "French"
 msgstr ""
 
-#: project/settings.py:117
+#: project/settings.py:118
 msgid "Russian"
 msgstr ""
 
@@ -493,15 +501,19 @@ msgstr ""
 msgid "Scoreboard"
 msgstr ""
 
-#: templates/base.html:96
+#: templates/base.html:66
+msgid "Resources"
+msgstr ""
+
+#: templates/base.html:99
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base.html:103
+#: templates/base.html:106
 msgid "Sign Up"
 msgstr ""
 
-#: templates/base.html:131
+#: templates/base.html:134
 msgid "Become a Patron!"
 msgstr ""
 

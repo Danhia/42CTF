@@ -15,3 +15,12 @@ def tools(request):
 
 def create_challenge(request):
     return render(request, 'resources/create_challenge.html')
+
+def translate(request):
+    return render(request, 'resources/translate.html')
+
+def edit(request):
+    return render(request, 'resources/edit.html')
+
+def donate(request):
+    return render(request, 'resources/donate.html')

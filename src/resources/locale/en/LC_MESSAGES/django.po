@@ -16,16 +16,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: resources/templates/resources/42ctf.html:9
 #: resources/templates/resources/resources.html:12
 msgid "What is 42CTF ?"
-msgstr "Qu'est ce que 42CTF ?"
+msgstr ""
 
 #: resources/templates/resources/42ctf.html:12
 msgid "A short introduction to CTF"
-msgstr "Une brève introduction aux CTF"
+msgstr ""
 
 #: resources/templates/resources/42ctf.html:13
 msgid ""
@@ -122,58 +121,55 @@ msgstr ""
 #: resources/templates/resources/donate.html:9
 #: resources/templates/resources/resources.html:31
 msgid "Donate"
-msgstr "Donner"
+msgstr ""
 
 #: resources/templates/resources/donate.html:12
 msgid "Become a 42CTF member"
-msgstr "Devenez membre de 42CTF"
+msgstr ""
 
 #: resources/templates/resources/donate.html:13
 msgid ""
 "42CTF is a non-profit organization with a legal status under the french law "
 "(Association loi 1901)."
-msgstr "42CTF est une association loi 1901 (loi française)."
+msgstr ""
 
 #: resources/templates/resources/donate.html:14
 msgid "You can support us by becoming a member and paying a fee of 15 euros."
-msgstr "Vous pouvez nous aider financièrement en devenant membre, au cout de 15 euros."
+msgstr ""
 
 #: resources/templates/resources/donate.html:15
 msgid "Membership is then granted for 1 year."
-msgstr "Le status de membre est valable 1 an au paiement de la cotisation."
+msgstr ""
 
 #: resources/templates/resources/donate.html:17
 msgid "When you become a member, you gain the following advantages:"
-msgstr "Lorsque vous adherez à 42CTF, vous obtenez les avantages suivants :"
+msgstr ""
 
 #: resources/templates/resources/donate.html:18
 msgid ""
 "A different color for your pseudo in the scoreboard, to let everyone know "
 "you're a member. (not yet implemented but coming soon)"
 msgstr ""
-"Une couleur différente pour votre pseudo sur le scoreboard, pour que tout le monde sache que vous êtes membre (en cours de développement)."
 
 #: resources/templates/resources/donate.html:19
 msgid ""
 "The possibility to play again past CTF, with challenges no longer available, "
 "in the form of private events with the people of your choice."
 msgstr ""
-"La possibilité de jouer de nouveau aux CTF passés, avec des challenges qui ne sont plus disponibles, "
-"sous la forme d'un événement privé avec les personnes de votre choix."
 
 #: resources/templates/resources/donate.html:20
 msgid ""
 "Ex: you played Welcome CTF 2021, and want to play it again with your friends "
 "during one weekend."
-msgstr "Ex: vous avez joué au Welcome CTF 2021, et vous voulez renouveler l'expérience avec vos amis le temps d'un weekend."
+msgstr ""
 
 #: resources/templates/resources/donate.html:21
 msgid "Or you didn't play Welcome CTF 2021 because you were not eligible."
-msgstr "Ou au contraire vous n'avez pas joué car vous n'étiez pas éligible."
+msgstr ""
 
 #: resources/templates/resources/donate.html:24
 msgid "More advantages may come later, and you can submit us your ideas."
-msgstr "Plus d'avantages pourraient être disponibles plus tard, et vous pouvez nous soumettre vos idées."
+msgstr ""
 
 #: resources/templates/resources/donate.html:25
 msgid ""
@@ -181,43 +177,33 @@ msgid ""
 "will be equivalent to organize paid events, and we want 42CTF to remain FREE "
 "for all."
 msgstr ""
-"Cependant, nous n'organiserons pas de CTF en temps limité réservé aux membres, "
-"car cela serait équivalent à organiser des événements payants, and nous voulons que 42CTF reste GRATUIT pour tous."
 
 #: resources/templates/resources/donate.html:28
 msgid "Donate to 42CTF"
-msgstr "Donnez à 42CTF"
+msgstr ""
 
 #: resources/templates/resources/donate.html:29
 msgid ""
 "You can donate to 42CTF or pay your membership with the following means:"
 msgstr ""
-"Vous pouvez donner à 42CTF ou payer votre adhésion avec les moyens suivants :"
 
 #: resources/templates/resources/donate.html:43
 msgid ""
 "If you would like us to add another payment method or if you want to pay in "
 "cash, send us a message !"
 msgstr ""
-"Si vous aimeriez qu'on ajoute un autre moyen de paiement, ou si vous voulez "
-"payer en liquide, envoyez nous un message !"
 
 #: resources/templates/resources/donate.html:45
 msgid ""
 "If you're paying for your membership, don't forget to send us your first and "
 "last name, as well as your 42CTF pseudo."
 msgstr ""
-"Si vous payez pour l'adhesion, n'oubliez pas de nous envoyer vos noms et prénoms, "
-"ainsi que votre pseudo 42CTF."
-
 
 #: resources/templates/resources/donate.html:46
 msgid ""
 "We will only use thoe data to keep track of our members and grant you "
 "advantages, and we will never communicate them to any third party."
 msgstr ""
-"Nous utiliserons ces données exclusivement pour tenir compte de nos membres et vous accorder "
-"des avantages, nous ne transmettrons jamais ces données à des tierces parties."
 
 #: resources/templates/resources/edit.html:9
 #: resources/templates/resources/resources.html:30
