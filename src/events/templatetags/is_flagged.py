@@ -9,6 +9,8 @@ def isflagged(user, ctf):
 	flagged		= False
 	event_info	= ctf.event
 
+	if user.is_authenticated == False:
+		return ""
 	if event_info.team_size == 1:
 		if CTF_flags.objects.filter(user=user, ctf=ctf):
 			flagged = True
