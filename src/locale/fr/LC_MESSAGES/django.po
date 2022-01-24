@@ -161,6 +161,7 @@ msgid "Personal website"
 msgstr "Site personnel"
 
 #: accounts/templates/accounts/register.html:26
+#: events/templates/events/event_info.html:117
 msgid "Register"
 msgstr "Inscription"
 
@@ -404,10 +405,6 @@ msgstr "Équipe"
 #: events/templates/events/event_info.html:104
 msgid "No one have earn point yet, you gonna be the first ?"
 msgstr "Personne n'a encore gagné de point, allez-vous être le premier ?"
-
-#: events/templates/events/event_info.html:117
-msgid "Register"
-msgstr ""
 
 #: events/templates/events/event_info.html:127
 msgid "Manage my team"
