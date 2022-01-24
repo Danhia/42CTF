@@ -1,9 +1,6 @@
 from django.contrib import admin
 from .models import Event, EventPlayer, Team
 
-#admin.site.register(Event)
-#admin.site.register(Scores)
-
 @admin.register(Event)
 class event(admin.ModelAdmin):
     #list display
@@ -27,15 +24,6 @@ class team(admin.ModelAdmin):
     #list display
     list_display = ['name', 'password']
     #list Filter
-    # list_filter = ('event',)
+    list_filter = ('event',)
     # search list
     search_fields = ['name']
-
-# @admin.register(EventPlayer)
-# class eventplayer(admin.ModelAdmin):
-#     #list display
-#     list_display = ['user', 'event', 'team']
-#     #list Filter
-#     list_filter = ('event', 'team__name')
-#     # search list
-#     search_fields = ['user__username', 'event__name']
