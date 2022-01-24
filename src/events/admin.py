@@ -22,7 +22,7 @@ class score(admin.ModelAdmin):
 @admin.register(Team)
 class team(admin.ModelAdmin):
     #list display
-    list_display = ['name', 'password']
+    list_display = ['name', 'event']
     #list Filter
     list_filter = ('event',)
     # search list
