@@ -406,7 +406,7 @@ msgid "No one have earn point yet, you gonna be the first ?"
 msgstr "Personne n'a encore gagné de point, allez-vous être le premier ?"
 
 #: events/templates/events/event_info.html:117
-msgid "Subscribe"
+msgid "Register"
 msgstr ""
 
 #: events/templates/events/event_info.html:127

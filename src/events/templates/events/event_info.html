@@ -111,10 +111,10 @@
       <li class="list-group-item">{% trans "Starts at" %} : {{ event.start_date | date:'H:i d-m-y'}}</li>
       <li class="list-group-item">{% trans "Ends at" %} : {{ event.end_date | date:'H:i d-m-y'}}</li>
       {% if ended == False and IsRegistered == False %}
-      <form method='POST' action="{% url 'events:subscribe_event' event_slug=event.slug %}">
+      <form method='POST' action="{% url 'events:register_event' event_slug=event.slug %}">
         {%csrf_token%}
         <li class="list-group-item">
-          <input class="form-control" type="submit" value="{% trans "Subscribe" %}">
+          <input class="form-control" type="submit" value="{% trans "Register" %}">
         </li>
       </form>
       {% endif %}

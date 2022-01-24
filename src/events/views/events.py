@@ -197,7 +197,7 @@ def submit_pwd(request, event_slug):
 		
 
 @login_required
-def subscribe_to_event(request, event_slug):
+def register_to_event(request, event_slug):
 	response = redirect('events:event_info', event_slug=event_slug)
 	if request.method == 'POST':
 		if request.user.is_authenticated:
