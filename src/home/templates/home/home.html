@@ -4,7 +4,30 @@
 {% get_current_language as lang %}
 {% load is_member %}
 <div class="row">
-        <div class="col-lg-9 col-sm-12 news-card">
+        <div class="col-lg-3 col-sm-12 right-sidebar middle-sm">
+
+                <ul class="list-group">
+                        <li class="list-group-item">Top 10</li>
+                        {% for t in top %}
+                        {% ismember t.user.userprofileinfo as is_member %}
+                        <li class="list-group-item text-truncate"># {{ forloop.counter }}
+                                <a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=t.user.username %}"> {{ t.user.username }}</a> 
+                                <span style="position:absolute;right: 15px;">{{ t.score }}</span></li>
+                        {% endfor %}
+                </ul>
+
+                <ul class="list-group">
+                        <li class="list-group-item">{% trans "Weekly Top 5" %}</li>
+                        {% for user, score in top_weekly %}
+                        {% ismember user as is_member %}
+                        <li class="list-group-item text-truncate"># {{ forloop.counter }}
+                                <a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=user %}"> {{ user }}</a> 
+                                <span style="position:absolute;right: 15px;">{{ score }}</span></li>
+                        {% endfor %}
+                </ul>
+                
+        </div>
+        <div class="col-lg-6 col-sm-12 news-card top-sm">
                 {% if news %}
                 {% for n in news %}
                 <div class="card text-center news-card">
@@ -33,30 +56,42 @@
 				<p class="text-center">{% trans "No article available." %}</p>
                 {% endif %}
         </div>
-        <div class="col-lg-3 col-sm-12 right-sidebar">
+        <div class="col-lg-3 col-sm-12 right-sidebar bottom-sm">
                 <ul class="list-group">
 					<li class="list-group-item active">{% trans "Latest challenges added" %}</li>
                         {% if ctfs %}
                         {% for ctf in ctfs %}
-			<a class="list-group-item" href="{% url 'ctf' cat_slug=ctf.category.slug ctf_slug=ctf.slug %}">{{ ctf.name }}</a>
+                        <li class="list-group-item">
+			<a  href="{% url 'ctf' cat_slug=ctf.category.slug ctf_slug=ctf.slug %}">{{ ctf.name }}</a> - {{ctf.points}} {% trans "points" %}
+                        </li>
                         {% endfor %}
                         {% else %}
-						<li class="list-group-item">{% trans "No ctf available." %}</li>
+				<li class="list-group-item">{% trans "No ctf available." %}</li>
                         {% endif %}
                 </ul>
                 <ul class="list-group">
-                        <li class="list-group-item">Top 10</li>
-                        {% for t in top %}
-                        {% ismember t.user.userprofileinfo as is_member %}
-                        <li class="list-group-item text-truncate"># {{ forloop.counter }}
-                                <a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=t.user.username %}"> {{ t.user.username }}</a> 
-                                <span style="position:absolute;right: 15px;">{{ t.score }}</span></li>
+                        <li class="list-group-item">{% trans "Latest Flags" %}</li>
+                        {% for f in latest_flags %}
+                        {% ismember f.user.userprofileinfo as is_member %}
+                        <li class="list-group-item text-truncate">
+                                <a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=f.user.username %}">
+                                {{ f.user.username }}</a> - {{f.ctf}}
                         {% endfor %}
                 </ul>
+                <div class="row flex-nowrap">
+                <div class="col-lg-6 col-sm-3">
                 <ul class="list-group">
 					<li class="list-group-item active">{% trans "Flags counter" %}</li>
                         <li class="list-group-item"><span>{{ flags }}</span></li>
                 </ul>
+                </div>
+                <div class="col-lg-6 col-sm-3">
+                        <ul class="list-group">
+                                                <li class="list-group-item active">{% trans "Users" %}</li>
+                                <li class="list-group-item"><span>{{ nb_users }}</span></li>
+                        </ul>
+                        </div>
+                </div>
         </div>
         
 </div>
