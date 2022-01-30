@@ -62,7 +62,8 @@
                         {% if ctfs %}
                         {% for ctf in ctfs %}
                         <li class="list-group-item">
-			<a  href="{% url 'ctf' cat_slug=ctf.category.slug ctf_slug=ctf.slug %}">{{ ctf.name }}</a> - {{ctf.points}} {% trans "points" %}
+			<a class="ctf-link" href="{% url 'ctf' cat_slug=ctf.category.slug ctf_slug=ctf.slug %}">{{ ctf.name }}</a>
+                        <span style="position:absolute;right: 15px;">{{ctf.points}} {% trans "points" %}</span>
                         </li>
                         {% endfor %}
                         {% else %}
@@ -74,8 +75,11 @@
                         {% for f in latest_flags %}
                         {% ismember f.user.userprofileinfo as is_member %}
                         <li class="list-group-item text-truncate">
-                                <a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=f.user.username %}">
-                                {{ f.user.username }}</a> - {{f.ctf}}
+                                <a class="ctf-link" href="{% url 'ctf' cat_slug=f.ctf.category.slug ctf_slug=f.ctf.slug %}"> {{f.ctf}}</a>
+                                <span style="position:absolute;right: 15px;">
+                                        <a class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=f.user.username %}">{{ f.user.username }}</a>
+                                </span>
+                        </li>
                         {% endfor %}
                 </ul>
                 <div class="row flex-nowrap">
