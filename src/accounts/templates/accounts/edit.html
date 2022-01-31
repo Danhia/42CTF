@@ -54,6 +54,14 @@
 		{% endif %}
 		<li class="list-group-item">{% trans "Registered since" %} {{ user.date_joined|date:"Y-m-d" }}</li>
 	</ul>
+	<ul class="list-group">
+		<form method='GET' action="{% url 'accounts:delete_account' %}">
+		  {%csrf_token%}
+		  <li class="list-group-item">
+			<input class="form-control" type="submit" value="{% trans "Delete my account" %}">
+		  </li>
+		</form>
+	  </ul>
   </div>
 </div>
 {% endblock %}

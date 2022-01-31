@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-23 17:31+0000\n"
+"POT-Creation-Date: 2022-01-31 19:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/templates/accounts/delete.html:8
+msgid "Delete account"
+msgstr ""
+
+#: accounts/templates/accounts/delete.html:11
+msgid "Please confirm your password to delete your account."
+msgstr ""
+
+#: accounts/templates/accounts/delete.html:12
+msgid "Deleted accounts cannot be recovered."
+msgstr ""
+
+#: accounts/templates/accounts/delete.html:15
+msgid "Password inccorect."
+msgstr ""
+
+#: accounts/templates/accounts/delete.html:17
+msgid "Your account has been deleted."
+msgstr ""
+
+#: accounts/templates/accounts/delete.html:22
+#: accounts/templates/accounts/login.html:19
+#: accounts/templates/accounts/register.html:23
+#: events/templates/events/create_team.html:26
+#: events/templates/events/join_team.html:31
+msgid "Password"
+msgstr ""
 
 #: accounts/templates/accounts/edit.html:21
 #: accounts/templates/accounts/login.html:18
@@ -61,15 +89,12 @@ msgstr ""
 msgid "Registered since"
 msgstr ""
 
-#: accounts/templates/accounts/login.html:13
-msgid "Please, verify your infos."
+#: accounts/templates/accounts/edit.html:61
+msgid "Delete my account"
 msgstr ""
 
-#: accounts/templates/accounts/login.html:19
-#: accounts/templates/accounts/register.html:23
-#: events/templates/events/create_team.html:26
-#: events/templates/events/join_team.html:31
-msgid "Password"
+#: accounts/templates/accounts/login.html:13
+msgid "Please, verify your infos."
 msgstr ""
 
 #: accounts/templates/accounts/login.html:22
@@ -202,7 +227,7 @@ msgid "Challenge is not yet available."
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:20
-#: events/templates/events/ctf_info.html:17 home/templates/home/home.html:22
+#: events/templates/events/ctf_info.html:17 home/templates/home/home.html:46
 msgid ""
 "No translation available. Please try another language (English or French)."
 msgstr ""
@@ -440,20 +465,36 @@ msgstr ""
 msgid "It seems that this team has not solved any challenge yet..."
 msgstr ""
 
-#: home/templates/home/home.html:32
+#: home/templates/home/home.html:20
+msgid "Weekly Top 5"
+msgstr ""
+
+#: home/templates/home/home.html:56
 msgid "No article available."
 msgstr ""
 
-#: home/templates/home/home.html:37
+#: home/templates/home/home.html:61
 msgid "Latest challenges added"
 msgstr ""
 
-#: home/templates/home/home.html:43
+#: home/templates/home/home.html:66
+msgid "points"
+msgstr ""
+
+#: home/templates/home/home.html:70
 msgid "No ctf available."
 msgstr ""
 
-#: home/templates/home/home.html:53
+#: home/templates/home/home.html:74
+msgid "Latest Flags"
+msgstr ""
+
+#: home/templates/home/home.html:88
 msgid "Flags counter"
+msgstr ""
+
+#: home/templates/home/home.html:94
+msgid "Users"
 msgstr ""
 
 #: project/settings.py:115
@@ -508,7 +549,7 @@ msgstr ""
 msgid "Sign Up"
 msgstr ""
 
-#: templates/base.html:134
+#: templates/base.html:144
 msgid "Become a Patron!"
 msgstr ""
 

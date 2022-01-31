@@ -163,3 +163,20 @@ def rank(request, token):
 		rank += 1
 	data = {"rank": rank}
 	return JsonResponse(data)
+
+@login_required
+def delete_account(request):
+	if request.method == 'POST':
+		user = request.user
+
+		password = request.POST.get('password')
+		if user.check_password(password):
+			logout(request)
+			user.delete()
+			return render(request, 'accounts/delete.html', {'deleted': True, 'bad_password': False})
+
+		else:
+			return render(request, 'accounts/delete.html', {'deleted': False, 'bad_password': True})
+
+	else:
+		return render(request, 'accounts/delete.html', {'deleted': False, 'bad_password': False} )
