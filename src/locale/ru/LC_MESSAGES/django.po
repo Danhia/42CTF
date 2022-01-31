@@ -499,10 +499,6 @@ msgstr ""
 msgid "Latest Flags"
 msgstr ""
 
-#: home/templates/home/home.html:88
-msgid "Flags counter"
-msgstr ""
-
 #: home/templates/home/home.html:94
 msgid "Users"
 msgstr ""

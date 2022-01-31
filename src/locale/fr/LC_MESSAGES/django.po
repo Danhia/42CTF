@@ -517,10 +517,6 @@ msgstr "Pas de challenge disponible"
 msgid "Latest Flags"
 msgstr ""
 
-#: home/templates/home/home.html:88
-msgid "Flags counter"
-msgstr "Compteur de flags"
-
 #: home/templates/home/home.html:94
 #, fuzzy
 #| msgid "Username"
