@@ -7,12 +7,11 @@ class Command(BaseCommand):
     help = 'Recomputes the score and ranking caches from the solutions'
 
     def handle(self, *args, **options):
-        all_sols = ex_models.CTF_flags.objects.select_related().all()
+        all_sols = ex_models.CTF_flags.objects.select_related().filter(ctf__event=None)
         scores = defaultdict(int)
         for sol in all_sols:
             scores[sol.user] += sol.ctf.points
         li = [(s, u) for (u, s) in scores.items()]
-        # #li.sort(reverse=True)
 
         li2 = []
         old_rank = None
@@ -29,10 +28,4 @@ class Command(BaseCommand):
 
         for (u, s, r) in li2:
             u.userprofileinfo.score = s
-        #     u.userprofileinfo.rank = r
             u.userprofileinfo.save()
-
-        # not_handled = acc_models.UserProfileInfo.objects.exclude(
-        #     id__in=[u.id for u, s, r in li2]
-        # )
-        # not_handled.update(score=0, rank=rank+1)
