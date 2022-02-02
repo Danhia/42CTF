@@ -124,7 +124,8 @@ def profile(request, user_name):
 		member = True
 	else:
 		member = False
-	cats = Category.objects.all()
+	all_cats = Category.objects.all()
+	cats = [cat for cat in all_cats if CTF.objects.filter(category__name=cat.name, event=None)]
 	pointDatas = {}
 
 	for cat in cats:
@@ -151,7 +152,7 @@ def profile(request, user_name):
 		solved.append([s.flag_date.timestamp() * 1000,somme])
 
 	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas,
-		'rank': rank, 'score' : somme, 'member' : member})
+		'rank': rank, 'score' : somme, 'member' : member, 'cats':cats})
 
 def rank(request, token):
 	all_users	  = UserProfileInfo.objects.filter(score__gt=0).select_related().order_by('-score', 'last_submission_date', 'user__username')
