@@ -2,6 +2,7 @@
 {% block content %}
 {% load i18n %}
 {% load is_flagged %}
+{% load is_member %}
 <div class="row">
   <div class="col-sm-12 col-md-9">
     {% if subisover == True %}
@@ -68,9 +69,10 @@
         <tbody>
           {% for s in solved_list %}
           <tr>
+            {% ismember s.user.userprofileinfo as is_member %}
             <th scope="row"># {{ forloop.counter0|add:1 }}</th>
             <th scope="row">
-              <a class="profile_link" href="{% url 'events:profile' user_name=s.user.username event_slug=event.slug %}"> {{ s.user.username }}</a>
+              <a class="profile_link {{is_member}}" href="{% url 'events:profile' user_name=s.user.username event_slug=event.slug %}"> {{ s.user.username }}</a>
             </th>
             <td>{{ s.user.userprofileinfo.site }}</td>
             <td>{{ s.score }}</td>
@@ -108,8 +110,8 @@
   <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
     <ul class="list-group">
       <li class="list-group-item">{{ event.name }}</li>
-      <li class="list-group-item">{% trans "Starts at" %} : {{ event.start_date | date:'H:i d-m-y'}}</li>
-      <li class="list-group-item">{% trans "Ends at" %} : {{ event.end_date | date:'H:i d-m-y'}}</li>
+      <li class="list-group-item">{% trans "Starts at" %} : <span style="position:absolute;right: 15px;">{{ event.start_date | date:'H:i d-m-y'}}</span></li>
+      <li class="list-group-item">{% trans "Ends at" %} : <span style="position:absolute;right: 15px;">{{ event.end_date | date:'H:i d-m-y'}}</span></li>
       {% if ended == False and IsRegistered == False %}
       <form method='POST' action="{% url 'events:register_event' event_slug=event.slug %}">
         {%csrf_token%}

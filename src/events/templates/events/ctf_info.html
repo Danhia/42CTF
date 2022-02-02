@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load i18n %}
+{% load is_member %}
 <div class="row">
   <div class="col-sm-12 col-md-9">
     <div class="ctf-block">
@@ -75,8 +76,9 @@
         <tbody>
           {% for s in solved_list %}
           {% if event.team_size == 1%}
+          {% ismember s.0.userprofileinfo as is_member %}
           <tr>
-            <th scope="row"><a class="profile_link" href="{% url 'events:profile' user_name=s.0.username event_slug=event.slug %}"> {{ s.0.username }}</a></th>
+            <th scope="row"><a class="profile_link {{is_member}}" href="{% url 'events:profile' user_name=s.0.username event_slug=event.slug %}"> {{ s.0.username }}</a></th>
             <td>{{ s.0.userprofileinfo.portfolio_site }}</td>
             <td>{{ s.1 }}</td>
           </tr>
@@ -96,9 +98,10 @@
     </div>
   </div>
   <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
+    {% ismember ctf.author.userprofileinfo as is_member %}
     <ul class="list-group">
-      <li class="list-group-item">{% trans "Author" %} : {{ ctf.author.username }}</li>
-      <li class="list-group-item">{% trans "Point reward" %} : {{ ctf.points }}</li>
+      <li class="list-group-item">{% trans "Author" %} :  <a style="position:absolute;right: 15px;" class="profile_link {{is_member}}" href="{% url 'accounts:profile' user_name=ctf.author.username %}">{{ ctf.author.username }}</a></li>
+      <li class="list-group-item">{% trans "Point reward" %} : <span style="position:absolute;right: 15px;">{{ ctf.points }}</span></li>
       
     </ul>
   </div>
