@@ -372,6 +372,13 @@ footer {
     .bottom-sm { order: 3 }
 }
 
+@media screen and (min-width: 992px) {
+  .container { display: flex; flex-flow: column; }
+  .top-md { order: 1; }
+  .middle-md { order: 2; }
+  .bottom-md { order: 3 }
+}
+
 .ctf-link {
   color: #fff;
 }
