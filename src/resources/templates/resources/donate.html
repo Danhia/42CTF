@@ -1,9 +1,7 @@
-{% extends 'base.html' %}
 {% block content %}
 {% load i18n %}
 {% get_current_language as lang %}
-<div class="row">
-    <div class="col-sm-12 col-md-9">
+    <div class="col-sm-12">
         <div class="ctf-block">
             <div class="ctf-head">
             <h3>{% trans "Donate" %}</h3>
@@ -48,6 +46,4 @@
             </div>
         </div>
     </div>
-
-</div>
 {% endblock %}
