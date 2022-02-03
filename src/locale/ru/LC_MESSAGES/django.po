@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-02 19:22+0100\n"
+"POT-Creation-Date: 2022-02-04 00:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -104,7 +104,7 @@ msgid "Reset password"
 msgstr ""
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:103
+#: accounts/templates/accounts/register.html:38 templates/base.html:101
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:38
 #: templates/registration/password_reset_done.html:18
@@ -437,7 +437,7 @@ msgstr ""
 msgid "You need to submit the event password to gain access to this event."
 msgstr ""
 
-#: events/templates/events/events_list.html:6 templates/base.html:63
+#: events/templates/events/events_list.html:6 templates/base.html:61
 msgid "Events"
 msgstr ""
 
@@ -548,19 +548,19 @@ msgstr ""
 msgid "Scoreboard"
 msgstr ""
 
-#: templates/base.html:66
+#: templates/base.html:64
 msgid "Resources"
 msgstr ""
 
-#: templates/base.html:99
+#: templates/base.html:97
 msgid "Logout"
 msgstr "Выйти"
 
-#: templates/base.html:106
+#: templates/base.html:104
 msgid "Sign Up"
 msgstr ""
 
-#: templates/base.html:144
+#: templates/base.html:139
 msgid "Become a Patron!"
 msgstr ""
 
