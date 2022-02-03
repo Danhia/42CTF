@@ -19,8 +19,6 @@ class Command(BaseCommand):
                 u.score = 0
                 u.save()
 
-        li = [(s, u) for (u, s) in scores.items()]
-
-        for (u, s) in li:
-            u.userprofileinfo.score = s
+        for u in scores:
+            u.userprofileinfo.score = scores[u]
             u.userprofileinfo.save()

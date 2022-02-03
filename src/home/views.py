@@ -52,7 +52,7 @@ def home(request):
     top10       =   UserProfileInfo.objects.select_related().order_by('-score', 'last_submission_date', 'user__username')[:10]
     nb_flags    =   CTF_flags.objects.count()
     nb_users    =   UserProfileInfo.objects.count()
-    latest_flags = CTF_flags.objects.order_by('-flag_date')[:5]
+    latest_flags = CTF_flags.objects.filter(ctf__event = None, ctf__disabled=False).order_by('-flag_date')[:5]
     top_weekly = get_weekly_top()
 
     return render(request, 'home/home.html', {'news' : news, 'ctfs' : latest_ctfs, 'top' : top10, 'flags' : nb_flags, 
