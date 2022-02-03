@@ -50,6 +50,7 @@ pre {
   padding-left: 15px;
   font-weight: bolder;
 }
+
 .dropdown-menu {
   background-color: #1d1d1d;
   border: none;
@@ -61,6 +62,10 @@ pre {
 .dropdown-item:hover {
   background-color: #1d1d1d;
   color: #fff;
+}
+.nav-item{
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .flag_link {
   margin-right: 6px;
