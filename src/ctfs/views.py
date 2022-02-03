@@ -27,7 +27,7 @@ def actualize_points(ctf):
     solves =  CTF_flags.objects.filter(ctf=ctf)
     nb_solves = len(solves)
 
-    new_points = 200 - int(log(nb_solves)*8.5)*5
+    new_points = max(200 - int(log(nb_solves)*8.5)*5, 5)
 
     if new_points != ctf.points:
         diff = ctf.points - new_points

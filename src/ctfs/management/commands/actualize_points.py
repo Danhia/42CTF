@@ -15,7 +15,7 @@ class Command(BaseCommand):
             nb_solves = len(solves)
 
             if nb_solves > 0:
-                new_points = 200 - int(log(nb_solves)*8.5)*5
+                new_points = max(200 - int(log(nb_solves)*8.5)*5, 5)
             else:
                 new_points = 200
 
