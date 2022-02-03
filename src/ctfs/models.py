@@ -12,6 +12,7 @@ class Category(models.Model):
 class CTF(models.Model):
     name        =   models.CharField(max_length=200)
     flag        =   models.CharField(max_length=100)
+    disabled    =   models.BooleanField(default=False)
     description =   models.TextField(blank=True)
     description_en =   models.TextField(blank=True)
     description_ru =   models.TextField(blank=True)

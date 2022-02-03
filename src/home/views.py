@@ -27,7 +27,7 @@ def get_content_by_lang(news):
 
 def get_weekly_top():
     week_ago = datetime.datetime.now() - datetime.timedelta(days=7)
-    weekly_flags = CTF_flags.objects.filter(flag_date__gt=week_ago)
+    weekly_flags = CTF_flags.objects.filter(flag_date__gt=week_ago, ctf__disabled=False, ctf__event=None)
     scores = defaultdict(int)
 
     for sol in weekly_flags:
@@ -48,7 +48,7 @@ def home(request):
         response = HttpResponseRedirect(url_translated)
         return response
     news        =   new.objects.order_by('-pub_date')[:5]
-    latest_ctfs =   CTF.objects.filter(event=None).order_by('-pub_date')[:5]
+    latest_ctfs =   CTF.objects.filter(event=None, disabled=False).order_by('-pub_date')[:5]
     top10       =   UserProfileInfo.objects.select_related().order_by('-score', 'last_submission_date', 'user__username')[:10]
     nb_flags    =   CTF_flags.objects.count()
     nb_users    =   UserProfileInfo.objects.count()
