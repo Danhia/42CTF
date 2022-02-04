@@ -4,6 +4,7 @@
 <div class="row">
     <div class="col-sm-12 col-md-9">
         <div class="ctf-block">
+            <a href="{% url 'events:event_info' event_slug=event.slug %}">< Back to event</a>
             <div class="ctf-head">
                 <h3>{{ event.name }}</h3>
                 <small>{% trans "This event starts at" %} : {{ event.start_date }}</small>
@@ -38,18 +39,18 @@
     <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
         <ul class="list-group">
             <li class="list-group-item">{{ event.name }}</li>
-            <li class="list-group-item">{% trans "Starts at" %} : {{ event.start_date | date:'H:i d-m-y'}}</li>
-            <li class="list-group-item">{% trans "Ends at" %} : {{ event.end_date | date:'H:i d-m-y'}}</li>
+            <li class="list-group-item">{% trans "Starts at" %} : <span style="position:absolute;right: 15px;">{{ event.start_date | date:'H:i d-m-y'}}</span></li>
+            <li class="list-group-item">{% trans "Ends at" %} : <span style="position:absolute;right: 15px;">{{ event.end_date | date:'H:i d-m-y'}}</span></li>
             
         </ul>
         <ul class="list-group">
-            <li class="list-group-item">{% trans "Manage team" %}</li>     
+            <li class="list-group-item">{% trans "Manage my team" %}</li>     
             <a href="{% url 'events:join_team' event_slug=event.slug %}" class="list-group-item">→{% trans "Join Team" %}</a>     
             <a href="{% url 'events:create_team' event_slug=event.slug %}" class="list-group-item">{% trans "Create Team" %}</a>
         </ul>
         {% if event.auto_match %}
         <ul class="list-group">
-            <li class="list-group-item">{% trans "No team yet ?" %}</li>     
+            <li class="list-group-item">{% trans "Auto-matching" %}</li>     
             <form method='GET' action="{% url 'events:find_team' event_slug=event.slug %}">
                 {%csrf_token%}
                 <li class="list-group-item">

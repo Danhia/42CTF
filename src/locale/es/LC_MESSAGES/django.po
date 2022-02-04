@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-04 19:04+0100\n"
+"POT-Creation-Date: 2022-02-04 19:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,8 +41,8 @@ msgstr ""
 #: accounts/templates/accounts/delete.html:22
 #: accounts/templates/accounts/login.html:19
 #: accounts/templates/accounts/register.html:23
-#: events/templates/events/create_team.html:26
-#: events/templates/events/join_team.html:31
+#: events/templates/events/create_team.html:27
+#: events/templates/events/join_team.html:32
 msgid "Password"
 msgstr ""
 
@@ -296,70 +296,71 @@ msgstr ""
 msgid "No category available."
 msgstr ""
 
-#: events/templates/events/create_team.html:9
-#: events/templates/events/join_team.html:9
+#: events/templates/events/create_team.html:10
+#: events/templates/events/join_team.html:10
 msgid "This event starts at"
 msgstr ""
 
-#: events/templates/events/create_team.html:16
-#: events/templates/events/join_team.html:16
+#: events/templates/events/create_team.html:17
+#: events/templates/events/join_team.html:17
 msgid "You need to be registered to the event."
 msgstr ""
 
-#: events/templates/events/create_team.html:19 events/views/teams.py:120
+#: events/templates/events/create_team.html:20 events/views/teams.py:120
 msgid "Name already taken."
 msgstr ""
 
-#: events/templates/events/create_team.html:25
-#: events/templates/events/join_team.html:30
+#: events/templates/events/create_team.html:26
+#: events/templates/events/join_team.html:31
 #: events/templates/events/manage_team.html:22
 msgid "Team name"
 msgstr ""
 
-#: events/templates/events/create_team.html:27
-#: events/templates/events/create_team.html:48
-#: events/templates/events/join_team.html:53
+#: events/templates/events/create_team.html:28
+#: events/templates/events/create_team.html:49
+#: events/templates/events/join_team.html:54
 msgid "Create Team"
 msgstr ""
 
-#: events/templates/events/create_team.html:32
+#: events/templates/events/create_team.html:33
 #: events/templates/events/event_pwd.html:28
-#: events/templates/events/join_team.html:37
+#: events/templates/events/join_team.html:38
 msgid "You need to be logged to access this event."
 msgstr ""
 
-#: events/templates/events/create_team.html:41
+#: events/templates/events/create_team.html:42
 #: events/templates/events/event_info.html:113
 #: events/templates/events/event_pwd.html:36
-#: events/templates/events/join_team.html:46
+#: events/templates/events/join_team.html:47
 msgid "Starts at"
 msgstr ""
 
-#: events/templates/events/create_team.html:42
+#: events/templates/events/create_team.html:43
 #: events/templates/events/event_info.html:114
 #: events/templates/events/event_pwd.html:37
-#: events/templates/events/join_team.html:47
+#: events/templates/events/join_team.html:48
 msgid "Ends at"
 msgstr ""
 
-#: events/templates/events/create_team.html:46
-#: events/templates/events/join_team.html:51
-msgid "Manage team"
+#: events/templates/events/create_team.html:47
+#: events/templates/events/event_info.html:129
+#: events/templates/events/join_team.html:52
+msgid "Manage my team"
 msgstr ""
 
-#: events/templates/events/create_team.html:47
-#: events/templates/events/join_team.html:32
-#: events/templates/events/join_team.html:52
+#: events/templates/events/create_team.html:48
+#: events/templates/events/join_team.html:33
+#: events/templates/events/join_team.html:53
 msgid "Join Team"
 msgstr ""
 
-#: events/templates/events/create_team.html:52
-#: events/templates/events/join_team.html:57
-msgid "No team yet ?"
+#: events/templates/events/create_team.html:53
+#: events/templates/events/join_team.html:58
+msgid "Auto-matching"
 msgstr ""
 
-#: events/templates/events/create_team.html:56
-#: events/templates/events/join_team.html:61
+#: events/templates/events/create_team.html:57
+#: events/templates/events/join_team.html:62
 msgid "Find me a team !"
 msgstr ""
 
@@ -422,12 +423,8 @@ msgstr ""
 msgid "No one have earn point yet, you gonna be the first ?"
 msgstr ""
 
-#: events/templates/events/event_info.html:129
-msgid "Manage my team"
-msgstr ""
-
 #: events/templates/events/event_pwd.html:15
-#: events/templates/events/join_team.html:21
+#: events/templates/events/join_team.html:22
 msgid "Wrong password submited."
 msgstr ""
 
@@ -451,11 +448,11 @@ msgstr ""
 msgid "No events available."
 msgstr ""
 
-#: events/templates/events/join_team.html:19
+#: events/templates/events/join_team.html:20
 msgid "Team does not exist."
 msgstr ""
 
-#: events/templates/events/join_team.html:23
+#: events/templates/events/join_team.html:24
 msgid "Maximum size reached."
 msgstr ""
 

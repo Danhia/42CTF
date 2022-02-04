@@ -149,7 +149,7 @@ def leave_team(request, event_slug):
 	if members.count() == 0:
 		team.delete()
 
-	return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
+	return redirect('events:event_info', event_slug=event_slug)
 
 @login_required
 def find_team(request, event_slug):

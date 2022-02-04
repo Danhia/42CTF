@@ -210,8 +210,6 @@ def register_to_event(request, event_slug):
 			else:
 				new = EventPlayer(user=request.user, event=ev, score=0)
 				new.save()
-				if ev.team_size > 1:
-					return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 	return redirect('events:event_info', event_slug=event_slug)
 
 @login_required
