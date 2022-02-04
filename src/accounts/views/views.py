@@ -124,16 +124,18 @@ def profile(request, user_name):
 		member = True
 	else:
 		member = False
-	cats = Category.objects.all()
+	all_cats = Category.objects.all()
+	cats = [cat for cat in all_cats if CTF.objects.filter(category__name=cat.name, event=None, disabled=False)]
 	pointDatas = {}
 
 	for cat in cats:
 		# prepare categories
-		solved_count = CTF_flags.objects.filter(user=user_obj, ctf__event=None , ctf__category__name=cat.name).count()
-		max_count = CTF.objects.filter(category__name=cat.name, event=None).count()
+		solved = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name, ctf__event=None, ctf__disabled=False).order_by('flag_date')
+		max_count = CTF.objects.filter(category__name=cat.name, event=None, disabled=False).count()
 		# get datas
 		somme = 0
-		solved = CTF_flags.objects.filter(user=user_obj, ctf__category__name=cat.name, ctf__event=None).order_by('flag_date')
+		solved_count = len(solved)
+		
 		pointDatas[cat.name] = []
 		pointDatas[cat.name].append([user_obj.date_joined.timestamp() * 1000, 0])
 		percent = (solved_count / max_count) * 100
@@ -142,7 +144,7 @@ def profile(request, user_name):
 			somme += flag.ctf.points
 			pointDatas[cat.name].append([flag.flag_date.timestamp() * 1000, somme])
 
-	solves = CTF_flags.objects.filter(user=user_obj, ctf__event=None).order_by('-flag_date')
+	solves = CTF_flags.objects.filter(user=user_obj, ctf__event=None, ctf__disabled=False).order_by('-flag_date')
 	solved = []
 	somme = 0
 	solved.append([user_obj.date_joined.timestamp() * 1000, 0])
@@ -151,7 +153,7 @@ def profile(request, user_name):
 		solved.append([s.flag_date.timestamp() * 1000,somme])
 
 	return render(request,'accounts/profile.html', {'user':user_obj, 'solves':solves,'solved':solved,'catsDatas': catsDatas, 'pointDatas': pointDatas,
-		'rank': rank, 'score' : somme, 'member' : member})
+		'rank': rank, 'score' : somme, 'member' : member, 'cats':cats})
 
 def rank(request, token):
 	all_users	  = UserProfileInfo.objects.filter(score__gt=0).select_related().order_by('-score', 'last_submission_date', 'user__username')
@@ -163,3 +165,20 @@ def rank(request, token):
 		rank += 1
 	data = {"rank": rank}
 	return JsonResponse(data)
+
+@login_required
+def delete_account(request):
+	if request.method == 'POST':
+		user = request.user
+
+		password = request.POST.get('password')
+		if user.check_password(password):
+			logout(request)
+			user.delete()
+			return render(request, 'accounts/delete.html', {'deleted': True, 'bad_password': False})
+
+		else:
+			return render(request, 'accounts/delete.html', {'deleted': False, 'bad_password': True})
+
+	else:
+		return render(request, 'accounts/delete.html', {'deleted': False, 'bad_password': False} )

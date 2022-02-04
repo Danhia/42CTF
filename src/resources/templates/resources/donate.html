@@ -1,12 +1,10 @@
-{% extends 'base.html' %}
 {% block content %}
 {% load i18n %}
 {% get_current_language as lang %}
-<div class="row">
-    <div class="col-sm-12 col-md-9">
+    <div class="col-sm-12">
         <div class="ctf-block">
             <div class="ctf-head">
-            <h3>{% trans "Donate" %}</h3>
+                <center><h3>{% trans "Donate" %}</h3></center>
             </div>
             <div class="ctf-body">
                 <h4>{% trans "Become a 42CTF member" %}</h4>
@@ -25,7 +23,7 @@
                 {% trans "However, we will not organize limited time CTF for members only, as this will be equivalent to organize paid events, and we want 42CTF to remain FREE for all." %}<br>
                 <br><br>
 
-                <h4>{% trans "Donate to 42CTF" %}</h4>
+                <center><h4>{% trans "Donate to 42CTF" %}</h4>
                 {% trans "You can donate to 42CTF or pay your membership with the following means:" %}<br>
                 <a href="https://www.patreon.com/42ctf" target="_blank" class="patreon li-patreon">
                     <!-- <div class="patreon-content"> -->
@@ -38,8 +36,13 @@
                     <!-- </div> -->
                 </a>
                 <a href="https://www.paypal.com/donate/?hosted_button_id=M6YBYZ63MQGAY" target="_blank">
-                                    <img src="/static/img/paypal.png" width="200">
-                </a><br>
+                                    <img src="/static/img/paypal.png" width="200" style="margin-top: -10px;">
+                </a>
+                <a href="https://www.helloasso.com/associations/42ctf/adhesions/adhesion" target="_blank">
+                    <img src="/static/img/hello_asso.png" width="180" style="margin-top: -10px;">
+                </a>
+                </center>
+                <br>
                 {% trans "If you would like us to add another payment method or if you want to pay in cash, send us a message !" %}<br><br>
 
                 {% trans "If you're paying for your membership, don't forget to send us your first and last name, as well as your 42CTF pseudo." %}
@@ -48,6 +51,4 @@
             </div>
         </div>
     </div>
-
-</div>
 {% endblock %}

@@ -11,18 +11,18 @@
             
             <div class="ctf-footer">
                 <div class="col-sm-8 col-md-6 mx-auto">
-                {% if logged == True%}
+                    {% if logged == True%}
                     {% if registered == False %}
                     <span class="message error-msg">{% trans "You need to be registered to the event." %}</span>
                     {% else %}
-                        {% if notexist == True %}
-                        <span class="message error-msg">{% trans "Team does not exist." %}</span>
-                        {% elif wrongpwd == True %}
-                        <span class="message error-msg">{% trans "Wrong password submited." %}</span>
-                        {% elif max == True %}
-                        <span class="message error-msg">{% trans "Maximum size reached." %}</span>
-                        {% elif exist == True %}
-                        {% endif %}
+                    {% if notexist == True %}
+                    <span class="message error-msg">{% trans "Team does not exist." %}</span>
+                    {% elif wrongpwd == True %}
+                    <span class="message error-msg">{% trans "Wrong password submited." %}</span>
+                    {% elif max == True %}
+                    <span class="message error-msg">{% trans "Maximum size reached." %}</span>
+                    {% elif exist == True %}
+                    {% endif %}
                     <h2>Join Team</h2>
                     <form method="post" action="{% url 'events:join_team' event_slug=event.slug %}" class="join-team-form">
                         {% csrf_token %}
@@ -31,11 +31,11 @@
                             <input class="form-control" type="password" name="password" placeholder="{% trans "Password" %} *" required="" id="id_password"></br>
                             <input type="submit" name="" class="form-control" value="{% trans "Join Team" %}">
                         </div>
-                        </form>
+                    </form>
                     {% endif %}
-                {% else %}
+                    {% else %}
                     <h4>{% trans "You need to be logged to access this event." %}</h4>
-                {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -43,24 +43,26 @@
     <div class="d-none d-md-block col-10 col-md-3 right-sidebar">
         <ul class="list-group">
             <li class="list-group-item">{{ event.name }}</li>
-            <li class="list-group-item">{% trans "Starts at" %} : {{ event.start_date | date:'H:i d-m-y' }}</li>
-            <li class="list-group-item">{% trans "Ends at" %} : {{ event.end_date | date:'H:i d-m-y' }}</li>
+            <li class="list-group-item">{% trans "Starts at" %} : {{ event.start_date | date:'H:i d-m-y'}}</li>
+            <li class="list-group-item">{% trans "Ends at" %} : {{ event.end_date | date:'H:i d-m-y'}}</li>
             
         </ul>
         <ul class="list-group">
-            <a href="{% url 'events:join_team' event_slug=event.slug %}" class="list-group-item">{% trans "Join Team" %}</a>
+            <li class="list-group-item">{% trans "Manage team" %}</li>     
+            <a href="{% url 'events:join_team' event_slug=event.slug %}" class="list-group-item">{% trans "Join Team" %}</a>     
             <a href="{% url 'events:create_team' event_slug=event.slug %}" class="list-group-item">{% trans "Create Team" %}</a>
-    </ul>
-    {% if event.auto_match %}
-    <ul class="list-group">
-        <form method='GET' action="{% url 'events:find_team' event_slug=event.slug %}">
-          {%csrf_token%}
-          <li class="list-group-item">
-            <input class="form-control" type="submit" value="{% trans "Find me a team !" %}">
-          </li>
-        </form>
-      </ul>
-    {% endif %}
+        </ul>
+        {% if event.auto_match %}
+        <ul class="list-group">
+            <li class="list-group-item">{% trans "No team yet ?" %}</li>     
+            <form method='GET' action="{% url 'events:find_team' event_slug=event.slug %}">
+                {%csrf_token%}
+                <li class="list-group-item">
+                    <input class="form-control" type="submit" value="{% trans "Find me a team !" %}">
+                </li>
+            </form>
+        </ul>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

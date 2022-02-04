@@ -12,5 +12,6 @@ urlpatterns = [
         path('rank/<str:token>', views.rank, name='rank'),
         path('connections/connect/discord', views.connection.connect, name='connections-connect-discord'),
         path('connections/connect/discord/authorize', views.connection.authorize, name='connections-connect-discord-authorize'),
-        path('connections/disconnect/discord', views.connection.disconnect, name='connections-disconnect-discord')
+        path('connections/disconnect/discord', views.connection.disconnect, name='connections-disconnect-discord'),
+        path('delete_account/', views.delete_account, name='delete_account'),
 ]
