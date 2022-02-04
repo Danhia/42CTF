@@ -68,7 +68,7 @@
                                                 <li class="nav-item dropdown">
                                                         {% get_current_language as LANGUAGE_CODE %}
                                                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <img class="flag_img" src="{% static "img/"|add:LANGUAGE_CODE|add:".svg" %}" alt="flag {{ LANGUAGE_CODE }}"/>
+                                                                <img class="flag_img" src="{% static "img/"|add:LANGUAGE_CODE|add:".svg" %}" alt="flag {{ LANGUAGE_CODE }}" style="margin-top: -5px;"/>
                                                         </a>
                                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                                 {% get_available_languages as languages %}
