@@ -65,24 +65,23 @@
                                                 </li>
                                         </ul>
                                         <ul class="navbar-nav ">
-            
-                                                <li class="dropdown">
-                                                {% get_current_language as LANGUAGE_CODE %}
-                                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <img class="flag_img" src="{% static "img/"|add:LANGUAGE_CODE|add:".svg" %}" alt="flag {{ LANGUAGE_CODE }}"/>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                {% get_available_languages as languages %}
-                                                {% for lang_code, lang_name in languages %}
-                                                        
-                                                        <a class="flag_link dropdown-item" href="{% url 'set_language' lang_code %}?next={{request.path|slice:"3:"}}">
-                                                                <img class="flag_img" src="{% static "img/"|add:lang_code|add:".svg" %}" alt="flag {{ lang_name }}"/>
+                                                <li class="nav-item dropdown">
+                                                        {% get_current_language as LANGUAGE_CODE %}
+                                                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <img class="flag_img" src="{% static "img/"|add:LANGUAGE_CODE|add:".svg" %}" alt="flag {{ LANGUAGE_CODE }}"/>
                                                         </a>
-                                                        
-                                                
-                                                {% endfor %}
-                                                </div>
-                                        </li>
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                {% get_available_languages as languages %}
+                                                                {% for lang_code, lang_name in languages %}
+                                                                
+                                                                <a class="dropdown-item" href="{% url 'set_language' lang_code %}?next={{request.path|slice:"3:"}}">
+                                                                        <img class="flag_img" src="{% static "img/"|add:lang_code|add:".svg" %}" alt="flag {{ lang_name }}"/>
+                                                                </a>
+                                                                
+                                                                
+                                                                {% endfor %}
+                                                        </div>
+                                                </li>
                                                 {% if request.user.is_authenticated %}
                                                 <li class="nav-item dropdown">
                                                         <a href="{% url 'accounts:edit' %}" class="nav-link">{{ request.user.username }}</a>
