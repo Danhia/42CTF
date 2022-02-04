@@ -11,7 +11,6 @@ from random import randint
 
 @login_required
 def create_team(request, event_slug):
-	response	=	redirect('events:create_team', event_slug=event_slug)
 	ev			=   get_object_or_404(Event, slug=event_slug)
 	if request.method == 'POST':
 		if request.user.is_authenticated and ev.team_size > 1:
@@ -22,11 +21,12 @@ def create_team(request, event_slug):
 			player = EventPlayer.objects.get(user=request.user, event=ev)
 			player.team = new
 			player.save()
-	return redirect('events:event_info', event_slug=event_slug)
+		return redirect('events:event_info', event_slug=event_slug)
+	else:
+		return render(request, 'events/create_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'exist' : False})
 
 @login_required
 def join_team(request, event_slug):
-	response 	= 	redirect('events:join_team', event_slug=event_slug)
 	ev    		=   get_object_or_404(Event, slug=event_slug)
 	if request.method == 'POST':
 		if request.user.is_authenticated and ev.team_size > 1:
@@ -102,6 +102,8 @@ def team_info(request, name, event_slug):
 def manage_team(request, event_slug):
 	event_info	=   get_object_or_404(Event, slug=event_slug)
 	player		= 	EventPlayer.objects.get(user=request.user, event=event_info)
+	if not player.team:
+		return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 	members		=	EventPlayer.objects.filter(team=player.team, event=event_info)
 
 	if request.method == 'POST':

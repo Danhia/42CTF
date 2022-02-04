@@ -86,15 +86,11 @@ def event(request, event_slug):
 			player = None
 		if player:
 			IsRegistered = True
-			if not player.team and event_info.team_size > 1:
-				return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 	if event_info.password:
 		if request.user.is_authenticated:
 			if request.user.is_staff is False:
 				if not player:
 					return render(request, 'events/event_pwd.html', {'event' : event_info, 'logged': True, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered})
-				elif not player.team and event_info.team_size > 1:
-					return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 		else:
 			return render(request, 'events/event_pwd.html', {'event' : event_info, 'logged': False, 'wrongpwd': wrongpwd, 'alreadyregistered': alreadyregistered})
 	ended = False
@@ -191,8 +187,8 @@ def submit_pwd(request, event_slug):
 			else:
 				new = EventPlayer(user=request.user, event=ev)
 				new.save()
-				if event_info.team_size > 1:
-					return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
+				# if event_info.team_size > 1:
+				# 	return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 	return redirect('events:event_info', event_slug=event_slug)
 		
 
