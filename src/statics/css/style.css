@@ -55,6 +55,7 @@ pre {
   background-color: #1d1d1d;
   border: none;
   border-radius: 0;
+  min-width:inherit;
 }
 .dropdown-item {
   color: #d9d9d9;
