@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-02 19:22+0100\n"
+"POT-Creation-Date: 2022-02-04 19:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,196 +18,192 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: resources/templates/resources/42ctf.html:9
-#: resources/templates/resources/resources.html:12
+#: resources/templates/resources/42ctf.html:7
 msgid "What is 42CTF ?"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:12
+#: resources/templates/resources/42ctf.html:10
 msgid "A short introduction to CTF"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:13
+#: resources/templates/resources/42ctf.html:11
 msgid ""
 "CTF stands for Capture The Flag. It is a cybersecurity competition, where "
 "participants have to solve challenges of various categories to gain points "
 "and progress on the scoreboard."
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:14
+#: resources/templates/resources/42ctf.html:12
 msgid "The challenges require participants to find sort of passwords called \\"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:17
+#: resources/templates/resources/42ctf.html:15
 msgid "Functionment of 42CTF"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:18
+#: resources/templates/resources/42ctf.html:16
 msgid "42CTF is what we call a permanent CTF."
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:19
+#: resources/templates/resources/42ctf.html:17
 msgid "Except from the"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:19
+#: resources/templates/resources/42ctf.html:17
 msgid "events"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:19
+#: resources/templates/resources/42ctf.html:17
 msgid "challenges are available on the platform without time limitations."
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:20
+#: resources/templates/resources/42ctf.html:18
 msgid "The registration on 42CTF is open to everyone, 42 students or not."
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:21
+#: resources/templates/resources/42ctf.html:19
 msgid ""
 "Events may or may not be open. If you would like to organize an event on "
 "42CTF, feel free to contact us."
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:24
+#: resources/templates/resources/42ctf.html:22
 msgid "42CTF Team"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:25
+#: resources/templates/resources/42ctf.html:23
 msgid "42CTF is managed by 42 students."
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:26
+#: resources/templates/resources/42ctf.html:24
 msgid "You can meet the team on"
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:27
+#: resources/templates/resources/42ctf.html:25
 msgid ""
 "Challenges are created by various contributors, not necessarily 42 students."
 msgstr ""
 
-#: resources/templates/resources/42ctf.html:28
+#: resources/templates/resources/42ctf.html:26
 msgid ""
 "Anyone is welcome to submit their own challenges, either on the permanent "
 "CTF or for a specific event."
 msgstr ""
 
-#: resources/templates/resources/create_challenge.html:9
-#: resources/templates/resources/resources.html:28
+#: resources/templates/resources/create_challenge.html:7
 msgid "Create new challenges"
 msgstr ""
 
-#: resources/templates/resources/create_challenge.html:12
+#: resources/templates/resources/create_challenge.html:10
 msgid "If you want to create new challenges for 42CTF, send us a message on "
 msgstr ""
 
-#: resources/templates/resources/create_challenge.html:13
+#: resources/templates/resources/create_challenge.html:11
 msgid "If your challenge is offline, then you don't have to ask us in advance."
 msgstr ""
 
-#: resources/templates/resources/create_challenge.html:14
+#: resources/templates/resources/create_challenge.html:12
 msgid ""
 "If your challenge is online (for example web or pwn), then you should give "
 "us a short description of what you want to do."
 msgstr ""
 
-#: resources/templates/resources/create_challenge.html:15
+#: resources/templates/resources/create_challenge.html:13
 msgid ""
 "We may be able to help you or to give you resources such as dockerfiles."
 msgstr ""
 
-#: resources/templates/resources/create_challenge.html:16
+#: resources/templates/resources/create_challenge.html:14
 msgid "We plan to make those resources publicly available in a near future."
 msgstr ""
 
-#: resources/templates/resources/donate.html:9
-#: resources/templates/resources/resources.html:31
+#: resources/templates/resources/donate.html:7
 msgid "Donate"
 msgstr ""
 
-#: resources/templates/resources/donate.html:12
+#: resources/templates/resources/donate.html:10
 msgid "Become a 42CTF member"
 msgstr ""
 
-#: resources/templates/resources/donate.html:13
+#: resources/templates/resources/donate.html:11
 msgid ""
 "42CTF is a non-profit organization with a legal status under the french law "
 "(Association loi 1901)."
 msgstr ""
 
-#: resources/templates/resources/donate.html:14
+#: resources/templates/resources/donate.html:12
 msgid "You can support us by becoming a member and paying a fee of 15 euros."
 msgstr ""
 
-#: resources/templates/resources/donate.html:15
+#: resources/templates/resources/donate.html:13
 msgid "Membership is then granted for 1 year."
 msgstr ""
 
-#: resources/templates/resources/donate.html:17
+#: resources/templates/resources/donate.html:15
 msgid "When you become a member, you gain the following advantages:"
 msgstr ""
 
-#: resources/templates/resources/donate.html:18
+#: resources/templates/resources/donate.html:16
 msgid ""
 "A different color for your pseudo in the scoreboard, to let everyone know "
 "you're a member."
 msgstr ""
 
-#: resources/templates/resources/donate.html:19
+#: resources/templates/resources/donate.html:17
 msgid ""
 "The possibility to play again past CTF, with challenges no longer available, "
 "in the form of private events with the people of your choice."
 msgstr ""
 
-#: resources/templates/resources/donate.html:20
+#: resources/templates/resources/donate.html:18
 msgid ""
 "Ex: you played Welcome CTF 2021, and want to play it again with your friends "
 "during one weekend."
 msgstr ""
 
-#: resources/templates/resources/donate.html:21
+#: resources/templates/resources/donate.html:19
 msgid "Or you didn't play Welcome CTF 2021 because you were not eligible."
 msgstr ""
 
-#: resources/templates/resources/donate.html:24
+#: resources/templates/resources/donate.html:22
 msgid "More advantages may come later, and you can submit us your ideas."
 msgstr ""
 
-#: resources/templates/resources/donate.html:25
+#: resources/templates/resources/donate.html:23
 msgid ""
 "However, we will not organize limited time CTF for members only, as this "
 "will be equivalent to organize paid events, and we want 42CTF to remain FREE "
 "for all."
 msgstr ""
 
-#: resources/templates/resources/donate.html:28
+#: resources/templates/resources/donate.html:26
 msgid "Donate to 42CTF"
 msgstr ""
 
-#: resources/templates/resources/donate.html:29
+#: resources/templates/resources/donate.html:27
 msgid ""
 "You can donate to 42CTF or pay your membership with the following means:"
 msgstr ""
 
-#: resources/templates/resources/donate.html:43
+#: resources/templates/resources/donate.html:46
 msgid ""
 "If you would like us to add another payment method or if you want to pay in "
 "cash, send us a message !"
 msgstr ""
 
-#: resources/templates/resources/donate.html:45
+#: resources/templates/resources/donate.html:48
 msgid ""
 "If you're paying for your membership, don't forget to send us your first and "
 "last name, as well as your 42CTF pseudo."
 msgstr ""
 
-#: resources/templates/resources/donate.html:46
+#: resources/templates/resources/donate.html:49
 msgid ""
 "We will only use thoe data to keep track of our members and grant you "
 "advantages, and we will never communicate them to any third party."
 msgstr ""
 
-#: resources/templates/resources/edit.html:9
-#: resources/templates/resources/resources.html:30
+#: resources/templates/resources/edit.html:7
 msgid "Edit this page"
 msgstr ""
 
@@ -217,101 +213,83 @@ msgid ""
 "request to your favorite"
 msgstr ""
 
-#: resources/templates/resources/resources.html:10
-msgid "Getting started"
-msgstr ""
-
-#: resources/templates/resources/resources.html:13
-#: resources/templates/resources/tools.html:9
+#: resources/templates/resources/tools.html:7
 msgid "Recommended Tools"
 msgstr ""
 
-#: resources/templates/resources/resources.html:20
-msgid "Technical documentation"
-msgstr ""
-
-#: resources/templates/resources/resources.html:21
-msgid "No docs available, contact us if you want to write some :)"
-msgstr ""
-
-#: resources/templates/resources/resources.html:26
-msgid "Contribute"
-msgstr ""
-
-#: resources/templates/resources/resources.html:29
-#: resources/templates/resources/translate.html:9
-msgid "Translate 42CTF"
-msgstr ""
-
-#: resources/templates/resources/tools.html:12
+#: resources/templates/resources/tools.html:10
 msgid "To get you started, we built a VM that you can simply import in"
 msgstr ""
 
-#: resources/templates/resources/tools.html:12
+#: resources/templates/resources/tools.html:10
 msgid "with a bunch of useful tools."
 msgstr ""
 
-#: resources/templates/resources/tools.html:13
+#: resources/templates/resources/tools.html:11
 msgid "You can dowload this OVA"
 msgstr ""
 
-#: resources/templates/resources/tools.html:13
+#: resources/templates/resources/tools.html:11
 msgid "here"
 msgstr ""
 
-#: resources/templates/resources/tools.html:15
+#: resources/templates/resources/tools.html:13
 msgid "Here are the tools installed on the VM:"
 msgstr ""
 
-#: resources/templates/resources/tools.html:24
+#: resources/templates/resources/tools.html:22
 msgid ""
 "If you want to solve the challenges on your own machine, we recommend you to "
 "use a Linux operating system."
 msgstr ""
 
-#: resources/templates/resources/tools.html:25
+#: resources/templates/resources/tools.html:23
 msgid ""
 "Most of the reverse challenges are ELF binaries and won't run on Mac OS or "
 "Windows."
 msgstr ""
 
-#: resources/templates/resources/tools.html:27
+#: resources/templates/resources/tools.html:25
 msgid "Additionnaly, you will need the following languages interpreters:"
 msgstr ""
 
-#: resources/templates/resources/translate.html:12
+#: resources/templates/resources/translate.html:7
+msgid "Translate 42CTF"
+msgstr ""
+
+#: resources/templates/resources/translate.html:10
 msgid "42CTF source code is publicly available on this"
 msgstr ""
 
-#: resources/templates/resources/translate.html:13
+#: resources/templates/resources/translate.html:11
 msgid ""
 "Translation does not require any programming skill and is a good way to "
 "contribute if you want to help us, by making the platform always more "
 "accessible."
 msgstr ""
 
-#: resources/templates/resources/translate.html:14
+#: resources/templates/resources/translate.html:12
 msgid "We have a"
 msgstr ""
 
-#: resources/templates/resources/translate.html:14
+#: resources/templates/resources/translate.html:12
 msgid ""
 "describing how to translate pages with the Django internalization module."
 msgstr ""
 
-#: resources/templates/resources/translate.html:15
+#: resources/templates/resources/translate.html:13
 msgid ""
 "We invite you to read it to know all the details, but it merely requires you "
 "to edit text files, so you see, no programming skills required ;)"
 msgstr ""
 
-#: resources/templates/resources/translate.html:16
+#: resources/templates/resources/translate.html:14
 msgid ""
 "You will need to fork the git repository, make your changes, push them, and "
 "then open a pull request so that we can merge your contributions into our "
 "repository."
 msgstr ""
 
-#: resources/templates/resources/translate.html:17
+#: resources/templates/resources/translate.html:15
 msgid "Don't hesitate to reach for help on"
 msgstr ""

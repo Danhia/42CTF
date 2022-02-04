@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-02 19:22+0100\n"
+"POT-Creation-Date: 2022-02-04 19:04+0100\n"
 "PO-Revision-Date: 2022-02-04 05:56+0100\n"
 "Last-Translator: Clément Hamada <clementhamada@pm.me>\n"
 "Language-Team: \n"
@@ -102,7 +102,7 @@ msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:101
+#: accounts/templates/accounts/register.html:38 templates/base.html:97
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:38
 #: templates/registration/password_reset_done.html:18
@@ -216,7 +216,7 @@ msgstr "Email bereits vergeben."
 msgid "Username already taken."
 msgstr "Nutzername bereits vergeben."
 
-#: accounts/views/views.py:105 events/views/teams.py:122
+#: accounts/views/views.py:105 events/views/teams.py:124
 msgid "Updated."
 msgstr "Aktualisiert."
 
@@ -310,7 +310,7 @@ msgstr "Dieses Ereignis beginnt am"
 msgid "You need to be registered to the event."
 msgstr "Sie müssen am Ereignis teilnehmen."
 
-#: events/templates/events/create_team.html:19 events/views/teams.py:118
+#: events/templates/events/create_team.html:19 events/views/teams.py:120
 msgid "Name already taken."
 msgstr "Name schon vergeben."
 
@@ -321,8 +321,8 @@ msgid "Team name"
 msgstr "Teamname"
 
 #: events/templates/events/create_team.html:27
-#: events/templates/events/create_team.html:46
-#: events/templates/events/join_team.html:52
+#: events/templates/events/create_team.html:48
+#: events/templates/events/join_team.html:53
 msgid "Create Team"
 msgstr "Team erstellen"
 
@@ -346,14 +346,26 @@ msgstr "Beginnt am"
 msgid "Ends at"
 msgstr "Endet am"
 
+#: events/templates/events/create_team.html:46
+#: events/templates/events/join_team.html:51
+#, fuzzy
+#| msgid "Manage my team"
+msgid "Manage team"
+msgstr "Team verwalten"
+
 #: events/templates/events/create_team.html:47
 #: events/templates/events/join_team.html:32
-#: events/templates/events/join_team.html:51
+#: events/templates/events/join_team.html:52
 msgid "Join Team"
 msgstr "Team beitreten"
 
-#: events/templates/events/create_team.html:54
-#: events/templates/events/join_team.html:59
+#: events/templates/events/create_team.html:52
+#: events/templates/events/join_team.html:57
+msgid "No team yet ?"
+msgstr ""
+
+#: events/templates/events/create_team.html:56
+#: events/templates/events/join_team.html:61
 msgid "Find me a team !"
 msgstr "Finde mir einen Team!"
 
@@ -548,15 +560,15 @@ msgstr "Punktestand"
 msgid "Resources"
 msgstr "Ressourcen"
 
-#: templates/base.html:97
+#: templates/base.html:93
 msgid "Logout"
 msgstr "Abmelden"
 
-#: templates/base.html:104
+#: templates/base.html:100
 msgid "Sign Up"
 msgstr "Registrieren"
 
-#: templates/base.html:139
+#: templates/base.html:135
 msgid "Become a Patron!"
 msgstr "Unterstützen Sie uns!"
 

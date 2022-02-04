@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-02 19:22+0100\n"
+"POT-Creation-Date: 2022-02-04 19:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,7 +108,7 @@ msgid "Reset password"
 msgstr "Réinitialiser le mot de passe"
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:103
+#: accounts/templates/accounts/register.html:38 templates/base.html:97
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:38
 #: templates/registration/password_reset_done.html:18
@@ -224,7 +224,7 @@ msgstr "L'adresse mail est déjà utilisée."
 msgid "Username already taken."
 msgstr "Le pseudo est déjà utilisé."
 
-#: accounts/views/views.py:105 events/views/teams.py:122
+#: accounts/views/views.py:105 events/views/teams.py:124
 msgid "Updated."
 msgstr "Mis à jour."
 
@@ -322,7 +322,7 @@ msgstr "Cet événement débute à"
 msgid "You need to be registered to the event."
 msgstr "Vous êtes déjà inscrit à cet événement."
 
-#: events/templates/events/create_team.html:19 events/views/teams.py:118
+#: events/templates/events/create_team.html:19 events/views/teams.py:120
 #, fuzzy
 #| msgid "Username already taken."
 msgid "Name already taken."
@@ -335,8 +335,8 @@ msgid "Team name"
 msgstr "Nom de l'équipe"
 
 #: events/templates/events/create_team.html:27
-#: events/templates/events/create_team.html:46
-#: events/templates/events/join_team.html:52
+#: events/templates/events/create_team.html:48
+#: events/templates/events/join_team.html:53
 msgid "Create Team"
 msgstr "Créer une équipe"
 
@@ -360,14 +360,26 @@ msgstr "Début"
 msgid "Ends at"
 msgstr "Fin"
 
+#: events/templates/events/create_team.html:46
+#: events/templates/events/join_team.html:51
+#, fuzzy
+#| msgid "Manage my team"
+msgid "Manage team"
+msgstr "Gérer mon équipe"
+
 #: events/templates/events/create_team.html:47
 #: events/templates/events/join_team.html:32
-#: events/templates/events/join_team.html:51
+#: events/templates/events/join_team.html:52
 msgid "Join Team"
 msgstr "Rejoindre une équipe"
 
-#: events/templates/events/create_team.html:54
-#: events/templates/events/join_team.html:59
+#: events/templates/events/create_team.html:52
+#: events/templates/events/join_team.html:57
+msgid "No team yet ?"
+msgstr ""
+
+#: events/templates/events/create_team.html:56
+#: events/templates/events/join_team.html:61
 msgid "Find me a team !"
 msgstr ""
 
@@ -455,7 +467,7 @@ msgstr "Cet événement est protégé par un mot de passe"
 msgid "You need to submit the event password to gain access to this event."
 msgstr "Vous devez saisir le mot de passe de l'événement pour y avoir accès."
 
-#: events/templates/events/events_list.html:6 templates/base.html:63
+#: events/templates/events/events_list.html:6 templates/base.html:61
 msgid "Events"
 msgstr "Événements"
 
@@ -568,19 +580,19 @@ msgstr "Fin"
 msgid "Scoreboard"
 msgstr "Classement"
 
-#: templates/base.html:66
+#: templates/base.html:64
 msgid "Resources"
 msgstr ""
 
-#: templates/base.html:99
+#: templates/base.html:93
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: templates/base.html:106
+#: templates/base.html:100
 msgid "Sign Up"
 msgstr "Inscription"
 
-#: templates/base.html:144
+#: templates/base.html:135
 msgid "Become a Patron!"
 msgstr "Soutenez nous via Patreon !"
 
