@@ -9,14 +9,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-02 19:22+0100\n"
 "PO-Revision-Date: 2022-02-04 03:08+0100\n"
+"Last-Translator: Clément Hamada <clementhamada@pm.me>\n"
+"Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Clément Hamada <clementhamada@pm.me>\n"
-"Language-Team: \n"
-"X-Generator: Poedit 3.0\n"
 
 #: accounts/templates/accounts/delete.html:8
 msgid "Delete account"
@@ -102,7 +101,7 @@ msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
 #: accounts/templates/accounts/login.html:31
-#: accounts/templates/accounts/register.html:38 templates/base.html:103
+#: accounts/templates/accounts/register.html:38 templates/base.html:101
 #: templates/registration/password_reset_complete.html:18
 #: templates/registration/password_reset_confirm.html:38
 #: templates/registration/password_reset_done.html:18
@@ -435,7 +434,7 @@ msgstr "Dieses Ereignis ist passwortgeschützt"
 msgid "You need to submit the event password to gain access to this event."
 msgstr "Sie müssen das Ereignispasswort eintragen um darauf zuzugreifen."
 
-#: events/templates/events/events_list.html:6 templates/base.html:63
+#: events/templates/events/events_list.html:6 templates/base.html:61
 msgid "Events"
 msgstr "Ereignisse"
 
@@ -544,19 +543,19 @@ msgstr "Letzte"
 msgid "Scoreboard"
 msgstr "Punktestand"
 
-#: templates/base.html:66
+#: templates/base.html:64
 msgid "Resources"
 msgstr "Ressourcen"
 
-#: templates/base.html:99
+#: templates/base.html:97
 msgid "Logout"
 msgstr "Abmelden"
 
-#: templates/base.html:106
+#: templates/base.html:104
 msgid "Sign Up"
 msgstr "Registrieren"
 
-#: templates/base.html:144
+#: templates/base.html:139
 msgid "Become a Patron!"
 msgstr "Unterstützen Sie uns!"
 
