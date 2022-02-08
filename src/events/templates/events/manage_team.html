@@ -45,14 +45,28 @@
         {% for p in members %}
 		<li class="list-group-item"><a class="profile_link" href="{% url 'accounts:profile' user_name=p.user.username %}">{{ p.user.username }}</a></li>
         {% endfor %}
-        <form method='POST' action="{% url 'events:leave_team' event_slug=player.event.slug %}">
+	</ul>
+	<form method='POST' action="{% url 'events:leave_team' event_slug=player.event.slug %}">
+		{%csrf_token%}
+		<li class="list-group-item">
+		  <input class="form-control" type="submit" value="{% trans "Leave Team" %}">
+		</li>
+	</form>
+		{% if player.team.auto == False and player.event.auto_match == True %}
+		<form method='POST' action="{% url 'events:open_team' event_slug=player.event.slug %}">
             {%csrf_token%}
             <li class="list-group-item">
-              <input class="form-control" type="submit" value="{% trans "Leave Team" %}">
+              <input class="form-control" type="submit" value="{% trans "Open to automatching" %}">
             </li>
-          </form>
-
-	</ul>
+        </form>
+		{% elif player.event.auto_match == True %}
+		<form method='POST' action="{% url 'events:close_team' event_slug=player.event.slug %}">
+            {%csrf_token%}
+            <li class="list-group-item">
+              <input class="form-control" type="submit" value="{% trans "Close to automatching" %}">
+            </li>
+        </form>
+		{% endif %}
   </div>
 </div>
 {% endblock %}

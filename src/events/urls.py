@@ -17,4 +17,6 @@ urlpatterns = [
         path('<str:event_slug>/manage_team', views.manage_team, name='manage_team'),
         path('<str:event_slug>/leave_team', views.leave_team, name='leave_team'),
         path('find_team/<str:event_slug>', views.find_team, name='find_team'),
+        path('<str:event_slug>/open_team', views.open_team, name='open_team'),
+        path('<str:event_slug>/close_team', views.close_team, name='close_team'),
 ]

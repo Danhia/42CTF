@@ -48,7 +48,6 @@ def join_team(request, event_slug):
 				player.save()
 	else:
 		return render(request, 'events/join_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
-	return redirect('events:event_info', event_slug=event_slug)
 
 @login_required
 def team_info(request, name, event_slug):
@@ -176,3 +175,27 @@ def find_team(request, event_slug):
 	player.save()
 
 	return redirect('events:event_info', event_slug=event_slug)
+
+@login_required
+def open_team(request, event_slug):
+	event_info	=   get_object_or_404(Event, slug=event_slug)
+	player		=	EventPlayer.objects.get(user=request.user, event=event_info)
+
+	if not player.team:
+		return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
+	
+	player.team.auto = True
+	player.team.save()
+	return redirect('events:manage_team', event_slug=event_slug)
+
+@login_required
+def close_team(request, event_slug):
+	event_info	=   get_object_or_404(Event, slug=event_slug)
+	player		=	EventPlayer.objects.get(user=request.user, event=event_info)
+
+	if not player.team:
+		return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
+	
+	player.team.auto = False
+	player.team.save()
+	return redirect('events:manage_team', event_slug=event_slug)

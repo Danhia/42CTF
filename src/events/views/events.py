@@ -29,6 +29,7 @@ def events(request):
 def chall_event_info(request, event_slug, chall_slug):
 	event_info  = get_object_or_404(Event, slug=event_slug)
 	ctf_info    = get_object_or_404(CTF, event__slug=event_info.slug, slug=chall_slug)
+
 	if timezone.now() < ctf_info.pub_date:
 		return redirect('events:event_info', event_slug=event_slug)
 	eventisover = False
@@ -37,6 +38,7 @@ def chall_event_info(request, event_slug, chall_slug):
 	wrongflag   = False
 	errorform   = False
 	notsub      = False
+	noteam		= False
 	player		= None
 	if request.user.is_authenticated and not request.user.is_staff:
 		player = EventPlayer.objects.filter(event=event_info, user=request.user)
@@ -56,6 +58,8 @@ def chall_event_info(request, event_slug, chall_slug):
 		errorform   = True
 	if request.GET.get('NotRegistered'):
 		notsub      = True
+	if request.GET.get('NoTeam'):
+		noteam      = True
 	solved_challs = CTF_flags.objects.filter(ctf=ctf_info).order_by('flag_date')
 	solved_list = []
 	for s in solved_challs:
@@ -65,7 +69,7 @@ def chall_event_info(request, event_slug, chall_slug):
 			solved_list.append([s.user, s.flag_date])
 	description = get_description_by_lang(ctf_info)
 	return render(request, 'events/ctf_info.html', { 'ctf' : ctf_info, 'event':event_info, 'solved_list': solved_list, 'description': description, 'eventisover': eventisover, 'alreadyflag': alreadyflag,
-		'congrat': congrat, 'wrongflag': wrongflag, 'errorform': errorform, 'notsub': notsub})
+		'congrat': congrat, 'wrongflag': wrongflag, 'errorform': errorform, 'notsub': notsub, 'noteam':noteam})
 
 def event(request, event_slug):
 	event_info 			= get_object_or_404(Event, slug=event_slug)
@@ -126,6 +130,9 @@ def submit_event_flag(request, event_slug, chall_slug):
 		player		=	EventPlayer.objects.get(user=request.user, event=ev)
 		
 		if player:
+			if ev.team_size > 1 and player.team is None:
+					response['Location'] += '?NoTeam=1'
+					return response
 			if ev.team_size == 1 and CTF_flags.objects.filter(user=request.user, ctf=ctf_info):
 				flagged = True
 			else:
@@ -187,8 +194,6 @@ def submit_pwd(request, event_slug):
 			else:
 				new = EventPlayer(user=request.user, event=ev)
 				new.save()
-				# if event_info.team_size > 1:
-				# 	return render(request, 'events/create_team.html', {'event' : event_info, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 	return redirect('events:event_info', event_slug=event_slug)
 		
 
