@@ -20,11 +20,11 @@ msgstr ""
 
 #: resources/templates/resources/42ctf.html:7
 msgid "What is 42CTF ?"
-msgstr ""
+msgstr "¿ Qué es 42CTF ?"
 
 #: resources/templates/resources/42ctf.html:10
 msgid "A short introduction to CTF"
-msgstr ""
+msgstr "Una corta introducción a CTF"
 
 #: resources/templates/resources/42ctf.html:11
 msgid ""
@@ -32,142 +32,161 @@ msgid ""
 "participants have to solve challenges of various categories to gain points "
 "and progress on the scoreboard."
 msgstr ""
+"CTF significa Capture the Flag. Es una competición de ciberseguridad, en la que "
+"los participantes tienen que resolver retos de diferentes categorías para ganar puntos "
+"y progresar en la Tabla de puntos."
 
 #: resources/templates/resources/42ctf.html:12
 msgid "The challenges require participants to find sort of passwords called \\"
-msgstr ""
+msgstr "Los retos requieren que los participantes encuentren unas contraseñas llamadas \\"
 
 #: resources/templates/resources/42ctf.html:15
 msgid "Functionment of 42CTF"
-msgstr ""
+msgstr "Funcionamiento de 42CTF"
 
 #: resources/templates/resources/42ctf.html:16
 msgid "42CTF is what we call a permanent CTF."
-msgstr ""
+msgstr "42CTF es lo que llamamos un CTF permanente."
 
 #: resources/templates/resources/42ctf.html:17
 msgid "Except from the"
-msgstr ""
+msgstr "A excepción de"
 
 #: resources/templates/resources/42ctf.html:17
 msgid "events"
-msgstr ""
+msgstr "eventos"
 
 #: resources/templates/resources/42ctf.html:17
 msgid "challenges are available on the platform without time limitations."
-msgstr ""
+msgstr "los retos están disponibles en la plataforma sin limites de tiempo."
 
 #: resources/templates/resources/42ctf.html:18
 msgid "The registration on 42CTF is open to everyone, 42 students or not."
-msgstr ""
+msgstr "El registro a 42CTF está abierto a todo el mundo, estudiantes de 42 o no."
 
 #: resources/templates/resources/42ctf.html:19
 msgid ""
 "Events may or may not be open. If you would like to organize an event on "
 "42CTF, feel free to contact us."
 msgstr ""
+"Los eventos pueden o no estar abiertos. Si quieres organizar un evento en "
+"42CTF, sientete libre de contactarnos."
 
 #: resources/templates/resources/42ctf.html:22
 msgid "42CTF Team"
-msgstr ""
+msgstr "Equipo de 42CTF"
 
 #: resources/templates/resources/42ctf.html:23
 msgid "42CTF is managed by 42 students."
-msgstr ""
+msgstr "42CTF está gestionado por estudiantes de 42."
 
 #: resources/templates/resources/42ctf.html:24
 msgid "You can meet the team on"
-msgstr ""
+msgstr "Puedes conocer al equipo en"
 
 #: resources/templates/resources/42ctf.html:25
 msgid ""
 "Challenges are created by various contributors, not necessarily 42 students."
 msgstr ""
+"Los retos son creados por varios contribuidores, no necesariamente estudiantes de 42."
 
 #: resources/templates/resources/42ctf.html:26
 msgid ""
 "Anyone is welcome to submit their own challenges, either on the permanent "
 "CTF or for a specific event."
 msgstr ""
+"Todo el mundo está bienvenido a publicar sus propios retos, en el CTF permanente o en "
+"un evento en específico."
 
 #: resources/templates/resources/create_challenge.html:7
 msgid "Create new challenges"
-msgstr ""
+msgstr "Crear retos nuevos"
 
 #: resources/templates/resources/create_challenge.html:10
 msgid "If you want to create new challenges for 42CTF, send us a message on "
-msgstr ""
+msgstr "Si quieres crear nuevos retos para 42CTF, mandanos un mensaje en "
 
 #: resources/templates/resources/create_challenge.html:11
 msgid "If your challenge is offline, then you don't have to ask us in advance."
-msgstr ""
+msgstr "Si tu reto es offline, no nos tienes que avisar por adelantado."
 
 #: resources/templates/resources/create_challenge.html:12
 msgid ""
 "If your challenge is online (for example web or pwn), then you should give "
 "us a short description of what you want to do."
 msgstr ""
+"Si tu evento es online (por ejemplo web o pwn), entonces deberias "
+"mandarnos una corta descripción de lo que quieres hacer."
 
 #: resources/templates/resources/create_challenge.html:13
 msgid ""
 "We may be able to help you or to give you resources such as dockerfiles."
 msgstr ""
+"Podemos ser de ayuda o darte recursos como dockerfiles."
 
 #: resources/templates/resources/create_challenge.html:14
 msgid "We plan to make those resources publicly available in a near future."
-msgstr ""
+msgstr "Planeamos publicar estos recursos al publico en un futuro cercano."
 
 #: resources/templates/resources/donate.html:7
 msgid "Donate"
-msgstr ""
+msgstr "Donar"
 
 #: resources/templates/resources/donate.html:10
 msgid "Become a 42CTF member"
-msgstr ""
+msgstr "Convertirse en un miembro de 42CTF"
 
 #: resources/templates/resources/donate.html:11
 msgid ""
 "42CTF is a non-profit organization with a legal status under the french law "
 "(Association loi 1901)."
 msgstr ""
+"42CTF es una organización sin ánimo de lucro bajo un estatus legal bajo la ley francesa "
+"(loi de asociación 1901)."
 
 #: resources/templates/resources/donate.html:12
 msgid "You can support us by becoming a member and paying a fee of 15 euros."
-msgstr ""
+msgstr "Puedes apoyarnos convirtiendote en un miebro y pagandonos una comisión de 15 euros."
 
 #: resources/templates/resources/donate.html:13
 msgid "Membership is then granted for 1 year."
-msgstr ""
+msgstr "La membresia dura 1 año."
 
 #: resources/templates/resources/donate.html:15
 msgid "When you become a member, you gain the following advantages:"
-msgstr ""
+msgstr "Cuando te conviertes en un miembro, ganas las siguientes ventajas:"
 
 #: resources/templates/resources/donate.html:16
 msgid ""
 "A different color for your pseudo in the scoreboard, to let everyone know "
 "you're a member."
 msgstr ""
+"Un color diferente para tu pseudo en la tabla de puntuaciones para "
+"que todo el mundo sepa que eres un miembro."
 
 #: resources/templates/resources/donate.html:17
 msgid ""
 "The possibility to play again past CTF, with challenges no longer available, "
 "in the form of private events with the people of your choice."
 msgstr ""
+"La posibilidad e jugar un CTF del pasado, con retos que ya no están disponibles, "
+"crear eventos privados con gente de tu elección."
 
 #: resources/templates/resources/donate.html:18
 msgid ""
 "Ex: you played Welcome CTF 2021, and want to play it again with your friends "
 "during one weekend."
 msgstr ""
+"Ejemplo: Si jugaste CTF 2021, y quieres volverlo a jugar con tus amigos "
+"durante un fin de semana."
 
 #: resources/templates/resources/donate.html:19
 msgid "Or you didn't play Welcome CTF 2021 because you were not eligible."
-msgstr ""
+msgstr "O no jugaste el Welcome CTF 2021 porque no estabas disponible."
 
 #: resources/templates/resources/donate.html:22
 msgid "More advantages may come later, and you can submit us your ideas."
-msgstr ""
+msgstr "Más ideas llegarán pronto, y puedes enviarnos ideas."
 
 #: resources/templates/resources/donate.html:23
 msgid ""
@@ -175,91 +194,107 @@ msgid ""
 "will be equivalent to organize paid events, and we want 42CTF to remain FREE "
 "for all."
 msgstr ""
+"Sin embargo, no organizaremos CTF de tiempo limitado para miembros, ya que "
+"esto sería equivalente a organizar eventos de pago, y queremos mantener 42CTF "
+"GRATIS para todos."
 
 #: resources/templates/resources/donate.html:26
 msgid "Donate to 42CTF"
-msgstr ""
+msgstr "Dona a 42CTF"
 
 #: resources/templates/resources/donate.html:27
 msgid ""
 "You can donate to 42CTF or pay your membership with the following means:"
 msgstr ""
+"Puedes donar a 42CTF o pagar tu membresía con los siguientes métodos de pago:"
 
 #: resources/templates/resources/donate.html:46
 msgid ""
 "If you would like us to add another payment method or if you want to pay in "
 "cash, send us a message !"
 msgstr ""
+"Si quieres que añadamos otro metodo de pago o quieres pagarnos en efectivo "
+"¡Mandanos un mensaje!"
 
 #: resources/templates/resources/donate.html:48
 msgid ""
 "If you're paying for your membership, don't forget to send us your first and "
 "last name, as well as your 42CTF pseudo."
 msgstr ""
+"Si estás pagando por tu membresía, no olvides mandarnos tu nombre y apellido, también "
+"tu nombre de usuario en 42CTF"
 
 #: resources/templates/resources/donate.html:49
 msgid ""
 "We will only use thoe data to keep track of our members and grant you "
 "advantages, and we will never communicate them to any third party."
 msgstr ""
+"Solo usarmos los datos para tener control de la lista de miembros y darte "
+"las ventajas de miembro, nunca se los daremos a ningún tercero."
 
 #: resources/templates/resources/edit.html:7
 msgid "Edit this page"
-msgstr ""
+msgstr "Editar esta página"
 
 #: resources/templates/resources/edit.html:12
 msgid ""
 "More information coming soon, but as you can guess it involves making a pull "
 "request to your favorite"
 msgstr ""
+"Más información llegará pronto, pero como puedes imaginar requiere hacer un pull request "
+"a tu favorito"
 
 #: resources/templates/resources/tools.html:7
 msgid "Recommended Tools"
-msgstr ""
+msgstr "Herramientas Recomendadas"
 
 #: resources/templates/resources/tools.html:10
 msgid "To get you started, we built a VM that you can simply import in"
-msgstr ""
+msgstr "Para empezar, hemos creado una Máquina Virtual que simplemente puedes importar."
 
 #: resources/templates/resources/tools.html:10
 msgid "with a bunch of useful tools."
-msgstr ""
+msgstr "con unas cuantas herramientas útiles."
 
 #: resources/templates/resources/tools.html:11
 msgid "You can dowload this OVA"
-msgstr ""
+msgstr "Puedes descargar este OVA"
 
 #: resources/templates/resources/tools.html:11
 msgid "here"
-msgstr ""
+msgstr "aquí"
 
 #: resources/templates/resources/tools.html:13
 msgid "Here are the tools installed on the VM:"
-msgstr ""
+msgstr "Aquí están las herramientas instaladas en la Máquina Virtual:"
 
 #: resources/templates/resources/tools.html:22
 msgid ""
 "If you want to solve the challenges on your own machine, we recommend you to "
 "use a Linux operating system."
 msgstr ""
+"Si quieres resolver los retos en tu propia máquina, te recomendamos usar "
+"Linux como sistema operativo."
 
 #: resources/templates/resources/tools.html:23
 msgid ""
 "Most of the reverse challenges are ELF binaries and won't run on Mac OS or "
 "Windows."
 msgstr ""
+"La mayoría de retos de ingeniería inversa usan binarios ELF y no funcionarán "
+"en Mac OS o Windows."
 
 #: resources/templates/resources/tools.html:25
 msgid "Additionnaly, you will need the following languages interpreters:"
-msgstr ""
+msgstr "Además, necesitarás tender los siguientes interpretes de lenguaje:"
 
 #: resources/templates/resources/translate.html:7
 msgid "Translate 42CTF"
-msgstr ""
+msgstr "Traducir 42CTF"
 
 #: resources/templates/resources/translate.html:10
 msgid "42CTF source code is publicly available on this"
-msgstr ""
+msgstr "El código de 42CTF está disponible al público aquí"
 
 #: resources/templates/resources/translate.html:11
 msgid ""
@@ -267,21 +302,27 @@ msgid ""
 "contribute if you want to help us, by making the platform always more "
 "accessible."
 msgstr ""
+"La traducción no requiere saber programación y es una buena forma para "
+"contribuir si quieres ayudarnos, haciendo la plataforma siempre más "
+"accesible."
 
 #: resources/templates/resources/translate.html:12
 msgid "We have a"
-msgstr ""
+msgstr "Tenemos un"
 
 #: resources/templates/resources/translate.html:12
 msgid ""
 "describing how to translate pages with the Django internalization module."
 msgstr ""
+"Describiendo como traducir las páginas con el modulo de internacionalización Django."
 
 #: resources/templates/resources/translate.html:13
 msgid ""
 "We invite you to read it to know all the details, but it merely requires you "
 "to edit text files, so you see, no programming skills required ;)"
 msgstr ""
+"Te invitamos a leerlo para conocer todos los detalles, pero simplemente rquiere "
+"que edites archivos de texto, asi que como ves, no hace falta saber programar ;)"
 
 #: resources/templates/resources/translate.html:14
 msgid ""
@@ -289,7 +330,10 @@ msgid ""
 "then open a pull request so that we can merge your contributions into our "
 "repository."
 msgstr ""
+"Vas a necesitar hacer un Fork del repositorio de git, hacer tus cambios, hacer un push y "
+"entonces abrir un Pull request para que podamos hacer merge de tus cambios a "
+"nuestro repositorio."
 
 #: resources/templates/resources/translate.html:15
 msgid "Don't hesitate to reach for help on"
-msgstr ""
+msgstr "No dudes en pedirnos ayuda"
