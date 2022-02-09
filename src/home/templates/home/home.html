@@ -3,6 +3,7 @@
 {% load i18n %}
 {% get_current_language as lang %}
 {% load is_member %}
+{% load get_news %}
 <div class="row">
         <div class="col-lg-3 col-sm-12 right-sidebar middle-sm">
 
@@ -34,17 +35,8 @@
                         <div class="card-body">
                                 <h5 class="card-title">{{ n.name|safe }}</h5>
                                 <p class="card-text">
-                                {% if lang == "fr" and n.content %}
-                                {{ n.content|safe }}
-                                {% elif lang == "en" and n.content_en %}
-                                {{ n.content_en|safe }}
-                                {% elif lang == "de" and n.content_de %}
-                                {{ n.content_de|safe }}
-                                {% elif lang == "ru" and n.content_ru %}
-                                {{ n.content_ru|safe }}
-                                {% else %}
-		  						{% trans "No translation available. Please try another language (English or French)." %}
-                                {% endif %}
+                                {% get_news_by_lang n lang as content %}
+                                {{ content | safe }}
                                 </p>
                         </div>
                         <div class="card-footer text-muted">

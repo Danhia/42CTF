@@ -8,22 +8,10 @@ from django.urls import translate_url
 from django.utils.translation import (
     LANGUAGE_SESSION_KEY, check_for_language, get_language,
 )
+from django.core.files.storage import default_storage
 import datetime
 from collections import defaultdict
 import operator
-
-def get_content_by_lang(news):
-    lang = get_language()
-    ret = None
-    if lang == "fr":
-        ret = news.content
-    elif lang == "en":
-        ret = news.content_en
-    elif lang == "de":
-        ret = news.content_de
-    elif lang == "ru":
-        ret = news.content_ru
-    return ret
 
 def get_weekly_top():
     week_ago = datetime.datetime.now() - datetime.timedelta(days=7)
