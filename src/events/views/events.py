@@ -103,7 +103,7 @@ def event(request, event_slug):
 	begun = False
 	if timezone.now() >= event_info.start_date:
 		begun = True
-	challenges  = CTF.objects.filter(event=event_info).order_by('category', 'points')
+	challenges  = CTF.objects.filter(event=event_info, pub_date__lte=timezone.now()).order_by('category', 'points')
 	if event_info.team_size == 1:
 		solved_list = EventPlayer.objects.filter(event=event_info).order_by('-score', 'last_submission_date', 'user__username')
 	else:
