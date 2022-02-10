@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-04 19:27+0100\n"
-"PO-Revision-Date: 2022-02-04 05:53+0100\n"
+"PO-Revision-Date: 2022-02-10 19:27+0100\n"
 "Last-Translator: Clément Hamada <clementhamada@pm.me>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -71,7 +71,7 @@ msgid ""
 "Events may or may not be open. If you would like to organize an event on "
 "42CTF, feel free to contact us."
 msgstr ""
-"Ereignisse können öffentlich oder privat sein. Wenn Sie ein Ereignisse bei "
+"Ereignisse können öffentlich oder privat sein. Wenn Sie ein Ereignis bei "
 "42CTF organisieren möchten, kontaktieren Sie uns."
 
 #: resources/templates/resources/42ctf.html:22
@@ -122,8 +122,8 @@ msgid ""
 "If your challenge is online (for example web or pwn), then you should give "
 "us a short description of what you want to do."
 msgstr ""
-"Falls Ihre Herausforderung online ist (z.B. web oder pwn), dann sollten sie "
-"uns eine kurze Beschreibung von dessen was sie vorhaben geben."
+"Falls Ihre Herausforderung online ist (z.B. web oder pwn), dann sollten Sie "
+"uns eine kurze Beschreibung Ihres Vorhabens geben."
 
 #: resources/templates/resources/create_challenge.html:13
 msgid ""
@@ -159,11 +159,11 @@ msgstr ""
 
 #: resources/templates/resources/donate.html:13
 msgid "Membership is then granted for 1 year."
-msgstr "Die Mitgliedschaft wird dann für ein Jahr gewährt."
+msgstr "Die Mitgliedschaft wird dann ein Jahr lang gewährt."
 
 #: resources/templates/resources/donate.html:15
 msgid "When you become a member, you gain the following advantages:"
-msgstr "Wenn sie Mitglied werden, bekommen sie folgende Vorteile:"
+msgstr "Wenn Sie Mitglied werden, bekommen Sie folgende Vorteile:"
 
 #: resources/templates/resources/donate.html:16
 msgid ""
@@ -193,7 +193,7 @@ msgstr ""
 #: resources/templates/resources/donate.html:19
 msgid "Or you didn't play Welcome CTF 2021 because you were not eligible."
 msgstr ""
-"Oder sie haben nicht am Welcome CTF 2021 teilgenommen weil sie nicht "
+"Oder Sie haben nicht am Welcome CTF 2021 teilgenommen weil Sie nicht dazu "
 "berechtigt waren."
 
 #: resources/templates/resources/donate.html:22
@@ -220,7 +220,7 @@ msgstr "An 42CTF spenden"
 msgid ""
 "You can donate to 42CTF or pay your membership with the following means:"
 msgstr ""
-"Folgende Zahlungsmethoden sind für eine Spende an 42CTF den Kauf einer "
+"Folgende Zahlungsmethoden sind für eine Spende an 42CTF oder den Kauf einer "
 "Mitgliedshaft verfügbar:"
 
 #: resources/templates/resources/donate.html:46
@@ -229,14 +229,14 @@ msgid ""
 "cash, send us a message !"
 msgstr ""
 "Falls Sie möchten, dass wir eine andere Zahlungsmethode hinzufügen oder "
-"lieber Bar zahlen möchten, schicken sie uns eine Nachricht!"
+"lieber Bar zahlen möchten, schicken Sie uns eine Nachricht!"
 
 #: resources/templates/resources/donate.html:48
 msgid ""
 "If you're paying for your membership, don't forget to send us your first and "
 "last name, as well as your 42CTF pseudo."
 msgstr ""
-"Falls sie für eine Mitgliedschaft zahlen, vergessen sie nicht uns Ihren vor "
+"Falls Sie für eine Mitgliedschaft zahlen, vergessen Sie nicht uns Ihren vor "
 "und Nachnamen, sowie Ihren 42CTF Nutzernamen mitzuteilen."
 
 #: resources/templates/resources/donate.html:49
@@ -245,7 +245,7 @@ msgid ""
 "advantages, and we will never communicate them to any third party."
 msgstr ""
 "Wir verwenden diese Daten nur um den Überblick über unsere Mitglieder zu "
-"Behalten und ihnen Vorteile zu bieten, und werden sie niemals an einem "
+"Behalten und ihnen Vorteile zu bieten, und werden Sie niemals an einem "
 "Dritten übermitteln."
 
 #: resources/templates/resources/edit.html:7
@@ -258,7 +258,7 @@ msgid ""
 "request to your favorite"
 msgstr ""
 "Weitere Information wird folgen, doch sowie Sie es erraten können benötigt "
-"es eine Pull Request auf ihrer lieblings"
+"es eine Pull Request auf Ihrer lieblings"
 
 #: resources/templates/resources/tools.html:7
 msgid "Recommended Tools"
@@ -266,12 +266,11 @@ msgstr "Empfohlene Werkzeuge"
 
 #: resources/templates/resources/tools.html:10
 msgid "To get you started, we built a VM that you can simply import in"
-msgstr ""
-"Zum beginnen haben wir eine VM erstellt die Sie einfach importieren können"
+msgstr "Zum beginnen haben wir eine VM erstellt die Sie einfach auf"
 
 #: resources/templates/resources/tools.html:10
 msgid "with a bunch of useful tools."
-msgstr "mit vielen nützlichen Werkzeugen."
+msgstr "importieren können, mit vielen nützlichen Werkzeugen."
 
 #: resources/templates/resources/tools.html:11
 msgid "You can dowload this OVA"
@@ -290,7 +289,7 @@ msgid ""
 "If you want to solve the challenges on your own machine, we recommend you to "
 "use a Linux operating system."
 msgstr ""
-"Falls sie die Herausforderung auf Ihrer eigenen Maschine lösen möchten, "
+"Falls Sie die Herausforderung auf Ihrer eigenen Maschine lösen möchten, "
 "empfehlen wir Ihnen einen Linux Betriebssystem zu verwenden."
 
 #: resources/templates/resources/tools.html:23
@@ -303,7 +302,7 @@ msgstr ""
 
 #: resources/templates/resources/tools.html:25
 msgid "Additionnaly, you will need the following languages interpreters:"
-msgstr "Zusätzlich, werden sie folgende Skript-Interpreter benötigen:"
+msgstr "Zusätzlich, werden Sie folgende Skript-Interpreter benötigen:"
 
 #: resources/templates/resources/translate.html:7
 msgid "Translate 42CTF"
@@ -311,7 +310,7 @@ msgstr "42CTF Übersetzen"
 
 #: resources/templates/resources/translate.html:10
 msgid "42CTF source code is publicly available on this"
-msgstr "42CTF's Quellcode ist öffentlich zugänglich auf dieser"
+msgstr "42CTF's Quellcode ist öffentlich zugänglich auf"
 
 #: resources/templates/resources/translate.html:11
 msgid ""
@@ -320,7 +319,7 @@ msgid ""
 "accessible."
 msgstr ""
 "Übersetzung benötigt keine Programmierkenntnisse und ist ein gute "
-"Möglichkeit beizutragen wenn sie uns helfen möchten, indem Sie diese "
+"Möglichkeit beizutragen wenn Sie uns helfen möchten, indem Sie diese "
 "Plattform immer zugänglicher machen."
 
 #: resources/templates/resources/translate.html:12

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-04 19:27+0100\n"
-"PO-Revision-Date: 2022-02-04 05:56+0100\n"
+"PO-Revision-Date: 2022-02-10 19:50+0100\n"
 "Last-Translator: Clément Hamada <clementhamada@pm.me>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
 
 #: accounts/templates/accounts/delete.html:8
 msgid "Delete account"
@@ -24,7 +23,7 @@ msgstr "Account löschen"
 
 #: accounts/templates/accounts/delete.html:11
 msgid "Please confirm your password to delete your account."
-msgstr "Bitte bestätigen sie ihr Passwort, um ihren Account zu löschen."
+msgstr "Bitte bestätigen Sie Ihr Passwort, um Ihren Account zu löschen."
 
 #: accounts/templates/accounts/delete.html:12
 msgid "Deleted accounts cannot be recovered."
@@ -361,7 +360,7 @@ msgstr "Team beitreten"
 #: events/templates/events/create_team.html:53
 #: events/templates/events/join_team.html:58
 msgid "Auto-matching"
-msgstr ""
+msgstr "Auto-Matching"
 
 #: events/templates/events/create_team.html:57
 #: events/templates/events/join_team.html:62
@@ -489,7 +488,7 @@ msgstr "Kein Artikel verfügbar."
 
 #: home/templates/home/home.html:61
 msgid "Latest challenges added"
-msgstr "Letzte Herausforderung hinzugefügt"
+msgstr "Neue Herausforderungen"
 
 #: home/templates/home/home.html:66
 msgid "points"
