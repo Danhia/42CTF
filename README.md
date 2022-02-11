@@ -20,7 +20,7 @@ CTF by 42 students
     - [x] Anglais
     - [x] Français
     - [ ] Russe
-    - [ ] Espagnol
+    - [x] Espagnol
     - [ ] Italien
 - [ ] OAuth 42
 - [ ] Feature proposer une solution à un challenge
