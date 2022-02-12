@@ -3,33 +3,28 @@ CTF by 42 students
 
 ### Todo
 
-- [x] Serveur SMTP & reset password
-- [x] Clean le repo
-- [x] Accès au chall après validation
-- [x] Section "Intro"
-- [x] Section Treasure Hunt
-- [x] Edition de profil
-- [x] Ajouter de la Doc
-- [x] Infrastructure de pwn
-- [x] Organiser une session découverte
-- [x] Compteur de flags
-- [x] Graphiques statistiques
-- [x] Création d'un discord linkable
-- [ ] Refonte du linkage discord -> 42ctf
-- [x] Traduction du site
-    - [x] Anglais
-    - [x] Français
-    - [ ] Russe
-    - [x] Espagnol
-    - [ ] Italien
+- [x] Password reset
+- [x] Access solved challenges
+- [x] "Intro" section
+- [x] Profile edition
+- [x] Resources page
+- [x] Flags counter
+- [x] Graphs on profile page
+- [ ] Refacto the discord bot with OAuth
+- [x] Platform translation
+    - [x] French
+    - [ ] Russian
+    - [x] Spanish
+    - [ ] Italian
+    - [x] German
 - [ ] OAuth 42
-- [ ] Feature proposer une solution à un challenge
-- [ ] Système de badge/succès
-- [ ] Génération d'une page résumant le profil d'un utilisateur (ex: show resume sur intra.42.fr)
+    - [ ] 42 Network leaderboard
+- [ ] Possibility for users to propose solution to challenges
+- [ ] Badges/achievments on profile pages
+- [x] Dynamic scoring
 
 #### Event feature
 
-- [X] make relation between user and events
 - [X] make scoreboard for events
 - [X] make access mod for events :
     - [X] Sub button for public events
@@ -39,12 +34,14 @@ CTF by 42 students
     - [ ] Access by invite link
 - [X] Admin rights
     - [X] Admin can access to events pages without password
-   - [X] Admin can subscribe to event without password
+    - [X] Admin can subscribe to event without password
 - [X] process flag submission
     - [X] increment user score in Scores model
 - [X] add filters for admin dashboard
 - [X] add search in fields in admin dashboard
-- [X] display more information in admin dashboard
 - [X] Smooth display of events listing
 - [X] Event info page with background and noice display
-- [ ] Create teams for events
+- [x] Create teams for events
+    - [x] Create/join team
+    - [x] Manage team: change password / leave team
+- [ ] Dynamic scoring for events 
