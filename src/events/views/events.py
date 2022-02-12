@@ -7,6 +7,7 @@ from ctfs.models import CTF, CTF_flags, Category
 from django.utils.translation import get_language
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from math import log
 
 def get_description_by_lang(ctf):
 	lang = get_language()
@@ -20,6 +21,24 @@ def get_description_by_lang(ctf):
 	elif lang == "ru":
 		ret = ctf.description_ru
 	return ret
+
+def actualize_points(ctf):
+	solves =  CTF_flags.objects.filter(ctf=ctf)
+	nb_solves = len(solves)
+
+	new_points = max(50 - int(log(nb_solves)*2.5)*5, 5)
+
+	if new_points != ctf.points:
+		diff = ctf.points - new_points
+		ctf.points = new_points
+		ctf.save()
+		for s in solves:
+			player = EventPlayer.objects.get(event=ctf.event, user=s.user)
+			player.score -= diff
+			player.save()
+			if player.team:
+				player.team.score -= diff
+				player.team.save()
 
 # Create your views here.
 def events(request):
@@ -115,6 +134,7 @@ def event(request, event_slug):
 def submit_event_flag(request, event_slug, chall_slug):
 	ev          =   get_object_or_404(Event, slug=event_slug)
 	response    =   redirect('events:event_chall_info', event_slug=event_slug, chall_slug=chall_slug)
+	flagged     =   False
 
 	if timezone.now() >= ev.end_date:
 		response['Location'] += '?EventIsOver=1'
@@ -126,8 +146,10 @@ def submit_event_flag(request, event_slug, chall_slug):
 			response['Location'] += '?ChallengeNotFound=1'
 			return response
 		
-		flagged     =   False
-		player		=	EventPlayer.objects.get(user=request.user, event=ev)
+		try:
+			player = EventPlayer.objects.get(event=ev, user=request.user)
+		except:
+			player = None
 		
 		if player:
 			if ev.team_size > 1 and player.team is None:
@@ -160,6 +182,8 @@ def submit_event_flag(request, event_slug, chall_slug):
 							player.team.last_submission_date = timezone.now()
 						player.team.score += ctf_info.points
 						player.team.save()
+					if ev.dynamic:
+						actualize_points(ctf_info)
 					response['Location'] += '?Congrat=1'
 					return response
 				else:

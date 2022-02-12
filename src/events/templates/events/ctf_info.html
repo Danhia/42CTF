@@ -29,7 +29,7 @@
           {% elif errorform == True %}
           <p>{% trans "Error while processing your request. (Invalid Form)" %}</p>
           {% elif notsub == True %}
-          <span class="message error-msg">{% trans "Error: you're not registered to this event, so you can't register scores, fucking logic." %}</span>
+          <span class="message error-msg">{% trans "You must register to the event before submitting flags." %}</span>
           {% elif noteam == True %}
           <span class="message error-msg">{% trans "This is a team event, please create or join a team before submitting flags." %}</span>
           {% if ctf.ctf_url %}

@@ -16,6 +16,7 @@ class Event(models.Model):
     slug        =   models.SlugField(max_length=55)
     team_size   =   models.PositiveIntegerField(default=1)
     auto_match  =   models.BooleanField(default=False)
+    dynamic     =   models.BooleanField(default=False)
     def __str__(self):
         return self.name
 
