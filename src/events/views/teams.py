@@ -46,6 +46,7 @@ def join_team(request, event_slug):
 				player = EventPlayer.objects.get(user=request.user, event=ev)
 				player.team = team
 				player.save()
+		return redirect('events:event_info', event_slug=event_slug)
 	else:
 		return render(request, 'events/join_team.html', {'event' : ev, 'logged': True, 'wrongpwd': False, 'registered' : True, 'notexist' : False})
 
