@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-04 19:27+0100\n"
+"POT-Creation-Date: 2022-02-14 19:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr ""
 #: accounts/templates/accounts/login.html:18
 #: accounts/templates/accounts/register.html:22
 #: ctfs/templates/ctfs/ctf_info.html:61 ctfs/templates/ctfs/ctfs_list.html:12
-#: events/templates/events/ctf_info.html:71
+#: events/templates/events/ctf_info.html:65
 #: events/templates/events/event_info.html:64
 #: scoreboard/templates/scoreboard/scoreboard.html:13
 msgid "Username"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: accounts/templates/accounts/edit.html:30
 #: ctfs/templates/ctfs/ctf_info.html:62
-#: events/templates/events/ctf_info.html:72
+#: events/templates/events/ctf_info.html:66
 #: events/templates/events/event_info.html:65
 #: scoreboard/templates/scoreboard/scoreboard.html:14
 msgid "Website"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: accounts/templates/accounts/profile.html:24
 #: ctfs/templates/ctfs/ctf_info.html:64
-#: events/templates/events/ctf_info.html:73
+#: events/templates/events/ctf_info.html:67
 #: events/templates/events/team.html:23
 msgid "Date"
 msgstr ""
@@ -232,55 +232,55 @@ msgid "Challenge is not yet available."
 msgstr "Нет доступных статей."
 
 #: ctfs/templates/ctfs/ctf_info.html:21
-#: events/templates/events/ctf_info.html:18 home/templates/home/home.html:46
+#: events/templates/events/ctf_info.html:18
 msgid ""
 "No translation available. Please try another language (English or French)."
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:27
-#: events/templates/events/ctf_info.html:32
+#: events/templates/events/ctf_info.html:24
 msgid "Congratulation !"
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:29
-#: events/templates/events/ctf_info.html:34
+#: events/templates/events/ctf_info.html:26
 msgid "Already flagged"
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:31 ctfs/templates/ctfs/ctf_info.html:40
-#: events/templates/events/ctf_info.html:42
-#: events/templates/events/ctf_info.html:51
+#: events/templates/events/ctf_info.html:36
+#: events/templates/events/ctf_info.html:45
 msgid "Start the challenge"
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:33 ctfs/templates/ctfs/ctf_info.html:42
-#: events/templates/events/ctf_info.html:44
-#: events/templates/events/ctf_info.html:53
+#: events/templates/events/ctf_info.html:38
+#: events/templates/events/ctf_info.html:47
 msgid "Download"
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:37
-#: events/templates/events/ctf_info.html:48
+#: events/templates/events/ctf_info.html:42
 msgid "Wrong flag ! You can do it !"
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:56
-#: events/templates/events/ctf_info.html:66
+#: events/templates/events/ctf_info.html:60
 msgid "Solved by"
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:80
-#: events/templates/events/ctf_info.html:96
+#: events/templates/events/ctf_info.html:90
 msgid "Nobody has solved this challenge yet."
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:87
-#: events/templates/events/ctf_info.html:103
+#: events/templates/events/ctf_info.html:97
 msgid "Author"
 msgstr ""
 
 #: ctfs/templates/ctfs/ctf_info.html:88
-#: events/templates/events/ctf_info.html:104
+#: events/templates/events/ctf_info.html:98
 msgid "Point reward"
 msgstr ""
 
@@ -372,30 +372,31 @@ msgstr ""
 msgid "Event"
 msgstr ""
 
-#: events/templates/events/ctf_info.html:25
-#: events/templates/events/event_info.html:9
-msgid "Subscriptions is over."
-msgstr ""
-
 #: events/templates/events/ctf_info.html:28
-#: events/templates/events/event_info.html:12
-#: events/templates/events/event_pwd.html:18
-msgid "You're already registered to this event."
-msgstr ""
-
-#: events/templates/events/ctf_info.html:36
 #: events/templates/events/event_info.html:18
 msgid "This event is over."
 msgstr ""
 
-#: events/templates/events/ctf_info.html:38
+#: events/templates/events/ctf_info.html:30
 msgid "Error while processing your request. (Invalid Form)"
 msgstr ""
 
-#: events/templates/events/ctf_info.html:40
+#: events/templates/events/ctf_info.html:32
+msgid "You must register to the event before submitting flags."
+msgstr ""
+
+#: events/templates/events/ctf_info.html:34
 msgid ""
-"Error: you're not registered to this event, so you can't register scores, "
-"fucking logic."
+"This is a team event, please create or join a team before submitting flags."
+msgstr ""
+
+#: events/templates/events/event_info.html:9
+msgid "Subscriptions is over."
+msgstr ""
+
+#: events/templates/events/event_info.html:12
+#: events/templates/events/event_pwd.html:18
+msgid "You're already registered to this event."
 msgstr ""
 
 #: events/templates/events/event_info.html:20
@@ -475,43 +476,51 @@ msgstr ""
 msgid "Members"
 msgstr ""
 
-#: events/templates/events/manage_team.html:51
+#: events/templates/events/manage_team.html:52
 msgid "Leave Team"
+msgstr ""
+
+#: events/templates/events/manage_team.html:59
+msgid "Open to automatching"
+msgstr ""
+
+#: events/templates/events/manage_team.html:66
+msgid "Close to automatching"
 msgstr ""
 
 #: events/templates/events/team.html:38
 msgid "It seems that this team has not solved any challenge yet..."
 msgstr ""
 
-#: home/templates/home/home.html:20
+#: home/templates/home/home.html:21
 msgid "Weekly Top 5"
 msgstr ""
 
-#: home/templates/home/home.html:56
+#: home/templates/home/home.html:48
 msgid "No article available."
 msgstr "Нет доступных статей."
 
-#: home/templates/home/home.html:61
+#: home/templates/home/home.html:53
 msgid "Latest challenges added"
 msgstr ""
 
-#: home/templates/home/home.html:66
+#: home/templates/home/home.html:58
 msgid "points"
 msgstr ""
 
-#: home/templates/home/home.html:70
+#: home/templates/home/home.html:62
 msgid "No ctf available."
 msgstr ""
 
-#: home/templates/home/home.html:74
+#: home/templates/home/home.html:66
 msgid "Latest Flags"
 msgstr ""
 
-#: home/templates/home/home.html:88
+#: home/templates/home/home.html:80
 msgid "Flags"
 msgstr ""
 
-#: home/templates/home/home.html:94
+#: home/templates/home/home.html:86
 msgid "Users"
 msgstr ""
 
@@ -529,6 +538,14 @@ msgstr ""
 
 #: project/settings.py:118
 msgid "Russian"
+msgstr ""
+
+#: project/settings.py:119
+msgid "Japanese"
+msgstr ""
+
+#: project/settings.py:120
+msgid "Spanish"
 msgstr ""
 
 #: scoreboard/templates/scoreboard/scoreboard.html:38
