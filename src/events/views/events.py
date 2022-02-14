@@ -65,7 +65,7 @@ def chall_event_info(request, event_slug, chall_slug):
 			return redirect('events:event_info', event_slug=event_slug)
 	elif not request.user.is_authenticated:
 		return redirect('accounts:signin')
-	if request.GET.get('EventIsOver'):
+	if request.GET.get('EventIsOver') or timezone.now() > event_info.end_date:
 		eventisover = True
 	if request.GET.get('AlreadyFlagged'):
 		alreadyflag = True
